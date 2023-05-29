@@ -1,0 +1,72 @@
+{
+  "hi": {
+    "headline": "Hi!",
+    "paragraphs": [
+      "I'm Marco, a certified Accessibility and Front End Developer.",
+      "I specialize in creating beautiful accessible web products and system designs for clients worldwide."
+    ]
+  },
+  "selectedWorks": {
+    "headline": "Selected works",
+    "cards": [
+      {
+        "headline": "RenatoDoList",
+        "subheadline": "PWA",
+        "description": "Basic metronome with tempo and time signature customisation.",
+        "chips": ["JS", "React", "HTML"],
+        "CTA": {
+          "label": "Check it out",
+          "url": "#"
+        }
+      },
+      {
+        "headline": "Metronome",
+        "subheadline": "WebApp",
+        "description": "Something somtehing...",
+        "chips": ["JS", "React", "HTML"],
+        "CTA": {
+          "label": "Check it out",
+          "url": "#"
+        }
+      },
+      {
+        "headline": "Picker",
+        "subheadline": "Web Component",
+        "description": "LALALALLALALALAalllala.",
+        "chips": ["JS", "React", "HTML"],
+        "CTA": {
+          "label": "Check it out",
+          "url": "#"
+        }
+      }
+    ],
+    "nda": {
+      "text": "Nda work:",
+      "images": [
+        {
+          "alt": "description",
+          "url": "#"
+        },
+        {
+          "alt": "description",
+          "url": "#"
+        },
+        {
+          "alt": "description",
+          "url": "#"
+        }
+      ]
+    },
+    "knowMore": {
+      "headline": "Know more:",
+      "CTA": "Github or Linkedin"
+    }
+  },
+  "writeMe": {
+    "headline": "Write me",
+    "CTA": {
+      "label": "here",
+      "url": "#"
+    }
+  }
+}
