@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
+
 interface ParagraphProps {
-  text: string;
+  children: ReactNode;
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({ text }) => {
-  return <p>{text}</p>;
+const Paragraph: React.FC<ParagraphProps> = ({ children }) => {
+  return <p>{children}</p>;
 };
 
 export default Paragraph;
