@@ -4,12 +4,17 @@ import styles from './page.module.css'
 export default function Home() {
   return (
     <>
-      <header></header>
+      <header>
+        {/* HI! section */}
+      </header>
       <nav></nav>
       <main className={styles.main}>
+        {/* SELECTED WORKS */}
         <Posts />
       </main>
-      <footer></footer>
+      <footer>
+        {/* WRITE ME HERE */}
+      </footer>
     </>
   )
 }
