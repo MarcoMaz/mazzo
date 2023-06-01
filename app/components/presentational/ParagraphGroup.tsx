@@ -2,7 +2,7 @@ import Paragraph from "./Paragraph";
 
 interface ParagraphGroupProps {
   dataCy: string;
-  paragraphs: string[];
+  paragraphs: { text: string; underline?: string[] }[];
 }
 
 const ParagraphGroup: React.FC<ParagraphGroupProps> = ({
@@ -12,7 +12,11 @@ const ParagraphGroup: React.FC<ParagraphGroupProps> = ({
   return (
     <div data-cy={dataCy}>
       {paragraphs.map((paragraph, index) => (
-        <Paragraph key={index} text={paragraph} />
+        <Paragraph
+          key={index}
+          text={paragraph.text}
+          underline={paragraph.underline}
+        />
       ))}
     </div>
   );

@@ -6,8 +6,14 @@
       "alt": "Picture of Marco Mazzai"
     },
     "paragraphs": [
-      "I'm Marco, a certified Accessibility and Front End Developer.",
-      "I specialize in creating beautiful accessible web products and system designs for clients worldwide."
+      {
+        "text": "I'm Marco, a certified Accessibility and Front End Developer.",
+        "underline": ["certified Accessibility", "Front End Developer"]
+      },
+      {
+        "text": "I specialize in creating beautiful accessible web products and system designs for clients worldwide.",
+        "underline": ["beautiful accessible web products", "system designs"]
+      }
     ]
   },
   "selectedWorks": {
