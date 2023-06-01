@@ -54,16 +54,16 @@
       "headline": "Nda work:",
       "images": [
         {
-          "alt": "description",
-          "url": "#"
+          "alt": "bosch logo",
+          "src": "/assets/images/bosch-logo.png"
         },
         {
-          "alt": "description",
-          "url": "#"
+          "alt": "mercedes logo",
+          "src": "/assets/images/mercedes-logo.png"
         },
         {
-          "alt": "description",
-          "url": "#"
+          "alt": "olymp logo",
+          "src": "/assets/images/olymp-logo.png"
         }
       ]
     },
