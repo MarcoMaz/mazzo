@@ -1,10 +1,10 @@
 import Chip from "./Chip";
 
-interface ChipGroup {
+interface ChipGroupProps {
   chips: string[];
 }
 
-const ChipGroup: React.FC<ChipGroup> = ({ chips }) => {
+const ChipGroup: React.FC<ChipGroupProps> = ({ chips }) => {
   return (
     <>
       {chips.map((chip, index) => (
