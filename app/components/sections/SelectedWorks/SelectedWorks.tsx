@@ -15,13 +15,13 @@ const SelectedWorks = () => {
     <>
       <Heading dataCy="selected-works-heading" level={2} label={headline} />
 
-      <div>
+      <div data-cy="selected-works-cards">
         {data.selectedWorks.cards.map(
           (
             { headline, subheadline, description, chips, CTA: { url, label } },
             index
           ) => (
-            <div className="Card" key={index}>
+            <div data-cy={headline} key={index}>
               <Heading level={3} label={headline} />
               <Heading level={4} label={subheadline} />
               <Paragraph text={description} />

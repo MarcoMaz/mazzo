@@ -13,7 +13,7 @@ const ExternalLinkGroup: React.FC<ExternalLinkGroupProps> = ({
     <div data-cy={dataCy}>
       {links.map(({ url, label }, index) => (
         <React.Fragment key={index}>
-          <ExternalLink address={url} label={label} />
+          <ExternalLink url={url} label={label} />
           {index !== links.length - 1 && <span> or </span>}
         </React.Fragment>
       ))}
