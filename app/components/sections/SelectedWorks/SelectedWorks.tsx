@@ -1,5 +1,5 @@
 import data from "../../../../public/assets/content/content.json";
-import Chip from "../../presentational/Chip";
+import ChipGroup from "../../presentational/ChipGroup";
 import ExternalLink from "../../presentational/ExternalLink";
 
 import ExternalLinkGroup from "../../presentational/ExternalLinkGroup";
@@ -25,9 +25,7 @@ const SelectedWorks = () => {
               <Heading level={3} label={headline} />
               <Heading level={4} label={subheadline} />
               <Paragraph text={description} />
-              {chips.map((chip, index) => (
-                <Chip key={index} label={chip} />
-              ))}
+              <ChipGroup chips={chips} />
               <ExternalLink url={url} label={label} />
             </div>
           )
