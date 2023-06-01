@@ -1,12 +1,12 @@
 interface ExternalLinkProps {
-  address: string;
+  url: string;
   label: string;
   dataCy?: string;
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({ address, label, dataCy }) => {
+const ExternalLink: React.FC<ExternalLinkProps> = ({ url, label, dataCy }) => {
   return (
-    <a data-cy={dataCy} href={address} target="_blank">
+    <a data-cy={dataCy} href={url} target="_blank">
       {label}
     </a>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface HeadingProps {
-  dataCy: string;
+  dataCy?: string;
   level: number;
   label: string;
 }
