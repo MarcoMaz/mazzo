@@ -1,6 +1,10 @@
 import SelectedWorks from "./SelectedWorks";
 
 const SELECTED_WORKS_HEADING_SELECTOR = "[data-cy='selected-works-heading']";
+const SELECTED_WORKS_NDA_HEADING_SELECTOR =
+  "[data-cy='selected-works-nda-heading']";
+const SELECTED_WORKS_KNOW_MORE_HEADING_SELECTOR =
+  "[data-cy='selected-works-know-more-heading']";
 
 describe("Headline", () => {
   beforeEach(() => {
@@ -12,6 +16,40 @@ describe("Headline", () => {
   });
 
   it("should have the correct label", () => {
-    cy.get(SELECTED_WORKS_HEADING_SELECTOR).should("have.text", "Selected works");
+    cy.get(SELECTED_WORKS_HEADING_SELECTOR).should(
+      "have.text",
+      "Selected works"
+    );
+  });
+});
+
+describe("NDA", () => {
+  describe("Headline", () => {
+    beforeEach(() => {
+      cy.mount(<SelectedWorks />);
+    });
+
+    it("should exists", () => {
+      cy.get(SELECTED_WORKS_NDA_HEADING_SELECTOR).should("exist");
+    });
+
+    it("should have the correct label", () => {
+      cy.get(SELECTED_WORKS_NDA_HEADING_SELECTOR).should(
+        "have.text",
+        "Nda work:"
+      );
+    });
+  });
+});
+
+describe("Know more", () => {
+  describe("Headline", () => {
+    beforeEach(() => {
+      cy.mount(<SelectedWorks />);
+    });
+
+    it("should exists", () => {
+      cy.get(SELECTED_WORKS_KNOW_MORE_HEADING_SELECTOR).should("exist");
+    });
   });
 });
