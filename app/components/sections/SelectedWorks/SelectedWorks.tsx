@@ -1,4 +1,5 @@
 import data from "../../../../public/assets/content/content.json";
+import Card from "../../presentational/Card";
 import ChipGroup from "../../presentational/ChipGroup";
 import ExternalLink from "../../presentational/ExternalLink";
 
@@ -21,13 +22,15 @@ const SelectedWorks = () => {
             { headline, subheadline, description, chips, CTA: { url, label } },
             index
           ) => (
-            <div data-cy={headline} key={index}>
-              <Heading level={3} label={headline} />
-              <Heading level={4} label={subheadline} />
-              <Paragraph text={description} />
-              <ChipGroup chips={chips} />
-              <ExternalLink url={url} label={label} />
-            </div>
+            <Card
+              headline={headline}
+              subheadline={subheadline}
+              description={description}
+              chips={chips}
+              CTA={{ url, label }}
+              dataCy={headline}
+              key={index}
+            />
           )
         )}
       </div>
