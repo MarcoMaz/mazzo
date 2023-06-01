@@ -1,5 +1,8 @@
 import Posts from "./components/Posts";
+
 import Hi from "./components/sections/Hi/Hi";
+import WriteMe from "./components/sections/WriteMe/WriteMe";
+
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -11,9 +14,11 @@ export default function Home() {
       <nav></nav>
       <main className={styles.main}>
         {/* SELECTED WORKS */}
-        <Posts />
+        {/* <Posts /> */}
       </main>
-      <footer>{/* WRITE ME HERE */}</footer>
+      <footer>
+        <WriteMe />
+      </footer>
     </>
   );
 }
