@@ -1,7 +1,7 @@
 import WriteMe from "./WriteMe";
 
-const WRITE_ME_HEADING_SELECTOR =  "[data-cy='write-me-heading']";
-const WRITE_ME_DIV_SELECTOR =  "[data-cy='write-me-div']";
+const WRITE_ME_HEADING_SELECTOR = "[data-cy='write-me-heading']";
+const WRITE_ME_DIV_SELECTOR = "[data-cy='write-me-cta']";
 
 describe("Headline", () => {
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe("Headline", () => {
   });
 });
 
-describe("Div", () => {
+describe("CTA", () => {
   beforeEach(() => {
     cy.mount(<WriteMe />);
   });
@@ -28,5 +28,13 @@ describe("Div", () => {
 
   it("should have the correct label", () => {
     cy.get(WRITE_ME_DIV_SELECTOR).should("have.text", "here");
+  });
+
+  it("should have the correct url", () => {
+    cy.get(WRITE_ME_DIV_SELECTOR).should(
+      "have.attr",
+      "href",
+      "mailto:mazzai.marco@gmail.com"
+    );
   });
 });

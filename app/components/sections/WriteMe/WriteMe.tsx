@@ -1,11 +1,18 @@
+import data from "../../../../public/assets/content/content.json";
+
 import Heading from "../../presentational/Heading";
-import Div from "../../presentational/Div";
+import ExternalLink from "../../presentational/ExternalLink";
 
 const WriteMe = () => {
+  const {
+    headline,
+    CTA: { url, label },
+  } = data.writeMe;
+
   return (
     <>
-      <Heading dataCy="write-me-heading" level={2} label="Write me" />
-      <Div dataCy="write-me-div">here</Div>
+      <Heading dataCy="write-me-heading" level={2} label={headline} />
+      <ExternalLink dataCy="write-me-cta" address={url} label={label} />
     </>
   );
 };
