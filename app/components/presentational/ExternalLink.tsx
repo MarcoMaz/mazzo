@@ -1,7 +1,7 @@
 interface ExternalLinkProps {
   address: string;
   label: string;
-  dataCy: string;
+  dataCy?: string;
 }
 
 const ExternalLink: React.FC<ExternalLinkProps> = ({ address, label, dataCy }) => {
