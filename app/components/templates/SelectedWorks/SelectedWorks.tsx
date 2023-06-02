@@ -1,10 +1,10 @@
 import data from "../../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading";
-import CardGroup from "../CardGroup";
+import CardGroup from "../../organisms/CardGroup";
 import ImageGroup from "../../molecules/ImageGroup";
 import ExternalLinkGroup from "../../molecules/ExternalLinkGroup";
-import Accordion from "../Accordion";
+import Accordion from "../../organisms/Accordion";
 
 const SelectedWorks = () => {
   const { headline, cards, nda, knowMore } = data.selectedWorks;
