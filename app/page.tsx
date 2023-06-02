@@ -1,8 +1,8 @@
 import Posts from "./components/Posts";
 
-import Hi from "./components/sections/Hi/Hi";
-import SelectedWorks from "./components/sections/SelectedWorks/SelectedWorks";
-import WriteMe from "./components/sections/WriteMe/WriteMe";
+import Hi from "./components/organisms/Hi/Hi";
+import SelectedWorks from "./components/organisms/SelectedWorks/SelectedWorks";
+import WriteMe from "./components/organisms/WriteMe/WriteMe";
 
 import styles from "./page.module.css";
 
