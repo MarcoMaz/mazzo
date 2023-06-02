@@ -52,21 +52,51 @@ describe("Paragraph Group", () => {
   describe("First paragraph", () => {
     it("should have the correct text", () => {
       cy.get(HI_PARAGRAPH_GROUP_SELECTOR)
-        .find(":first-child")
+        .find("p:first-child")
         .should(
-          "have.text",
+          "contain",
           "I'm Marco, a certified Accessibility and Front End Developer."
         );
+      cy.get(HI_PARAGRAPH_GROUP_SELECTOR)
+        .find("p:first-child")
+        .within(() => {
+          cy.get("span").each((span) => {
+            cy.wrap(span).invoke("removeAttr", "data-cy");
+            cy.wrap(span).invoke("text", "");
+          });
+        });
+      cy.get(HI_PARAGRAPH_GROUP_SELECTOR)
+        .find("p:first-child")
+        .should("contain", "I'm Marco, a  and .");
     });
   });
 
   describe("Second paragraph", () => {
     it("should have the correct text", () => {
       cy.get(HI_PARAGRAPH_GROUP_SELECTOR)
-        .find(":nth-child(2)")
+        .find("p")
+        .eq(1)
         .should(
-          "have.text",
+          "contain",
           "I specialize in creating beautiful accessible web products and system designs for clients worldwide."
+        );
+
+      cy.get(HI_PARAGRAPH_GROUP_SELECTOR)
+        .find("p")
+        .eq(1)
+        .within(() => {
+          cy.get("span").each((span) => {
+            cy.wrap(span).invoke("removeAttr", "data-cy");
+            cy.wrap(span).invoke("text", "");
+          });
+        });
+
+      cy.get(HI_PARAGRAPH_GROUP_SELECTOR)
+        .find("p")
+        .eq(1)
+        .should(
+          "contain",
+          "I specialize in creating  and  for clients worldwide."
         );
     });
   });
