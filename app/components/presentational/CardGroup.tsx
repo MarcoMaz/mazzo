@@ -1,4 +1,5 @@
 import Card from "./Card";
+import DotGroup from "./DotGroup";
 
 interface CardGroupProps {
   dataCy: string;
@@ -33,11 +34,7 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           />
         )
       )}
-      <div data-cy="Dots">
-        {cards.map((card, index) => (
-          <div key={index}></div>
-        ))}
-      </div>
+      <DotGroup cards={cards} dataCy="Dots" />
     </div>
   );
 };

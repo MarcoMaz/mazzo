@@ -3,7 +3,7 @@ import ExternalLink from "./ExternalLink";
 import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 
-interface CardProps {
+export interface CardProps {
   headline: string;
   subheadline: string;
   description: string;
@@ -12,7 +12,7 @@ interface CardProps {
     url: string;
     label: string;
   };
-  dataCy: string;
+  dataCy?: string;
 }
 
 const Card: React.FC<CardProps> = ({
