@@ -1,4 +1,4 @@
-import Paragraph from "./Paragraph";
+import Paragraph from "../molecules/Paragraph";
 
 interface ParagraphGroupProps {
   dataCy: string;

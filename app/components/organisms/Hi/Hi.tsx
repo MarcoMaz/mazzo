@@ -3,7 +3,7 @@ import data from "../../../../public/assets/content/content.json";
 // Components
 import Heading from "../../atoms/Heading";
 import Image from "next/image";
-import ParagraphGroup from "../../atoms/ParagraphGroup";
+import ParagraphGroup from "../ParagraphGroup";
 
 const Hi: React.FC = () => {
   const {

@@ -1,4 +1,4 @@
-import Dot from "./Dot";
+import Dot from "../atoms/Dot";
 import { CardProps } from "./Card";
 
 interface DotGroupProps {

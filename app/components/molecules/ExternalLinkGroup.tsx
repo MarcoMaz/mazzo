@@ -1,5 +1,5 @@
 import React from "react";
-import ExternalLink from "./ExternalLink";
+import ExternalLink from "../atoms/ExternalLink";
 
 interface ExternalLinkGroupProps {
   dataCy: string;

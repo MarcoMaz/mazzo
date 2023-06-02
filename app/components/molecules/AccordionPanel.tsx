@@ -1,6 +1,6 @@
 import ChipGroup from "./ChipGroup";
-import ExternalLink from "./ExternalLink";
-import Heading from "./Heading";
+import ExternalLink from "../atoms/ExternalLink";
+import Heading from "../atoms/Heading";
 import Paragraph from "./Paragraph";
 
 import { CardProps } from "./Card";

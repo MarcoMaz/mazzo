@@ -1,5 +1,5 @@
-import Card, { CardProps } from "./Card";
-import DotGroup from "./DotGroup";
+import Card, { CardProps } from "../molecules/Card";
+import DotGroup from "../molecules/DotGroup";
 
 interface CardGroupProps {
   dataCy: string;
