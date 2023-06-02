@@ -1,4 +1,8 @@
-import data from "../../../public/assets/content/content.json";
+import ChipGroup from "./ChipGroup";
+import Heading from "./Heading";
+import Paragraph from "./Paragraph";
+import ExternalLink from "./ExternalLink";
+
 import { CardProps } from "./Card";
 
 interface AccordionProps {
@@ -31,13 +35,11 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy }) => {
               role="region"
               aria-labelledby={`accordion${index}id`}
             >
-              <h4>{headline}</h4>
-              <h5>{subheadline}</h5>
-              <p>{description}</p>
-              {chips.map((chip, idx) => (
-                <div key={idx}>{chip}</div>
-              ))}
-              <a href={url}>{label}</a>
+              <Heading level={4} label={headline} />
+              <Heading level={5} label={subheadline} />
+              <Paragraph text={description} />
+              <ChipGroup chips={chips} />
+              <ExternalLink url={url} label={label} />
             </div>
           </>
         )
