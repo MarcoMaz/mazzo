@@ -1,7 +1,4 @@
-import ChipGroup from "./ChipGroup";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
-import ExternalLink from "./ExternalLink";
+import AccordionPanel from "./AccordionPanel";
 
 import { CardProps } from "./Card";
 
@@ -29,18 +26,16 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy }) => {
                 <span>{headline}</span>
               </button>
             </h3>
-            <div
-              data-cy={`selected-works-accordion-panel-${headline}`}
-              id={`sect${index}`}
-              role="region"
-              aria-labelledby={`accordion${index}id`}
-            >
-              <Heading level={4} label={headline} />
-              <Heading level={5} label={subheadline} />
-              <Paragraph text={description} />
-              <ChipGroup chips={chips} />
-              <ExternalLink url={url} label={label} />
-            </div>
+            <AccordionPanel
+              panelId={`sect${index}`}
+              dataCy={`selected-works-accordion-panel-${headline}`}
+              buttonId={`accordion${index}id`}
+              headline={headline}
+              subheadline={subheadline}
+              description={description}
+              chips={chips}
+              CTA={{ url, label }}
+            />
           </>
         )
       )}
