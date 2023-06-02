@@ -12,7 +12,7 @@ const SelectedWorks = () => {
   return (
     <>
       <Heading dataCy="selected-works-heading" level={2} label={headline} />
-      <Accordion />
+      <Accordion dataCy="selected-works-accordion" cards={cards} />
       <CardGroup dataCy="selected-works-cards" cards={cards} />
       <Heading
         dataCy="selected-works-nda-heading"

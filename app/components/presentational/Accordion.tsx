@@ -1,9 +1,15 @@
 import data from "../../../public/assets/content/content.json";
+import { CardProps } from "./Card";
 
-const Accordion = () => {
+interface AccordionProps {
+  dataCy: string;
+  cards: CardProps[];
+}
+
+const Accordion: React.FC<AccordionProps> = ({ cards, dataCy }) => {
   return (
-    <div style={{ border: "1px solid" }} data-cy="selected-works-accordion">
-      {data.selectedWorks.cards.map(
+    <div style={{ border: "1px solid" }} data-cy={dataCy}>
+      {cards.map(
         (
           { headline, subheadline, description, chips, CTA: { url, label } },
           index
