@@ -4,6 +4,7 @@ import Heading from "../../presentational/Heading";
 import CardGroup from "../../presentational/CardGroup";
 import ImageGroup from "../../presentational/ImageGroup";
 import ExternalLinkGroup from "../../presentational/ExternalLinkGroup";
+import Accordion from "../../presentational/Accordion";
 
 const SelectedWorks = () => {
   const { headline, cards, nda, knowMore } = data.selectedWorks;
@@ -11,6 +12,7 @@ const SelectedWorks = () => {
   return (
     <>
       <Heading dataCy="selected-works-heading" level={2} label={headline} />
+      <Accordion />
       <CardGroup dataCy="selected-works-cards" cards={cards} />
       <Heading
         dataCy="selected-works-nda-heading"
