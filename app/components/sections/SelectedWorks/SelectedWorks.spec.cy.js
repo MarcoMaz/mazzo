@@ -6,6 +6,7 @@ const SELECTED_WORKS_CARDS_SELECTOR = "[data-cy='selected-works-cards']";
 const SELECTED_WORKS_CARD_1_SELECTOR = "[data-cy='RenatoDoList']";
 const SELECTED_WORKS_CARD_2_SELECTOR = "[data-cy='Metronome']";
 const SELECTED_WORKS_CARD_3_SELECTOR = "[data-cy='Picker']";
+const SELECTED_WORKS_DOTS_SELECTOR = "[data-cy='Dots']";
 
 const SELECTED_WORKS_NDA_HEADING_SELECTOR =
   "[data-cy='selected-works-nda-heading']";
@@ -41,10 +42,10 @@ describe("Cards", () => {
     cy.get(SELECTED_WORKS_CARDS_SELECTOR).should("exist");
   });
 
-  it("should have 3 div cards", () => {
+  it("should have 4 div children", () => {
     cy.get(SELECTED_WORKS_CARDS_SELECTOR)
       .children("div")
-      .should("have.length", 3);
+      .should("have.length", 4);
   });
 
   describe("First Card", () => {
@@ -205,6 +206,18 @@ describe("Cards", () => {
       });
     });
   });
+
+  describe("Dots", () => {
+    it("should exists", () => {
+      cy.get(SELECTED_WORKS_DOTS_SELECTOR).should("exist");
+    });
+  
+    it("should have 4 div children", () => {
+      cy.get(SELECTED_WORKS_DOTS_SELECTOR)
+        .children("div")
+        .should("have.length", 3);
+    });  
+  })
 });
 
 describe("NDA", () => {

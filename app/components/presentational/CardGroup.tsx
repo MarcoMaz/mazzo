@@ -33,6 +33,11 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           />
         )
       )}
+      <div data-cy="Dots">
+        {cards.map((card, index) => (
+          <div key={index}></div>
+        ))}
+      </div>
     </div>
   );
 };
