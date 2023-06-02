@@ -1,18 +1,9 @@
-import Card from "./Card";
+import Card, { CardProps } from "./Card";
 import DotGroup from "./DotGroup";
 
 interface CardGroupProps {
   dataCy: string;
-  cards: {
-    headline: string;
-    subheadline: string;
-    description: string;
-    chips: string[];
-    CTA: {
-      url: string;
-      label: string;
-    };
-  }[];
+  cards: CardProps[];
 }
 
 const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
@@ -34,7 +25,7 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           />
         )
       )}
-      <DotGroup cards={cards} dataCy="Dots" />
+      <DotGroup dots={cards} dataCy="Dots" />
     </div>
   );
 };

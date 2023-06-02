@@ -22,12 +22,7 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   buttonId,
 }) => {
   return (
-    <div
-      data-cy={dataCy}
-      id={panelId}
-      role="region"
-      aria-labelledby={buttonId}
-    >
+    <div data-cy={dataCy} id={panelId} role="region" aria-labelledby={buttonId}>
       <Heading level={4} label={headline} />
       <Heading level={5} label={subheadline} />
       <Paragraph text={description} />
