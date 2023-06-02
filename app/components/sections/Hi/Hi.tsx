@@ -1,9 +1,9 @@
 import data from "../../../../public/assets/content/content.json";
 
 // Components
-import Heading from "../../presentational/Heading";
+import Heading from "../../atoms/Heading";
 import Image from "next/image";
-import ParagraphGroup from "../../presentational/ParagraphGroup";
+import ParagraphGroup from "../../atoms/ParagraphGroup";
 
 const Hi: React.FC = () => {
   const {

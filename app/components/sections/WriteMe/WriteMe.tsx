@@ -1,7 +1,7 @@
 import data from "../../../../public/assets/content/content.json";
 
-import Heading from "../../presentational/Heading";
-import ExternalLink from "../../presentational/ExternalLink";
+import Heading from "../../atoms/Heading";
+import ExternalLink from "../../atoms/ExternalLink";
 
 const WriteMe = () => {
   const {
