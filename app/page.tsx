@@ -17,9 +17,7 @@ export default function Home() {
         <SelectedWorks />
         {/* <Posts /> */}
       </main>
-      <footer>
-        <WriteMe />
-      </footer>
+      <WriteMe />
     </>
   );
 }

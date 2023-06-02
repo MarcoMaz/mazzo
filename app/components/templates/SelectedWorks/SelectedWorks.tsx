@@ -6,11 +6,13 @@ import ImageGroup from "../../molecules/ImageGroup";
 import ExternalLinkGroup from "../../molecules/ExternalLinkGroup";
 import Accordion from "../../organisms/Accordion";
 
+import styles from "./SelectedWorks.module.css";
+
 const SelectedWorks = () => {
   const { headline, cards, nda, knowMore } = data.selectedWorks;
 
   return (
-    <>
+    <section className={styles.container}>
       <Heading dataCy="selected-works-heading" level={2} label={headline} />
       <Accordion dataCy="selected-works-accordion" cards={cards} />
       <CardGroup dataCy="selected-works-cards" cards={cards} />
@@ -26,7 +28,7 @@ const SelectedWorks = () => {
         label={knowMore.headline}
       />
       <ExternalLinkGroup dataCy="selected-works-links" links={knowMore.CTA} />
-    </>
+    </section>
   );
 };
 
