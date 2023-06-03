@@ -1,4 +1,6 @@
-import Paragraph from "../molecules/Paragraph/Paragraph";
+import styles from "./ParagraphGroup.module.css";
+
+import Paragraph from "../../molecules/Paragraph/Paragraph";
 
 interface ParagraphGroupProps {
   dataCy: string;
@@ -10,7 +12,7 @@ const ParagraphGroup: React.FC<ParagraphGroupProps> = ({
   paragraphs,
 }) => {
   return (
-    <div data-cy={dataCy}>
+    <div data-cy={dataCy} className={styles.container}>
       {paragraphs.map((paragraph, index) => (
         <Paragraph
           key={index}
