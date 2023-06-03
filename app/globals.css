@@ -48,7 +48,9 @@ h4 {
 }
 
 /* Header Styling */
-header, section {
+header,
+section,
+footer {
   column-gap: 1.5rem;
   display: grid;
   padding: 0 1.5rem;
@@ -63,8 +65,8 @@ header h1 {
 header img {
   border-radius: 50%;
   position: absolute;
-  top: calc( 64 / 16 * 1rem);
-  left: calc(-43 / 16 * 1rem)
+  top: calc(64 / 16 * 1rem);
+  left: calc(-43 / 16 * 1rem);
 }
 
 header div {
@@ -78,15 +80,41 @@ section div:nth-of-type(4) {
   flex-direction: column;
 }
 
-section div:nth-of-type(4) img{
+section div:nth-of-type(4) img {
   margin-bottom: 1rem;
   margin-right: 0;
+}
+
+/* Footer */
+footer {
+  padding-top: 3rem;
+}
+
+footer h2 {
+  grid-column: span 3;
+}
+
+footer a {
+  align-items: center;
+  background: var(--colorWhite);
+  border-radius: 50%;
+  color: var(--colorBlack);
+  display: flex;
+  font-size: 3.5rem;
+  grid-column: 2 / span 3;
+  height: 16rem;
+  justify-content: center;
+  position: relative;
+  text-decoration: underline;
+  top: -90px;
+  width: 16rem;
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   header,
-  section {
+  section,
+  footer {
     grid-template-columns: repeat(4, 1fr);
 
     > * {
