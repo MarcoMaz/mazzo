@@ -3,7 +3,7 @@ import data from "../../../../public/assets/content/content.json";
 import Heading from "../../atoms/Heading/Heading";
 import CardGroup from "../../organisms/CardGroup";
 import ImageGroup from "../../molecules/ImageGroup";
-import ExternalLinkGroup from "../../molecules/ExternalLinkGroup";
+import ExternalLinkGroup from "../../molecules/ExternalLinkGroup/ExternalLinkGroup";
 import Accordion from "../../organisms/Accordion";
 
 import styles from "./SelectedWorks.module.css";

@@ -1,5 +1,7 @@
+import styles from "./ExternalLinkGroup.module.css";
+
 import React from "react";
-import ExternalLink from "../atoms/ExternalLink/ExternalLink";
+import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
 
 interface ExternalLinkGroupProps {
   dataCy: string;
@@ -10,7 +12,7 @@ const ExternalLinkGroup: React.FC<ExternalLinkGroupProps> = ({
   links,
 }) => {
   return (
-    <div data-cy={dataCy}>
+    <div data-cy={dataCy} className={styles.container}>
       {links.map(({ url, label }, index) => (
         <React.Fragment key={index}>
           <ExternalLink url={url} label={label} />
