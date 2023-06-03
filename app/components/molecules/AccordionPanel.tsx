@@ -1,5 +1,5 @@
 import ChipGroup from "./ChipGroup/ChipGroup";
-import ExternalLink from "../atoms/ExternalLink";
+import ExternalLink from "../atoms/ExternalLink/ExternalLink";
 import Heading from "../atoms/Heading";
 import Paragraph from "./Paragraph";
 

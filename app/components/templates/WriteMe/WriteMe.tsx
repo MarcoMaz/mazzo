@@ -1,7 +1,7 @@
 import data from "../../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading";
-import ExternalLink from "../../atoms/ExternalLink";
+import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
 
 import styles from "./WriteMe.module.css";
 

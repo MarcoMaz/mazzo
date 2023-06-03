@@ -1,0 +1,7 @@
+.container {
+  border-bottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
+  font-weight: bold;
+  padding: 2px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
