@@ -4,7 +4,7 @@ import Heading from "../../atoms/Heading/Heading";
 import CardGroup from "../../organisms/CardGroup/CardGroup";
 import ImageGroup from "../../molecules/ImageGroup/ImageGroup";
 import ExternalLinkGroup from "../../molecules/ExternalLinkGroup/ExternalLinkGroup";
-import Accordion from "../../organisms/Accordion";
+import Accordion from "../../organisms/Accordion/Accordion";
 
 import styles from "./SelectedWorks.module.css";
 

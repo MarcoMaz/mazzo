@@ -1,3 +1,6 @@
+import Dot from "../../atoms/Dot/Dot";
+import styles from "./AccordionHeader.module.css";
+
 interface AccordionHeaderProps {
   dataCy: string;
   headline: string;
@@ -10,7 +13,7 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   index,
 }) => {
   return (
-    <h3 data-cy={dataCy}>
+    <h3 data-cy={dataCy} className={styles.container}>
       <button
         type="button"
         aria-expanded="true"
@@ -18,6 +21,7 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         id={`accordion${index}id`}
       >
         <span>{headline}</span>
+        <Dot />
       </button>
     </h3>
   );

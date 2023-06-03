@@ -1,0 +1,22 @@
+.container {
+  border-bottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
+}
+
+.container span {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.container button {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container button div {
+  margin-right: 2rem;
+  height: 2rem;
+  width: 2rem;
+}

@@ -1,7 +1,9 @@
-import AccordionHeader from "../molecules/AccordionHeader";
-import AccordionPanel from "../molecules/AccordionPanel";
+import styles from "./Accordion.module.css";
 
-import { CardProps } from "../molecules/Card/Card";
+import AccordionHeader from "../../molecules/AccordionHeader/AccordionHeader";
+import AccordionPanel from "../../molecules/AccordionPanel";
+
+import { CardProps } from "../../molecules/Card/Card";
 
 interface AccordionProps {
   dataCy: string;
@@ -10,7 +12,7 @@ interface AccordionProps {
 
 const Accordion: React.FC<AccordionProps> = ({ cards, dataCy }) => {
   return (
-    <div data-cy={dataCy}>
+    <div data-cy={dataCy} className={styles.container}>
       {cards.map(
         (
           { headline, subheadline, description, chips, CTA: { url, label } },
