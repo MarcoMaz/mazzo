@@ -73,7 +73,7 @@ header div {
 
 /* Selected Works */
 section div:nth-of-type(4) {
-  align-items: start;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
 }
