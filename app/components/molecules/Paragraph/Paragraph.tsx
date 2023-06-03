@@ -1,4 +1,6 @@
-import UnderlineSpan from "../atoms/UnderlineSpan/UnderlineSpan";
+import styles from "./Paragraph.module.css";
+
+import UnderlineSpan from "../../atoms/UnderlineSpan/UnderlineSpan";
 
 interface ParagraphProps {
   text: string;
@@ -30,7 +32,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, underline }) => {
 
   const underlinedText = generateUnderlinedText(text, underline || []);
 
-  return <p>{underlinedText}</p>;
+  return <p className={styles.container}>{underlinedText}</p>;
 };
 
 export default Paragraph;
