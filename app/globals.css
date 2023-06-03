@@ -12,10 +12,6 @@
   margin: 0;
 }
 
-body {
-  display: grid;
-}
-
 html,
 body {
   max-width: 100vw;
@@ -32,28 +28,52 @@ button {
 }
 
 h1 {
-  font-size: 126px;
-  margin-bottom: 96px;
+  font-size: 7rem;
+  margin-bottom: 6rem;
 }
 
 h2 {
-  font-size: 64px;
-  margin-bottom: 32px;
+  font-size: 4rem;
+  margin-bottom: 2rem;
 }
 
 h3 {
-  font-size: 32px;
-  margin-bottom: 24px;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h4 {
-  font-size: 20px;
-  margin-bottom: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Header Styling */
+header {
+  column-gap: 1.5rem;
+  display: grid;
+  padding: 0 1.5rem;
+}
+
+header h1 {
+  grid-column: 2 / span 2;
+  margin-top: 96px;
+  z-index: 99;
+}
+
+header img {
+  border-radius: 50%;
+  position: absolute;
+  top: calc( 64 / 16 * 1rem);
+  left: calc(-43 / 16 * 1rem)
+}
+
+header div {
+  grid-column: 2 / span 3;
 }
 
 /* Mobile */
 @media (max-width: 700px) {
-  body {
+  header {
     grid-template-columns: repeat(4, 1fr);
 
     > * {
@@ -64,7 +84,7 @@ h4 {
 
 /* Tablet and Desktop */
 @media (min-width: 701px) {
-  body {
+  header {
     grid-template-columns: repeat(12, 1fr);
 
     > * {
