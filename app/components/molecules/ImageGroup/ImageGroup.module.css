@@ -1,0 +1,11 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.image {
+  margin-right: 1rem;
+}
+
+.container img:last-child {
+  margin-right: 0;
+}

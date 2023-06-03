@@ -1,3 +1,5 @@
+import styles from "./ImageGroup.module.css";
+
 import Image from "next/image";
 
 interface ImageGroupProps {
@@ -7,14 +9,15 @@ interface ImageGroupProps {
 
 const ImageGroup: React.FC<ImageGroupProps> = ({ images, dataCy }) => {
   return (
-    <div data-cy={dataCy}>
+    <div data-cy={dataCy} className={styles.container}>
       {images.map(({ src, alt }) => (
         <Image
+          className={styles.image}
           data-cy={src}
           src={src}
           alt={alt}
           key={src}
-          height={50}
+          height={45}
           width={150}
         />
       ))}
