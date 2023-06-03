@@ -1,4 +1,6 @@
-import Chip from "../atoms/Chip";
+import styles from "./ChipGroup.module.css";
+
+import Chip from "../../atoms/Chip/Chip";
 
 interface ChipGroupProps {
   chips: string[];
@@ -6,11 +8,11 @@ interface ChipGroupProps {
 
 const ChipGroup: React.FC<ChipGroupProps> = ({ chips }) => {
   return (
-    <>
+    <div className={styles.container}>
       {chips.map((chip, index) => (
         <Chip key={index} label={chip} />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,7 @@
+.container {
+  margin: 2rem 0;
+}
+
+.container span:last-child {
+  margin-right: 0;
+}

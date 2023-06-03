@@ -1,4 +1,4 @@
-import ChipGroup from "./ChipGroup";
+import ChipGroup from "./ChipGroup/ChipGroup";
 import ExternalLink from "../atoms/ExternalLink";
 import Heading from "../atoms/Heading";
 import Paragraph from "./Paragraph";
