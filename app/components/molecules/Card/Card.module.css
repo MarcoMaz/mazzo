@@ -1,0 +1,11 @@
+.container {
+  border-right: 0.25rem solid var(--colorBlack);
+  display: grid;
+  grid-template-rows: 4rem 3rem 6rem 3rem 2rem;
+  min-width: 20rem;
+  padding: 2rem;
+}
+
+.container a {
+  width: fit-content;
+}

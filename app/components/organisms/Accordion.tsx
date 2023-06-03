@@ -1,7 +1,7 @@
 import AccordionHeader from "../molecules/AccordionHeader";
 import AccordionPanel from "../molecules/AccordionPanel";
 
-import { CardProps } from "../molecules/Card";
+import { CardProps } from "../molecules/Card/Card";
 
 interface AccordionProps {
   dataCy: string;

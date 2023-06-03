@@ -3,7 +3,7 @@ import ExternalLink from "../atoms/ExternalLink/ExternalLink";
 import Heading from "../atoms/Heading/Heading";
 import Paragraph from "./Paragraph/Paragraph";
 
-import { CardProps } from "./Card";
+import { CardProps } from "./Card/Card";
 
 interface AccordionPanelProps extends CardProps {
   dataCy: string;

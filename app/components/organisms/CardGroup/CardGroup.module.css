@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  margin-bottom: 2rem;
+  min-height: 20rem;
+  overflow-x: auto;
+}

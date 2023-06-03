@@ -1,5 +1,7 @@
-import Card, { CardProps } from "../molecules/Card";
-import DotGroup from "../molecules/DotGroup/DotGroup";
+import styles from "./CardGroup.module.css";
+
+import Card, { CardProps } from "../../molecules/Card/Card";
+import DotGroup from "../../molecules/DotGroup/DotGroup";
 
 interface CardGroupProps {
   dataCy: string;
@@ -8,7 +10,7 @@ interface CardGroupProps {
 
 const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
   return (
-    <div data-cy={dataCy}>
+    <div data-cy={dataCy} className={styles.container}>
       {cards.map(
         (
           { headline, subheadline, description, chips, CTA: { url, label } },

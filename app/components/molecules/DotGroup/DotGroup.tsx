@@ -1,7 +1,7 @@
 import styles from "./DotGroup.module.css";
 
 import Dot from "../../atoms/Dot/Dot";
-import { CardProps } from "../Card";
+import { CardProps } from "../Card/Card";
 
 interface DotGroupProps {
   dataCy: string;
