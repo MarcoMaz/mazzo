@@ -1,0 +1,28 @@
+.container {
+  align-items: center;
+  border-bottom: 0.25rem solid var(--colorBlack);
+  border-top: 0.25rem solid var(--colorBlack);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0 calc(1.5rem + 2px); /* 2px keeps in mind the a link's border bottom*/
+}
+
+.container div:last-child {
+  height: 2rem;
+  margin-right: 2rem;
+  width: 2rem;
+}
+
+.container h4 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.container h5 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  text-transform: none;
+}

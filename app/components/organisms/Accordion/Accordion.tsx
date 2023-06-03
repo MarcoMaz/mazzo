@@ -1,7 +1,7 @@
 import styles from "./Accordion.module.css";
 
 import AccordionHeader from "../../molecules/AccordionHeader/AccordionHeader";
-import AccordionPanel from "../../molecules/AccordionPanel";
+import AccordionPanel from "../../molecules/AccordionPanel/AccordionPanel";
 
 import { CardProps } from "../../molecules/Card/Card";
 
