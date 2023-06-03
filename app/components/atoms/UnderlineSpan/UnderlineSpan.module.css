@@ -1,7 +1,4 @@
 .container {
   border-bottom: var(--borderBottom);
   font-weight: bold;
-  padding: 2px 0;
-  text-decoration: none;
-  text-transform: uppercase;
 }

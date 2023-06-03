@@ -1,3 +1,5 @@
+import styles from "./UnderlineSpan.module.css";
+
 import { ReactNode } from "react";
 
 interface UnderlineSpanProps {
@@ -5,7 +7,7 @@ interface UnderlineSpanProps {
 }
 
 const UnderlineSpan: React.FC<UnderlineSpanProps> = ({ children }) => {
-  return <span>{children}</span>;
+  return <span className={styles.container}>{children}</span>;
 };
 
 export default UnderlineSpan;

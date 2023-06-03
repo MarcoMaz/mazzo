@@ -1,4 +1,4 @@
-import UnderlineSpan from "../atoms/UnderlineSpan";
+import UnderlineSpan from "../atoms/UnderlineSpan/UnderlineSpan";
 
 interface ParagraphProps {
   text: string;
