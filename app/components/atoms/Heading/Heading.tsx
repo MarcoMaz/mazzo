@@ -1,3 +1,5 @@
+import styles from "./Heading.module.css";
+
 import React from "react";
 
 interface HeadingProps {
@@ -9,7 +11,11 @@ interface HeadingProps {
 const Heading: React.FC<HeadingProps> = ({ dataCy, level, label }) => {
   const HeadingTag = `h${level}`;
 
-  return React.createElement(HeadingTag, { "data-cy": dataCy }, label);
+  return React.createElement(
+    HeadingTag,
+    { "data-cy": dataCy, className: `${styles.container}` },
+    label
+  );
 };
 
 export default Heading;

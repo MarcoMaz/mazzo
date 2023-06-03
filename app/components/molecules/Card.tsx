@@ -1,6 +1,6 @@
 import ChipGroup from "./ChipGroup/ChipGroup";
 import ExternalLink from "../atoms/ExternalLink/ExternalLink";
-import Heading from "../atoms/Heading";
+import Heading from "../atoms/Heading/Heading";
 import Paragraph from "./Paragraph";
 
 export interface CardProps {
