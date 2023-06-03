@@ -1,5 +1,7 @@
-import Dot from "../atoms/Dot";
-import { CardProps } from "./Card";
+import styles from "./DotGroup.module.css";
+
+import Dot from "../../atoms/Dot/Dot";
+import { CardProps } from "../Card";
 
 interface DotGroupProps {
   dataCy: string;
@@ -8,7 +10,7 @@ interface DotGroupProps {
 
 const DotGroup: React.FC<DotGroupProps> = ({ dots, dataCy }) => {
   return (
-    <div data-cy={dataCy}>
+    <div data-cy={dataCy} className={styles.container}>
       {dots.map((dot, index) => (
         <Dot key={index} />
       ))}

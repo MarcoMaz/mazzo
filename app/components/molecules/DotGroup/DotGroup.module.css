@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.container div:last-child {
+  margin-right: 0;
+}

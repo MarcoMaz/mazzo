@@ -1,0 +1,7 @@
+.container {
+  background-color: var(--colorBlack);
+  border-radius: 50%;
+  height: 1rem;
+  margin-right: 1rem;
+  width: 1rem;
+}
