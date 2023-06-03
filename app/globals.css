@@ -33,7 +33,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 2rem;
 }
 
@@ -48,7 +48,7 @@ h4 {
 }
 
 /* Header Styling */
-header {
+header, section {
   column-gap: 1.5rem;
   display: grid;
   padding: 0 1.5rem;
@@ -71,9 +71,22 @@ header div {
   grid-column: 2 / span 3;
 }
 
+/* Selected Works */
+section div:nth-of-type(4) {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+section div:nth-of-type(4) img{
+  margin-bottom: 1rem;
+  margin-right: 0;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
-  header {
+  header,
+  section {
     grid-template-columns: repeat(4, 1fr);
 
     > * {
@@ -84,7 +97,8 @@ header div {
 
 /* Tablet and Desktop */
 @media (min-width: 701px) {
-  header {
+  header,
+  section {
     grid-template-columns: repeat(12, 1fr);
 
     > * {

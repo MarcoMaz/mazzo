@@ -8,3 +8,10 @@
 .container div:last-child {
   border-right: 0;
 }
+
+/* Tablet and Desktop */
+@media (min-width: 701px) {
+  .container {
+    display: none;
+  }
+}
