@@ -4,3 +4,7 @@
   min-height: 20rem;
   overflow-x: auto;
 }
+
+.container div:last-child {
+  border-right: 0;
+}
