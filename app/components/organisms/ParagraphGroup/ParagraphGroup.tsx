@@ -5,14 +5,20 @@ import Paragraph from "../../molecules/Paragraph/Paragraph";
 interface ParagraphGroupProps {
   dataCy: string;
   paragraphs: { text: string; underline?: string[] }[];
+  className?: string;
 }
 
 const ParagraphGroup: React.FC<ParagraphGroupProps> = ({
   dataCy,
   paragraphs,
+  className,
 }) => {
+  const combinedClassName = className
+    ? `${styles.container} ${className}`
+    : styles.container;
+
   return (
-    <div data-cy={dataCy} className={styles.container}>
+    <div data-cy={dataCy} className={combinedClassName}>
       {paragraphs.map((paragraph, index) => (
         <Paragraph
           key={index}

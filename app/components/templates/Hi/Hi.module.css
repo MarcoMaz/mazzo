@@ -1,0 +1,16 @@
+.heading {
+  grid-column: 2 / span 2;
+  margin-top: 96px;
+  z-index: 99;
+}
+
+.image {
+  border-radius: 50%;
+  position: absolute;
+  top: calc(64 / 16 * 1rem);
+  left: calc(-43 / 16 * 1rem);
+}
+
+.paragraphGroup {
+  grid-column: 2 / span 3;
+}

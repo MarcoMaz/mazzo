@@ -9,9 +9,7 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <>
-      <header>
-        <Hi />
-      </header>
+      <Hi />
       <nav></nav>
       <main className={styles.main}>
         <SelectedWorks />
