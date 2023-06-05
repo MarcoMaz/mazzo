@@ -1,7 +1,14 @@
 .container {
-  background-color: var(--colorBlack);
   border-radius: 50%;
   height: 1rem;
   margin-right: 1rem;
   width: 1rem;
+}
+
+.full {
+  background-color: var(--colorBlack);
+}
+
+.empty {
+  border: calc(2 / 16 * 1rem) solid var(--colorBlack);
 }
