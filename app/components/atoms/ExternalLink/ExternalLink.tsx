@@ -4,11 +4,26 @@ interface ExternalLinkProps {
   url: string;
   label: string;
   dataCy?: string;
+  className?: string;
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({ url, label, dataCy }) => {
+const ExternalLink: React.FC<ExternalLinkProps> = ({
+  url,
+  label,
+  dataCy,
+  className,
+}) => {
+  const combinedClassName = className
+    ? `${styles.container} ${className}`
+    : styles.container;
+
   return (
-    <a data-cy={dataCy} href={url} target="_blank" className={styles.container}>
+    <a
+      data-cy={dataCy}
+      href={url}
+      target="_blank"
+      className={combinedClassName}
+    >
       {label}
     </a>
   );

@@ -5,7 +5,6 @@
   --borderBottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
 }
 
-/* Resets */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -95,31 +94,6 @@ section div:nth-of-type(4) {
 section div:nth-of-type(4) img {
   margin-bottom: 1rem;
   margin-right: 0;
-}
-
-/* Footer */
-footer {
-  padding-top: 3rem;
-}
-
-footer h2 {
-  grid-column: span 3;
-}
-
-footer a {
-  align-items: center;
-  background: var(--colorWhite);
-  border-radius: 50%;
-  color: var(--colorBlack);
-  display: flex;
-  font-size: 3.5rem;
-  grid-column: 2 / span 3;
-  height: 16rem;
-  justify-content: center;
-  position: relative;
-  text-decoration: underline;
-  top: -90px;
-  width: 16rem;
 }
 
 /* Mobile */

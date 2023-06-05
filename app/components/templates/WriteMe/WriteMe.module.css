@@ -1,4 +1,25 @@
 .container {
   background-color: var(--colorBlack);
   color: var(--colorWhite);
+  padding-top: 3rem;
+}
+
+.headline {
+  grid-column: span 3;
+}
+
+.link {
+  align-items: center;
+  background: var(--colorWhite);
+  border-radius: 50%;
+  color: var(--colorBlack);
+  display: flex;
+  font-size: 3.5rem;
+  grid-column: 2 / span 3;
+  height: 16rem;
+  justify-content: center;
+  position: relative;
+  text-decoration: underline;
+  top: calc(-90 / 16 * 1rem);
+  width: 16rem;
 }

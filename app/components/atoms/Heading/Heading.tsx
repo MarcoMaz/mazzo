@@ -6,14 +6,24 @@ interface HeadingProps {
   dataCy?: string;
   level: number;
   label: string;
+  className?: string;
 }
 
-const Heading: React.FC<HeadingProps> = ({ dataCy, level, label }) => {
+const Heading: React.FC<HeadingProps> = ({
+  dataCy,
+  level,
+  label,
+  className,
+}) => {
+  const combinedClassName = className
+    ? `${styles.container} ${className}`
+    : styles.container;
+
   const HeadingTag = `h${level}`;
 
   return React.createElement(
     HeadingTag,
-    { "data-cy": dataCy, className: `${styles.container}` },
+    { "data-cy": dataCy, className: `${combinedClassName}` },
     label
   );
 };

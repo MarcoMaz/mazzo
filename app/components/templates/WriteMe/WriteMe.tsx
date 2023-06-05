@@ -13,8 +13,8 @@ const WriteMe = () => {
 
   return (
     <footer className={styles.container}>
-      <Heading dataCy="write-me-heading" level={2} label={headline} />
-      <ExternalLink dataCy="write-me-cta" url={url} label={label} />
+      <Heading dataCy="write-me-heading" level={2} label={headline} className={styles.headline} />
+      <ExternalLink dataCy="write-me-cta" url={url} label={label} className={styles.link}/>
     </footer>
   );
 };
