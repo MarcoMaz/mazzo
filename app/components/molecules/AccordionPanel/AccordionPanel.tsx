@@ -24,13 +24,16 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   dataCy,
   buttonId,
 }) => {
+
+  const className = `${styles.container} ${styles.hide}`;
+
   return (
     <div
       data-cy={dataCy}
       id={panelId}
       role="region"
       aria-labelledby={buttonId}
-      className={styles.container}
+      className={className}
     >
       <div>
         <Heading level={4} label={headline} />

@@ -1,15 +1,9 @@
-.container {
-  border: 1px dashed black;
-}
-
-/* Mobile */
 @media (max-width: 700px) {
   .container {
     display: none;
   }
 }
 
-/* Tablet and Desktop */
 @media (min-width: 701px) {
   .container {
     display: block;

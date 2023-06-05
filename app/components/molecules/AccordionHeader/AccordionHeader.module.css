@@ -1,5 +1,6 @@
 .container {
   border-bottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
+  margin-bottom: 0;
 }
 
 .container span {
