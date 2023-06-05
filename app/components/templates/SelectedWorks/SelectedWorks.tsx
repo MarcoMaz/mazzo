@@ -17,17 +17,19 @@ const SelectedWorks = () => {
       <Accordion dataCy="selected-works-accordion" cards={cards} />
       <CardGroup dataCy="selected-works-cards" cards={cards} />
       <Heading
+        className={styles.ndaHeading}
         dataCy="selected-works-nda-heading"
         level={3}
         label={nda.headline}
       />
-      <ImageGroup dataCy="selected-works-nda-images" images={nda.images} className={styles.images}/>
+      <ImageGroup dataCy="selected-works-nda-images" images={nda.images} className={styles.ndaImages}/>
       <Heading
+        className={styles.knowMoreHeading}
         dataCy="selected-works-know-more-heading"
         level={3}
         label={knowMore.headline}
       />
-      <ExternalLinkGroup dataCy="selected-works-links" links={knowMore.CTA} />
+      <ExternalLinkGroup className={styles.knowMoreCTA} dataCy="selected-works-links" links={knowMore.CTA} />
     </section>
   );
 };
