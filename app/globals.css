@@ -84,18 +84,6 @@ header div {
   grid-column: 2 / span 3;
 }
 
-/* Selected Works */
-section div:nth-of-type(4) {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-}
-
-section div:nth-of-type(4) img {
-  margin-bottom: 1rem;
-  margin-right: 0;
-}
-
 /* Mobile */
 @media (max-width: 700px) {
   header,

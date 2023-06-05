@@ -21,7 +21,7 @@ const SelectedWorks = () => {
         level={3}
         label={nda.headline}
       />
-      <ImageGroup dataCy="selected-works-nda-images" images={nda.images} />
+      <ImageGroup dataCy="selected-works-nda-images" images={nda.images} className={styles.images}/>
       <Heading
         dataCy="selected-works-know-more-heading"
         level={3}
