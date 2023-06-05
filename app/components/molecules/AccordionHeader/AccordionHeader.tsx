@@ -12,16 +12,19 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   headline,
   index,
 }) => {
+  const { container, button, heading, dot } = styles;
+
   return (
-    <h3 data-cy={dataCy} className={styles.container}>
+    <h3 data-cy={dataCy} className={container}>
       <button
+        className={button}
         type="button"
         aria-expanded="true"
         aria-controls={`sect${index}`}
         id={`accordion${index}id`}
       >
-        <span>{headline}</span>
-        <Dot />
+        <span className={heading}>{headline}</span>
+        <Dot className={dot} />
       </button>
     </h3>
   );
