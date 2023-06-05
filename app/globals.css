@@ -87,7 +87,8 @@ footer {
 /* Tablet and Desktop */
 @media (min-width: 701px) {
   header,
-  section {
+  section,
+  footer {
     grid-template-columns: repeat(12, 1fr);
 
     > * {
