@@ -78,6 +78,10 @@ footer {
       grid-column: span 4;
     }
   }
+
+  nav {
+    display: none;
+  }
 }
 
 /* Tablet and Desktop */
