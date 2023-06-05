@@ -18,6 +18,18 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Hide scrollbar on Firefox */
+html {
+  scrollbar-width: none;
+}
+
 a {
   color: inherit;
 }
