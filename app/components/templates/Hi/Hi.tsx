@@ -1,14 +1,16 @@
+"use client";
+
 import styles from "./Hi.module.css";
 
 import data from "../../../../public/assets/content/content.json";
 
-// Components
 import Heading from "../../atoms/Heading/Heading";
 import Image from "next/image";
 import ParagraphGroup from "../../organisms/ParagraphGroup/ParagraphGroup";
+import { useEffect, useState } from "react";
 
 const Hi: React.FC = () => {
-  const { heading, image, paragraphGroup } = styles;
+  const { container, heading, image, paragraphGroup } = styles;
 
   const {
     headline,
@@ -16,8 +18,24 @@ const Hi: React.FC = () => {
     paragraphs,
   } = data.hi;
 
+  const [viewportWidth, setViewportWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      // Cleanup
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <header>
+    <header className={container}>
       <Heading
         dataCy="hi-heading"
         level={1}
@@ -29,8 +47,8 @@ const Hi: React.FC = () => {
         data-cy="hi-image"
         src={url}
         alt={alt}
-        width={200}
-        height={200}
+        width={viewportWidth >= 701 ? 300 : 200}
+        height={viewportWidth >= 701 ? 300 : 200}
         priority
       />
       <ParagraphGroup

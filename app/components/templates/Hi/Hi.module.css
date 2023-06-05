@@ -1,16 +1,40 @@
+.container {
+  margin-top: 6rem;
+  position: relative;
+}
+
 .heading {
   grid-column: 2 / span 2;
-  margin-top: 96px;
   z-index: 99;
 }
 
 .image {
   border-radius: 50%;
   position: absolute;
-  top: calc(64 / 16 * 1rem);
+  top: calc(-30 / 16 * 1rem);
   left: calc(-43 / 16 * 1rem);
 }
 
 .paragraphGroup {
   grid-column: 2 / span 3;
+}
+
+@media (min-width: 701px) {
+  .container {
+    margin-top: 12rem;
+  }
+
+  .heading {
+    grid-column: 7 / span 3;
+    margin-bottom: 8rem;
+  }
+
+  .image {
+    left: calc(50% - 300px);
+    top: calc(50% - 300px);
+  }
+
+  .paragraphGroup {
+    grid-column: 5 / span 4;
+  }
 }
