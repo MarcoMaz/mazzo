@@ -1,9 +1,13 @@
 import styles from "./Dot.module.css";
 
-const Dot: React.FC = () => {
+interface DotProps {
+  className?: string;
+}
+
+const Dot: React.FC<DotProps> = ({ className }) => {
   const { container, full } = styles;
 
-  return <div className={`${container} ${full}`} />;
+  return <div className={`${container} ${full} ${className ? className : ""}`} />;
 };
 
 export default Dot;

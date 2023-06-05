@@ -14,22 +14,22 @@
   display: none;
 }
 
-.container div:last-child {
-  height: 2rem;
-  margin-right: 2rem;
-  width: 2rem;
-}
-
-.container h4 {
+.heading {
   font-size: 2rem;
   margin-bottom: 0;
   text-transform: none;
 }
 
-.container h5 {
+.subheading {
   font-size: 1rem;
   font-style: italic;
   font-weight: normal;
   margin-bottom: 1.5rem;
   text-transform: none;
+}
+
+.dot {
+  height: 2rem;
+  margin-right: 2rem;
+  width: 2rem;
 }

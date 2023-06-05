@@ -24,8 +24,9 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   dataCy,
   buttonId,
 }) => {
+  const { container, hide, heading, subheading, dot } = styles;
 
-  const className = `${styles.container} ${styles.hide}`;
+  const className = `${container} ${hide}`;
 
   return (
     <div
@@ -36,13 +37,13 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
       className={className}
     >
       <div>
-        <Heading level={4} label={headline} />
-        <Heading level={5} label={subheadline} />
+        <Heading level={4} label={headline} className={heading} />
+        <Heading level={5} label={subheadline} className={subheading} />
         <Paragraph text={description} />
         <ChipGroup chips={chips} />
         <ExternalLink url={url} label={label} />
       </div>
-      <Dot />
+      <Dot className={dot} />
     </div>
   );
 };
