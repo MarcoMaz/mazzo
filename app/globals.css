@@ -90,6 +90,7 @@ footer {
   section,
   footer {
     grid-template-columns: repeat(12, 1fr);
+    height: 100vh;
 
     > * {
       grid-column: span 12;
