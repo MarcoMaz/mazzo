@@ -15,8 +15,14 @@
 
 @media (min-width: 701px) {
   .heading {
+    font-size: 6rem;
     grid-column: 4 / span 6;
+    margin-top: 4rem;
     text-align: right;
+  }
+
+  .accordion {
+    margin-bottom: 6rem;
   }
 
   .ndaHeading,

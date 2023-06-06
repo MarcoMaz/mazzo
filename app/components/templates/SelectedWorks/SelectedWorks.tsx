@@ -28,7 +28,7 @@ const SelectedWorks = () => {
         label={headline}
         className={heading}
       />
-      <Accordion dataCy="selected-works-accordion" cards={cards} />
+      <Accordion dataCy="selected-works-accordion" cards={cards} className={styles.accordion}/>
       <CardGroup dataCy="selected-works-cards" cards={cards} />
       <Heading
         className={ndaHeading}

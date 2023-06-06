@@ -8,11 +8,16 @@ import { CardProps } from "../../molecules/Card/Card";
 interface AccordionProps {
   dataCy: string;
   cards: CardProps[];
+  className?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ cards, dataCy }) => {
+const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
+  const combinedClassName = className
+    ? `${styles.container} ${className}`
+    : styles.container;
+
   return (
-    <div data-cy={dataCy} className={styles.container}>
+    <div data-cy={dataCy} className={combinedClassName}>
       {cards.map(
         (
           { headline, subheadline, description, chips, CTA: { url, label } },
