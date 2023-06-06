@@ -10,9 +10,14 @@
   border-right: 0;
 }
 
+.dotGroup {
+  display: flex;
+}
+
 /* Tablet and Desktop */
 @media (min-width: 701px) {
-  .container {
+  .container,
+  .dotGroup {
     display: none;
   }
 }

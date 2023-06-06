@@ -29,7 +29,7 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           )
         )}
       </div>
-      <DotGroup dots={cards} dataCy="Dots" />
+      <DotGroup dots={cards} dataCy="Dots" className={styles.dotGroup}/>
     </>
   );
 };

@@ -9,27 +9,49 @@ import Accordion from "../../organisms/Accordion/Accordion";
 import styles from "./SelectedWorks.module.css";
 
 const SelectedWorks = () => {
+  const {
+    container,
+    heading,
+    ndaHeading,
+    ndaImages,
+    knowMoreHeading,
+    knowMoreCTA,
+  } = styles;
+
   const { headline, cards, nda, knowMore } = data.selectedWorks;
 
   return (
-    <section className={styles.container}>
-      <Heading dataCy="selected-works-heading" level={2} label={headline} />
+    <section className={container}>
+      <Heading
+        dataCy="selected-works-heading"
+        level={2}
+        label={headline}
+        className={heading}
+      />
       <Accordion dataCy="selected-works-accordion" cards={cards} />
       <CardGroup dataCy="selected-works-cards" cards={cards} />
       <Heading
-        className={styles.ndaHeading}
+        className={ndaHeading}
         dataCy="selected-works-nda-heading"
         level={3}
         label={nda.headline}
       />
-      <ImageGroup dataCy="selected-works-nda-images" images={nda.images} className={styles.ndaImages}/>
+      <ImageGroup
+        dataCy="selected-works-nda-images"
+        images={nda.images}
+        className={ndaImages}
+      />
       <Heading
-        className={styles.knowMoreHeading}
+        className={knowMoreHeading}
         dataCy="selected-works-know-more-heading"
         level={3}
         label={knowMore.headline}
       />
-      <ExternalLinkGroup className={styles.knowMoreCTA} dataCy="selected-works-links" links={knowMore.CTA} />
+      <ExternalLinkGroup
+        className={knowMoreCTA}
+        dataCy="selected-works-links"
+        links={knowMore.CTA}
+      />
     </section>
   );
 };
