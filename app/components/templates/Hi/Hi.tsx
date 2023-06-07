@@ -35,7 +35,7 @@ const Hi: React.FC = () => {
   }, []);
 
   return (
-    <header className={container}>
+    <header className={container} id="hi">
       <Heading
         dataCy="hi-heading"
         level={1}

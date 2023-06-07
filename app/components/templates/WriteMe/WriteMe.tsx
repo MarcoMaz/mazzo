@@ -12,7 +12,7 @@ const WriteMe = () => {
   } = data.writeMe;
 
   return (
-    <footer className={styles.container}>
+    <footer className={styles.container} id="write-me">
       <Heading dataCy="write-me-heading" level={2} label={headline} className={styles.headline} />
       <ExternalLink dataCy="write-me-cta" url={url} label={label} className={styles.link}/>
     </footer>

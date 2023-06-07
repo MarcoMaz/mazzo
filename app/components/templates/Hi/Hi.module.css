@@ -1,4 +1,5 @@
 .container {
+  background: var(--colorWhite);
   margin-top: 6rem;
   position: relative;
 }

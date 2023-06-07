@@ -21,7 +21,7 @@ const SelectedWorks = () => {
   const { headline, cards, nda, knowMore } = data.selectedWorks;
 
   return (
-    <section className={container}>
+    <section className={container} id="selected-works">
       <Heading
         dataCy="selected-works-heading"
         level={2}
