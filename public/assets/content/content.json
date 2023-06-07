@@ -1,4 +1,18 @@
 {
+  "navigation": [
+    {
+      "label": "Hi!",
+      "url": "hi"
+    },
+    {
+      "label": "Selected Works",
+      "url": "selected-works"
+    },
+    {
+      "label": "Write me",
+      "url": "write-me"
+    }
+  ],
   "hi": {
     "headline": "Hi!",
     "image": {

@@ -1,28 +1,17 @@
-import Image from "next/image";
 import Posts from "./components/Posts";
-
+import Navigation from "./components/organisms/Navigation/Navigation";
 import Hi from "./components/templates/Hi/Hi";
 import SelectedWorks from "./components/templates/SelectedWorks/SelectedWorks";
 import WriteMe from "./components/templates/WriteMe/WriteMe";
 
+import content from "../public/assets/content/content.json";
+
 export default function Home() {
+  const navigationData = content.navigation;
+
   return (
     <>
-      <nav>
-        <ul className="ul-top">
-          <li>
-            <a href="#hi">Hi!</a>
-          </li>
-          <li>
-            <a href="#selected-works">Selected Works</a>
-          </li>
-        </ul>
-        <ul className="ul-bottom">
-          <li>
-            <a href="#write-me">Write me</a>
-          </li>
-        </ul>
-      </nav>
+      <Navigation navigationData={navigationData} />
       <Hi />
       <main>
         <SelectedWorks />
