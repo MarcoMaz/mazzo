@@ -1,0 +1,11 @@
+.container:nth-of-type(2) {
+  text-align: right;
+  width: 11rem;
+}
+
+.link {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}

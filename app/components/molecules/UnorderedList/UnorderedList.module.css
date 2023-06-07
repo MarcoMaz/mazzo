@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  height: 50vh;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 2rem;
+}

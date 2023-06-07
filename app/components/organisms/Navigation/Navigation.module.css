@@ -1,0 +1,12 @@
+.container {
+  color: var(--colorWhite);
+  mix-blend-mode: difference;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.container ul:last-child {
+  align-items: end;
+}
+

@@ -101,35 +101,3 @@ footer {
     }
   }
 }
-
-nav {
-  color: var(--colorWhite);
-  mix-blend-mode: difference;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
-
-nav ul {
-  display: flex;
-  height: 50vh;
-  justify-content: space-between;
-  list-style-type: none;
-  padding: 2rem;
-}
-
-nav ul:last-child {
-  align-items: end;
-}
-
-nav a {
-  font-size: 2rem;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-nav li:nth-of-type(2) {
-  width: 11rem;
-  text-align: right;
-}

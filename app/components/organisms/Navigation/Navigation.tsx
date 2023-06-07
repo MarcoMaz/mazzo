@@ -1,6 +1,7 @@
 import { NavLinkProps } from "../../atoms/NavLink/NavLink";
 
 import UnorderedList from "../../molecules/UnorderedList/UnorderedList";
+import styles from "./Navigation.module.css";
 
 interface NavigationProps {
   navigationData: NavLinkProps[];
@@ -18,11 +19,10 @@ const Navigation: React.FC<NavigationProps> = ({ navigationData }) => {
   const chunkedNavigation = chunkArray(navigationData, 2);
 
   return (
-    <nav>
+    <nav className={styles.container}>
       {chunkedNavigation.map((chunk, index) => (
         <UnorderedList
           key={index}
-          className={`ul-${index % 2 === 0 ? "top" : "bottom"}`}
           listItems={chunk}
         />
       ))}
