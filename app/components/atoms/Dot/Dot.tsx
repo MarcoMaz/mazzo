@@ -5,9 +5,9 @@ interface DotProps {
 }
 
 const Dot: React.FC<DotProps> = ({ className }) => {
-  const { container, full } = styles;
+  const { container } = styles;
 
-  return <div className={`${container} ${full} ${className ? className : ""}`} />;
+  return <div className={`${container} ${className ? className : ""}`} />;
 };
 
 export default Dot;
