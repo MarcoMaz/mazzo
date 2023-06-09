@@ -22,6 +22,10 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
     ? `${styles.container} ${className}`
     : styles.container;
 
+  const handleHeaderClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <div data-cy={dataCy} className={combinedClassName}>
       {cards.map(
@@ -35,6 +39,7 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
                 headline={headline}
                 index={index}
                 dataCy={`selected-works-accordion-group-${headline}`}
+                onClick={() => handleHeaderClick(index)}
               />
             )}
             {index === activeIndex && (

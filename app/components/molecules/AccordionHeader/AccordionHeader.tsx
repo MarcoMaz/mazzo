@@ -6,18 +6,21 @@ interface AccordionHeaderProps {
   dataCy: string;
   headline: string;
   index: number;
+  onClick?: () => void;
 }
 
 const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   dataCy,
   headline,
   index,
+  onClick
 }) => {
   const { container, button, heading, dot } = styles;
 
   return (
-    <h3 data-cy={dataCy} className={container}>
+    <h3 data-cy={dataCy} className={container} onClick={onClick}>
       <button
+        
         className={button}
         type="button"
         aria-expanded="true"
