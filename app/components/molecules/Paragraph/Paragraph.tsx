@@ -1,6 +1,7 @@
 import styles from "./Paragraph.module.css";
 
 import UnderlineSpan from "../../atoms/UnderlineSpan/UnderlineSpan";
+import React from "react";
 
 interface ParagraphProps {
   text: string;
@@ -12,20 +13,20 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, underline }) => {
     let currentIndex = 0;
     const underlinedText: JSX.Element[] = [];
 
-    underline.forEach((term) => {
-      const index = text.toLowerCase().indexOf(term.toLowerCase());
-      if (index !== -1) {
-        underlinedText.push(<>{text.substring(currentIndex, index)}</>);
+    underline.forEach((term, index) => {
+      const termIndex = text.toLowerCase().indexOf(term.toLowerCase(), currentIndex);
+      if (termIndex !== -1) {
+        underlinedText.push(<React.Fragment key={`fragment-${index}`}>{text.substring(currentIndex, termIndex)}</React.Fragment>);
         underlinedText.push(
-          <UnderlineSpan key={`highlight-${currentIndex}`}>
-            {text.substring(index, index + term.length)}
+          <UnderlineSpan key={`highlight-${index}`}>
+            {text.substring(termIndex, termIndex + term.length)}
           </UnderlineSpan>
         );
-        currentIndex = index + term.length;
+        currentIndex = termIndex + term.length;
       }
     });
 
-    underlinedText.push(<>{text.substring(currentIndex)}</>);
+    underlinedText.push(<React.Fragment key={`fragment-last`}>{text.substring(currentIndex)}</React.Fragment>);
 
     return underlinedText;
   };
