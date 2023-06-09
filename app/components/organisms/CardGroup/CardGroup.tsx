@@ -47,6 +47,10 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
     };
   }, []);
 
+  const handleDotClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <>
       <div data-cy={dataCy} className={styles.container} ref={containerRef}>
@@ -72,6 +76,7 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
         dataCy="Dots"
         className={styles.dotGroup}
         activeIndex={activeIndex}
+        onClick={handleDotClick}
       />
     </>
   );

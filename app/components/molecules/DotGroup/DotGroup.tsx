@@ -9,6 +9,7 @@ interface DotGroupProps {
   dots: CardProps[];
   className?: string;
   activeIndex?: number;
+  onClick?: (index: number) => void;
 }
 
 const DotGroup: React.FC<DotGroupProps> = ({
@@ -16,10 +17,17 @@ const DotGroup: React.FC<DotGroupProps> = ({
   dataCy,
   className,
   activeIndex,
+  onClick,
 }) => {
   const combinedClassName = className
     ? `${styles.container} ${className}`
     : styles.container;
+
+  const handleClick = (index: number) => {
+    if (onClick) {
+      onClick(index);
+    }
+  };
 
   return (
     <div data-cy={dataCy} className={combinedClassName}>
@@ -27,6 +35,7 @@ const DotGroup: React.FC<DotGroupProps> = ({
         <Dot
           key={index}
           className={index === activeIndex ? dotStyles.full : dotStyles.empty}
+          onClick={() => handleClick(index)}
         />
       ))}
     </div>
