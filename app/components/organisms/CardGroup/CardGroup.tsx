@@ -31,7 +31,7 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           }
         });
       },
-      { threshold: 0.5 } // Adjust the threshold as needed
+      { threshold: 0.5 }
     );
 
     const cardElements = Array.from(container.children) as HTMLElement[];
@@ -49,6 +49,19 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
+
+    const container = containerRef.current;
+    if (container) {
+      const cardElements = Array.from(container.children) as HTMLElement[];
+      const card = cardElements[index];
+      if (card) {
+        const cardOffsetLeft = card.offsetLeft;
+        container.scrollTo({
+          left: cardOffsetLeft,
+          behavior: "smooth",
+        });
+      }
+    }
   };
 
   return (
