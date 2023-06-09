@@ -1,4 +1,5 @@
 import styles from "./AccordionPanel.module.css";
+import dotStyles from "../../atoms/Dot/Dot.module.css";
 
 import ChipGroup from "../ChipGroup/ChipGroup";
 import Dot from "../../atoms/Dot/Dot";
@@ -26,7 +27,7 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
 }) => {
   const { container, hide, heading, subheading, dot } = styles;
 
-  const className = `${container} ${hide}`;
+  const className = `${container}`;
 
   return (
     <div
@@ -43,7 +44,7 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
         <ChipGroup chips={chips} />
         <ExternalLink url={url} label={label} />
       </div>
-      <Dot className={dot} />
+      <Dot className={`${dot} ${dotStyles.full}`} />
     </div>
   );
 };

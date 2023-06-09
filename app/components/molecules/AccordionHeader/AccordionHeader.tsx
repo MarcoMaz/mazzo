@@ -1,5 +1,6 @@
 import Dot from "../../atoms/Dot/Dot";
 import styles from "./AccordionHeader.module.css";
+import dotStyles from "../../atoms/Dot/Dot.module.css";
 
 interface AccordionHeaderProps {
   dataCy: string;
@@ -24,7 +25,7 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         id={`accordion${index}id`}
       >
         <span className={heading}>{headline}</span>
-        <Dot className={dot} />
+        <Dot className={`${dot} ${dotStyles.empty}`} />
       </button>
     </h3>
   );
