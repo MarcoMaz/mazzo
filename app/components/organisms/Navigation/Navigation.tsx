@@ -20,12 +20,7 @@ const Navigation: React.FC<NavigationProps> = ({ navigationData }) => {
 
   return (
     <nav className={styles.container}>
-      {chunkedNavigation.map((chunk, index) => (
-        <UnorderedList
-          key={index}
-          listItems={chunk}
-        />
-      ))}
+      <UnorderedList listItems={navigationData} />
     </nav>
   );
 };
