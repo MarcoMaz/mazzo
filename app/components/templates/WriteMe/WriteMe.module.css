@@ -19,9 +19,34 @@
   height: 16rem;
   justify-content: center;
   position: relative;
-  text-decoration: underline;
+  text-decoration: none;
   top: calc(-90 / 16 * 1rem);
   width: 16rem;
+}
+
+.link::after {
+  animation: underline-animation 2s linear infinite;
+  background-color: var(--colorBlack);
+  bottom: calc(170 / 16 * 1rem);
+  content: "";
+  height: calc(10 / 16 * 1rem);
+  left: calc(99 / 16 * 1rem);
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+  width: 0;
+}
+
+@keyframes underline-animation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 285px;
+  }
+}
+
+.link:hover::after {
+  animation: none;
 }
 
 @media (min-width: 701px) {
