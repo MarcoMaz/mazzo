@@ -3,6 +3,10 @@
   margin-bottom: 0;
 }
 
+.borderReset {
+  border-bottom: 0;
+}
+
 .heading {
   display: block;
   font-size: 2rem;

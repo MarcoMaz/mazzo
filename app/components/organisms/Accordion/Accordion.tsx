@@ -36,6 +36,7 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
           <React.Fragment key={index}>
             {index !== activeIndex && (
               <AccordionHeader
+                className={index === activeIndex - 1 ? "borderReset": ""}
                 headline={headline}
                 index={index}
                 dataCy={`selected-works-accordion-group-${headline}`}
