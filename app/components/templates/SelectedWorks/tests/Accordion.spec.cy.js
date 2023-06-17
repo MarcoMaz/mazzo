@@ -64,6 +64,10 @@ describe("Accordion", () => {
       );
     });
 
+    it("should do nothing on click", () => {
+      cy.get(SELECTED_WORKS_ACCORDION_PANEL_1_SELECTOR).click().should("exist");
+    });
+
     it("should have 2 children", () => {
       cy.get(SELECTED_WORKS_ACCORDION_PANEL_1_SELECTOR)
         .children()
@@ -165,6 +169,11 @@ describe("Accordion", () => {
       );
     });
 
+    it("should open the corresponding panel on click", () => {
+      cy.get(SELECTED_WORKS_ACCORDION_HEADER_2_SELECTOR).click();
+      cy.get(SELECTED_WORKS_ACCORDION_PANEL_2_SELECTOR).should("exist");
+    });
+
     it("should have a child button", () => {
       cy.get(SELECTED_WORKS_ACCORDION_HEADER_2_SELECTOR)
         .find("button")
@@ -224,6 +233,11 @@ describe("Accordion", () => {
         "tagName",
         "H3"
       );
+    });
+
+    it("should open the corresponding panel on click", () => {
+      cy.get(SELECTED_WORKS_ACCORDION_HEADER_3_SELECTOR).click();
+      cy.get(SELECTED_WORKS_ACCORDION_PANEL_3_SELECTOR).should("exist");
     });
 
     it("should have a child button", () => {
