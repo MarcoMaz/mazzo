@@ -37,4 +37,12 @@ describe("CTA", () => {
       "mailto:mazzai.marco@gmail.com"
     );
   });
+
+  it("should have the ::after animated", () => {
+    cy.get(WRITE_ME_DIV_SELECTOR).should(($element) => {
+      const pseudoElement = window.getComputedStyle($element[0], "::after");
+      const animationName = pseudoElement.getPropertyValue("animation");
+      expect(animationName).to.not.be.empty;
+    });
+  });
 });
