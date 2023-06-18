@@ -45,9 +45,8 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
             )}
             {index === activeIndex && (
               <AccordionPanel
-                panelId={`sect${index}`}
                 dataCy={`selected-works-accordion-panel-${headline}`}
-                buttonId={`accordion${index}id`}
+                buttonId={`accordion-${index}-id`}
                 headline={headline}
                 subheadline={subheadline}
                 description={description}

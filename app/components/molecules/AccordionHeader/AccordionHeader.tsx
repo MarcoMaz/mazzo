@@ -28,9 +28,6 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
       <button
         className={button}
         type="button"
-        aria-expanded="true"
-        aria-controls={`sect${index}`}
-        id={`accordion${index}id`}
       >
         <span className={heading}>{headline}</span>
         <Dot className={`${dot} ${dotStyles.empty}`} />

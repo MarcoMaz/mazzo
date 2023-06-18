@@ -12,7 +12,6 @@ import { CardProps } from "../Card/Card";
 interface AccordionPanelProps extends CardProps {
   dataCy: string;
   buttonId: string;
-  panelId: string;
 }
 
 const AccordionPanel: React.FC<AccordionPanelProps> = ({
@@ -21,7 +20,6 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   description,
   chips,
   CTA: { url, label },
-  panelId,
   dataCy,
   buttonId,
 }) => {
@@ -32,14 +30,13 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   return (
     <div
       data-cy={dataCy}
-      id={panelId}
       role="region"
       aria-labelledby={buttonId}
       className={className}
     >
       <div>
-        <Heading level={4} label={headline} className={heading} />
-        <Heading level={5} label={subheadline} className={subheading} />
+        <Heading level={3} label={headline} className={heading} />
+        <Heading level={4} label={subheadline} className={subheading} />
         <Paragraph text={description} />
         <ChipGroup chips={chips} />
         <ExternalLink url={url} label={label} />
