@@ -10,7 +10,7 @@ import ParagraphGroup from "../../organisms/ParagraphGroup/ParagraphGroup";
 import { useEffect, useState } from "react";
 
 const Hi: React.FC = () => {
-  const { container, heading, image, paragraphGroup } = styles;
+  const { container, avatar, heading, image, paragraphGroup } = styles;
 
   const {
     headline,
@@ -36,21 +36,24 @@ const Hi: React.FC = () => {
 
   return (
     <header className={container} id="hi">
-      <Heading
-        dataCy="hi-heading"
-        level={1}
-        label={headline}
-        className={heading}
-      />
-      <Image
-        className={image}
-        data-cy="hi-image"
-        src={url}
-        alt={alt}
-        width={viewportWidth >= 701 ? 300 : 200}
-        height={viewportWidth >= 701 ? 300 : 200}
-        priority
-      />
+      <div className={avatar}>
+        <Image
+          className={image}
+          data-cy="hi-image"
+          src={url}
+          alt={alt}
+          width={viewportWidth >= 701 ? 300 : 200}
+          height={viewportWidth >= 701 ? 300 : 200}
+          priority
+        />
+
+        <Heading
+          dataCy="hi-heading"
+          level={1}
+          label={headline}
+          className={heading}
+        />
+      </div>
       <ParagraphGroup
         className={paragraphGroup}
         dataCy="hi-paragraph-group"
