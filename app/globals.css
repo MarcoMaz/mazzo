@@ -21,6 +21,19 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  height: 100vh; /* or any other value */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+header,
+main,
+section,
+footer {
+  scroll-snap-align: start; /* or end, center, etc. */
+}
+
 /* Hide the scrollbar */
 ::-webkit-scrollbar {
   width: 0;

@@ -10,7 +10,7 @@ export default function Home() {
   const navigationData = content.navigation;
 
   return (
-    <>
+    <div className="container">
       <Navigation navigationData={navigationData} />
       <Hi />
       <main>
@@ -18,6 +18,6 @@ export default function Home() {
         {/* <Posts /> */}
       </main>
       <WriteMe />
-    </>
+    </div>
   );
 }
