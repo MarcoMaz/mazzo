@@ -7,6 +7,10 @@
   padding: 1.5rem 0 calc(1.5rem + 2px); /* 2px keeps in mind the a link's border bottom*/
 }
 
+.content {
+  flex: 1;
+}
+
 .show {
   display: flex;
 }

@@ -34,7 +34,7 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
       aria-labelledby={buttonId}
       className={className}
     >
-      <div>
+      <div className={styles.content}>
         <Heading level={3} label={headline} className={heading} />
         <Heading level={4} label={subheadline} className={subheading} />
         <Paragraph text={description} />
