@@ -8,6 +8,11 @@
   flex-direction: column;
 }
 
+.heading {
+  margin-top: 3rem;
+}
+
+
 .ndaImages img {
   margin-bottom: 1rem;
   margin-right: 0;
