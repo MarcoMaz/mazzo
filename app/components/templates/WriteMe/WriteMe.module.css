@@ -76,3 +76,9 @@
     animation: none;
   }
 }
+
+@media (min-width: 1201px) {
+  .container {
+    height: 100vh;
+  }
+}
