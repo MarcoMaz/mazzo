@@ -46,7 +46,7 @@
 
   .paragraphGroup {
     font-size: 1.2rem;
-    grid-column: 5 / span 4;
+    grid-column: 6 / span 6;
     margin-bottom: unset;
   }
 }
@@ -56,4 +56,11 @@
     grid-column: 4 / span 6;
     justify-content: start;
   }
+
+  .paragraphGroup {
+    font-size: 1.2rem;
+    grid-column: 5 / span 4;
+    margin-bottom: unset;
+  }
+
 }
