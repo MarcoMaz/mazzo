@@ -35,7 +35,7 @@ const Hi: React.FC = () => {
   }, []);
 
   return (
-    <header className={container} id="hi">
+    <header className={container}>
       <div className={avatar}>
         <Image
           className={image}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./NavLink.module.css";
 
 export interface NavLinkProps {
@@ -10,9 +11,7 @@ const NavLink: React.FC<NavLinkProps> = ({ url, label }) => {
 
   return (
     <li className={container}>
-      <a className={link} href={`#${url}`}>
-        {label}
-      </a>
+      <Link className={link} href={url}>{label}</Link>
     </li>
   );
 };
