@@ -1,4 +1,3 @@
-import Posts from "./components/Posts";
 import Navigation from "./components/organisms/Navigation/Navigation";
 import Hi from "./components/templates/Hi/Hi";
 import SelectedWorks from "./components/templates/SelectedWorks/SelectedWorks";
@@ -15,7 +14,6 @@ export default function Home() {
       <Hi />
       <main>
         <SelectedWorks />
-        {/* <Posts /> */}
       </main>
       <WriteMe />
     </div>

@@ -12,7 +12,7 @@ export default function ListItem({ post }: Props) {
   return (
     <li>
       <strong>
-        <Link href={`/posts/${id}`}>{title}</Link>
+        <Link href={`/blog/${id}`}>{title}</Link>
       </strong>
       <br />
       <p>{formattedDate}</p>
