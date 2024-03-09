@@ -1,4 +1,3 @@
-import Navigation from "./components/organisms/Navigation/Navigation";
 import Hi from "./components/templates/Hi/Hi";
 import SelectedWorks from "./components/templates/SelectedWorks/SelectedWorks";
 
