@@ -1,12 +1,14 @@
 import { headers } from "next/headers";
 
-import { getSortedPostsData } from "@/lib/posts";
+import { getPrevNextPosts, getSortedPostsData } from "@/lib/posts";
 import ListItem from "../../ListItem";
 import Link from "next/link";
 
 const PostsLists = () => {
   const headersList = headers();
   const activePath = headersList.get("x-invoke-path");
+  const postId = activePath ? activePath.split("/")[2] : null; // Extract post ID from path
+
   const title = activePath === "/blog" ? "Blog" : "Latest Posts";
 
   const posts = getSortedPostsData();

@@ -1,5 +1,5 @@
 import getFormattedDate from "@/lib/getFormattedDate";
-import { getSortedPostsData, getPostData } from "@/lib/posts";
+import { getSortedPostsData, getPostData, getPrevNextPosts } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -37,6 +37,9 @@ export default async function Post({ params }: { params: { postId: string } }) {
   const { title, date, contentHtml } = await getPostData(postId);
 
   const pubDate = getFormattedDate(date);
+  const { prevPost, nextPost } = getPrevNextPosts(postId as string);
+
+  console.log(nextPost);
 
   return (
     <main>
@@ -44,9 +47,20 @@ export default async function Post({ params }: { params: { postId: string } }) {
       <p>{pubDate}</p>
       <article>
         <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        <p>
-          <Link href="/">← Back to home</Link>
-        </p>
+        <div>
+          {prevPost && (
+            <Link href={`/blog/${prevPost.id}`}>
+              Previous Post: {prevPost.title}
+            </Link>
+          )}
+        </div>
+        <div>
+          {nextPost && (
+            <Link href={`/blog/${nextPost.id}`}>
+              Next Post: {nextPost.title}
+            </Link>
+          )}
+        </div>
       </article>
     </main>
   );
