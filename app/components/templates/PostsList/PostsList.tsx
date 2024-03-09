@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 
 import { getSortedPostsData } from "@/lib/posts";
 import ListItem from "../../ListItem";
+import Link from "next/link";
 
 const PostsLists = () => {
   const headersList = headers();
@@ -18,6 +19,7 @@ const PostsLists = () => {
           <ListItem key={post.id} post={post} />
         ))}
       </ul>
+      {activePath === "/" ? <Link href={"/blog"}>All Blog Posts</Link> : null}
     </>
   );
 };
