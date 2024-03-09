@@ -1,18 +1,12 @@
-import { getSortedPostsData } from "@/lib/posts";
+import { usePathname } from 'next/navigation';
 
-import ListItem from "../components/ListItem";
+import PostsLists from "../components/templates/PostsList/PostsList";
 
 const Posts = () => {
-  const posts = getSortedPostsData();
 
   return (
     <div>
-      Posts:
-      <ul>
-        {posts.map((post) => (
-          <ListItem key={post.id} post={post} />
-        ))}
-      </ul>
+      <PostsLists />
     </div>
   );
 };
