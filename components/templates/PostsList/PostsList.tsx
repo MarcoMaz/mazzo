@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 
 import { getPrevNextPosts, getSortedPostsData } from "@/lib/posts";
-import ListItem from "../../ListItem";
+import ListItem from "../../atoms/ListItem/ListItem";
 import Link from "next/link";
 
 const PostsLists = () => {
