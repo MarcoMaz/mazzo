@@ -4,48 +4,51 @@ import Heading from "../../atoms/Heading/Heading";
 import CardCarousel from "../../organisms/CardCarousel/CardCarousel";
 import Accordion from "../../organisms/Accordion/Accordion";
 
-import styles from "./SelectedWorksSection.module.css";
+import "./SelectedWorksSection.css";
 import ExternalLink from "@/components/atoms/ExternalLink/ExternalLink";
 import React from "react";
 
 import Image from "next/image";
 
 const SelectedWorksSection = () => {
-  const {
-    container,
-    heading,
-    ndaHeading,
-    ndaImages,
-    knowMoreHeading,
-    knowMoreCTA,
-  } = styles;
+  // const {
+  //   container,
+  //   heading,
+  //   ndaHeading,
+  //   ndaImages,
+  //   knowMoreHeading,
+  //   knowMoreCTA,
+  // } = styles;
 
   const { headline, cards, nda, knowMore } = data.selectedWorks;
 
   return (
-    <section className={container} id="selected-works">
+    <section className="selected-works-section" id="selected-works">
       <Heading
         dataCy="selected-works-heading"
         level={2}
         label={headline}
-        className={heading}
+        // className={heading}
       />
       <Accordion
         dataCy="selected-works-accordion"
         cards={cards}
-        className={styles.accordion}
+        // className={styles.accordion}
       />
       <CardCarousel dataCy="selected-works-cards" cards={cards} />
       <Heading
-        className={ndaHeading}
+        // className={ndaHeading}
         dataCy="selected-works-nda-heading"
         level={3}
         label={nda.headline}
       />
-      <div data-cy={"selected-works-nda-images"} className={ndaImages}>
+      <div
+        data-cy={"selected-works-nda-images"}
+        // className={ndaImages}
+      >
         {nda.images.map(({ src, alt }) => (
           <Image
-            className={styles.image}
+            // className={styles.image}
             data-cy={src}
             src={src}
             alt={alt}
@@ -56,7 +59,7 @@ const SelectedWorksSection = () => {
         ))}
       </div>
       <Heading
-        className={knowMoreHeading}
+        // className={knowMoreHeading}
         dataCy="selected-works-know-more-heading"
         level={3}
         label={knowMore.headline}

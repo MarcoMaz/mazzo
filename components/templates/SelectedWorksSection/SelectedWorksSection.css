@@ -1,6 +1,8 @@
-.container {
+.selected-works-section {
   background-color: var(--colorPrimary);
 }
+
+/* CLEAN UP DOWN HERE */
 
 .ndaImages {
   align-items: flex-start;
@@ -11,7 +13,6 @@
 .heading {
   margin-top: 3rem;
 }
-
 
 .ndaImages img {
   margin-bottom: 1rem;
