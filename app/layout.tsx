@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import Navigation from "../components/organisms/Navigation/Navigation";
-import WriteMe from "../components/templates/WriteMe/WriteMe";
+import FooterSection from "../components/templates/FooterSection/FooterSection";
 
 import content from "../public/assets/content/content.json";
 
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body>
         <Navigation navigationData={navigationData} />
         {children}
-        <WriteMe />
+        <FooterSection />
       </body>
     </html>
   );

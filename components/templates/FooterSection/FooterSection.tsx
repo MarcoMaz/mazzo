@@ -5,7 +5,7 @@ import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
 
 import styles from "./WriteMe.module.css";
 
-const WriteMe = () => {
+const FooterSection = () => {
   const {
     headline,
     CTA: { url, label },
@@ -19,4 +19,4 @@ const WriteMe = () => {
   );
 };
 
-export default WriteMe;
+export default FooterSection;

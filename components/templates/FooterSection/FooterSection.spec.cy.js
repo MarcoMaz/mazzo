@@ -1,11 +1,11 @@
-import WriteMe from "./WriteMe";
+import FooterSection from "./FooterSection";
 
 const WRITE_ME_HEADING_SELECTOR = "[data-cy='write-me-heading']";
 const WRITE_ME_DIV_SELECTOR = "[data-cy='write-me-cta']";
 
 describe("Headline", () => {
   beforeEach(() => {
-    cy.mount(<WriteMe />);
+    cy.mount(<FooterSection />);
   });
 
   it("should exists", () => {
@@ -19,7 +19,7 @@ describe("Headline", () => {
 
 describe("CTA", () => {
   beforeEach(() => {
-    cy.mount(<WriteMe />);
+    cy.mount(<FooterSection />);
   });
 
   it("should exists", () => {
