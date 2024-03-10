@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Hi.module.css";
+import styles from "./IntroSection.module.css";
 
 import data from "../../../public/assets/content/content.json";
 
@@ -9,7 +9,7 @@ import Image from "next/image";
 import ParagraphGroup from "../../organisms/ParagraphGroup/ParagraphGroup";
 import { useEffect, useState } from "react";
 
-const Hi: React.FC = () => {
+const IntroSection: React.FC = () => {
   const { container, avatar, heading, image, paragraphGroup } = styles;
 
   const {
@@ -63,4 +63,4 @@ const Hi: React.FC = () => {
   );
 };
 
-export default Hi;
+export default IntroSection;

@@ -1,4 +1,4 @@
-import Hi from "./Hi";
+import IntroSection from "./IntroSection";
 
 const HI_HEADING_SELECTOR = "[data-cy='hi-heading']";
 const HI_IMAGE_SELECTOR = "[data-cy='hi-image']";
@@ -6,7 +6,7 @@ const HI_PARAGRAPH_GROUP_SELECTOR = '[data-cy="hi-paragraph-group"]';
 
 describe("Headline", () => {
   beforeEach(() => {
-    cy.mount(<Hi />);
+    cy.mount(<IntroSection />);
   });
 
   it("should exists", () => {
@@ -20,7 +20,7 @@ describe("Headline", () => {
 
 describe("Image", () => {
   beforeEach(() => {
-    cy.mount(<Hi />);
+    cy.mount(<IntroSection />);
   });
 
   it("should exists", () => {
@@ -38,7 +38,7 @@ describe("Image", () => {
 
 describe("Paragraph Group", () => {
   beforeEach(() => {
-    cy.mount(<Hi />);
+    cy.mount(<IntroSection />);
   });
 
   it("should exists", () => {
