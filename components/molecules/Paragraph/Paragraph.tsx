@@ -1,5 +1,3 @@
-import "./Paragraph.css";
-
 import BoldSpan from "../../atoms/BoldSpan/BoldSpan";
 import React from "react";
 
