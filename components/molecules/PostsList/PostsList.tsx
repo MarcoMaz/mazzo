@@ -1,11 +1,12 @@
 import Link from "next/link";
 import getFormattedDate from "@/lib/getFormattedDate";
+import React from "react";
 
-type Props = {
+interface PostsListProps {
   post: Blogpost;
-};
+}
 
-export default function ListItem({ post }: Props) {
+const PostsList: React.FC<PostsListProps> = ({ post }) => {
   const { id, title, date } = post;
   const formattedDate = getFormattedDate(date);
 
@@ -18,4 +19,6 @@ export default function ListItem({ post }: Props) {
       <p>{formattedDate}</p>
     </li>
   );
-}
+};
+
+export default PostsList

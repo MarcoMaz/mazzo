@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 
 import { getPrevNextPosts, getSortedPostsData } from "@/lib/posts";
-import ListItem from "../../atoms/ListItem/ListItem";
+import PostsList from "../../molecules/PostsList/PostsList";
 import Link from "next/link";
 
 const PostsSection = () => {
@@ -18,7 +18,7 @@ const PostsSection = () => {
       <h2>{title}</h2>
       <ul>
         {posts.map((post) => (
-          <ListItem key={post.id} post={post} />
+          <PostsList key={post.id} post={post} />
         ))}
       </ul>
       {activePath === "/" ? <Link href={"/blog"}>All Blog Posts</Link> : null}
