@@ -1,13 +1,13 @@
 import styles from "./AccordionPanel.module.css";
-import dotStyles from "../../atoms/Dot/Dot.module.css";
+import dotStyles from "../../../../atoms/Dot/Dot.module.css";
 
-import ChipGroup from "../ChipGroup/ChipGroup";
-import Dot from "../../atoms/Dot/Dot";
-import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
-import Heading from "../../atoms/Heading/Heading";
-import Paragraph from "../Paragraph/Paragraph";
+import ChipGroup from "../../../../molecules/ChipGroup/ChipGroup";
+import Dot from "../../../../atoms/Dot/Dot";
+import ExternalLink from "../../../../atoms/ExternalLink/ExternalLink";
+import Heading from "../../../../atoms/Heading/Heading";
+import Paragraph from "../../../../molecules/Paragraph/Paragraph";
 
-import { CardProps } from "../Card/Card";
+import { CardProps } from "../../../../molecules/Card/Card";
 
 interface AccordionPanelProps extends CardProps {
   dataCy: string;

@@ -1,6 +1,6 @@
-import Dot from "../../atoms/Dot/Dot";
+import Dot from "../../../../atoms/Dot/Dot";
 import styles from "./AccordionHeader.module.css";
-import dotStyles from "../../atoms/Dot/Dot.module.css";
+import dotStyles from "../../../../atoms/Dot/Dot.module.css";
 
 interface AccordionHeaderProps {
   dataCy: string;
