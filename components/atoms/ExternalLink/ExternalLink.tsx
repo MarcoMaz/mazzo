@@ -3,24 +3,11 @@ import "./ExternalLink.css";
 interface ExternalLinkProps {
   url: string;
   label: string;
-  className?: string;
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({
-  url,
-  label,
-  className,
-}) => {
-  const combinedClassName = className
-    ? `${"external-link"} ${className}`
-    : "external-link";
-
+const ExternalLink: React.FC<ExternalLinkProps> = ({ url, label }) => {
   return (
-    <a
-      href={url}
-      target="_blank"
-      className={combinedClassName}
-    >
+    <a href={url} target="_blank" className="external-link">
       {label}
     </a>
   );
