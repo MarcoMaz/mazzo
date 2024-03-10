@@ -4,7 +4,7 @@ import { getPrevNextPosts, getSortedPostsData } from "@/lib/posts";
 import ListItem from "../../atoms/ListItem/ListItem";
 import Link from "next/link";
 
-const PostsLists = () => {
+const PostsSection = () => {
   const headersList = headers();
   const activePath = headersList.get("x-invoke-path");
   const postId = activePath ? activePath.split("/")[2] : null; // Extract post ID from path
@@ -26,4 +26,4 @@ const PostsLists = () => {
   );
 };
 
-export default PostsLists;
+export default PostsSection;

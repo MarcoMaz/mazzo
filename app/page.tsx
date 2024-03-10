@@ -1,5 +1,5 @@
 import IntroSection from "../components/templates/IntroSection/IntroSection";
-import PostsLists from "../components/templates/PostsList/PostsList";
+import PostsLists from "../components/templates/PostsSection/PostsSection";
 
 export default function Home() {
 
