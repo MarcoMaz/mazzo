@@ -1,4 +1,4 @@
-import styles from "./BoldSpan.module.css";
+import "./BoldSpan.css";
 
 import { ReactNode } from "react";
 
@@ -7,7 +7,7 @@ interface BoldSpanProps {
 }
 
 const BoldSpan: React.FC<BoldSpanProps> = ({ children }) => {
-  return <span className={styles.container}>{children}</span>;
+  return <span className="bold-span">{children}</span>;
 };
 
 export default BoldSpan;

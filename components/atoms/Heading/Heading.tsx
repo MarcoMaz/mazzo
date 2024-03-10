@@ -1,4 +1,4 @@
-import styles from "./Heading.module.css";
+import "./Heading.css";
 
 import React from "react";
 
@@ -15,9 +15,7 @@ const Heading: React.FC<HeadingProps> = ({
   label,
   className,
 }) => {
-  const combinedClassName = className
-    ? `${styles.container} ${className}`
-    : styles.container;
+  const combinedClassName = className ? `${"heading"} ${className}` : "heading";
 
   const HeadingTag = `h${level}`;
 

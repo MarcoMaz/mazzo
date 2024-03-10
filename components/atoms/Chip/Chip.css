@@ -1,4 +1,4 @@
-.container {
+.chip {
   border: calc(1 / 16 * 1rem) solid var(--colorBlack);
   border-radius: calc(6 / 16 * 1rem);
   margin-right: 1rem;

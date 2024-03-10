@@ -1,4 +1,4 @@
-import styles from "./ExternalLink.module.css";
+import "./ExternalLink.css";
 
 interface ExternalLinkProps {
   url: string;
@@ -14,8 +14,8 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({
   className,
 }) => {
   const combinedClassName = className
-    ? `${styles.container} ${className}`
-    : styles.container;
+    ? `${"external-link"} ${className}`
+    : "external-link";
 
   return (
     <a

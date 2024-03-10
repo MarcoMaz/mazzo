@@ -1,4 +1,4 @@
-.container:nth-of-type(2) {
+.nav-link:nth-of-type(2) {
   text-align: right;
   width: 11rem;
 }
