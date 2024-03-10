@@ -10,7 +10,6 @@ import Paragraph from "../../../../molecules/Paragraph/Paragraph";
 import { CardProps } from "../../../CardCarousel/parts/Card/Card";
 
 interface AccordionPanelProps extends CardProps {
-  dataCy: string;
   buttonId: string;
 }
 
@@ -20,7 +19,6 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   description,
   chips,
   CTA: { url, label },
-  dataCy,
   buttonId,
 }) => {
   // const { container, hide, heading, subheading, dot } = styles;
@@ -29,7 +27,6 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
 
   return (
     <div
-      data-cy={dataCy}
       role="region"
       aria-labelledby={buttonId}
       className="accordion-panel"
