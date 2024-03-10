@@ -1,10 +1,8 @@
 import styles from "./DotGroup.module.css";
-import dotStyles from "../../atoms/Dot/Dot.module.css";
 
-import Dot from "../../atoms/Dot/Dot";
 import { CardProps } from "../Card/Card";
 
-interface DotGroupProps {
+interface DotsProps {
   dataCy: string;
   dots: CardProps[];
   className?: string;
@@ -12,7 +10,7 @@ interface DotGroupProps {
   onClick?: (index: number) => void;
 }
 
-const DotGroup: React.FC<DotGroupProps> = ({
+const Dots: React.FC<DotsProps> = ({
   dots,
   dataCy,
   className,
@@ -32,9 +30,9 @@ const DotGroup: React.FC<DotGroupProps> = ({
   return (
     <div data-cy={dataCy} className={combinedClassName}>
       {dots.map((dot, index) => (
-        <Dot
+        <div
           key={index}
-          className={index === activeIndex ? dotStyles.full : dotStyles.empty}
+          className={index === activeIndex ? "dotStyles.full" : "dotStyles.empty"}
           onClick={() => handleClick(index)}
         />
       ))}
@@ -42,4 +40,24 @@ const DotGroup: React.FC<DotGroupProps> = ({
   );
 };
 
-export default DotGroup;
+export default Dots;
+
+/*
+DOT Legacy code
+
+.container {
+  border-radius: 50%;
+  height: 1rem;
+  margin-right: 1rem;
+  width: 1rem;
+}
+
+.full {
+  background-color: var(--colorBlack);
+}
+
+.empty {
+  border: calc(2 / 16 * 1rem) solid var(--colorBlack);
+}
+
+*/

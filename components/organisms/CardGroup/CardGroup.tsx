@@ -3,7 +3,7 @@
 import styles from "./CardGroup.module.css";
 
 import Card, { CardProps } from "../../molecules/Card/Card";
-import DotGroup from "../../molecules/DotGroup/DotGroup";
+import Dots from "../../molecules/Dots/Dots";
 import { useEffect, useRef, useState } from "react";
 
 interface CardGroupProps {
@@ -84,7 +84,7 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           )
         )}
       </div>
-      <DotGroup
+      <Dots
         dots={cards}
         dataCy="Dots"
         className={styles.dotGroup}
