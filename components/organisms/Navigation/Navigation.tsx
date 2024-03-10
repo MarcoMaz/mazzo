@@ -1,6 +1,5 @@
-import { NavLinkProps } from "../../atoms/NavLink/NavLink";
+import NavLink, { NavLinkProps } from "../../atoms/NavLink/NavLink";
 
-import UnorderedList from "../../molecules/UnorderedList/UnorderedList";
 import styles from "./Navigation.module.css";
 
 interface NavigationProps {
@@ -20,7 +19,11 @@ const Navigation: React.FC<NavigationProps> = ({ navigationData }) => {
 
   return (
     <nav className={styles.container}>
-      <UnorderedList listItems={navigationData} />
+      <ul className={styles.container}>
+        {navigationData.map(({ label, url }) => (
+          <NavLink key={label} url={url} label={label} />
+        ))}
+      </ul>
     </nav>
   );
 };
