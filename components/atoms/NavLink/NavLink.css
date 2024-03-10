@@ -1,6 +1,7 @@
 .nav-link {
   font-size: 2rem;
   font-weight: bold;
+  position: fixed;
   text-transform: uppercase;
 
   a {

@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation navigationData={navigationData} />
+        <Navigation navLinks={navigationData} />
         {children}
         <FooterSection />
       </body>

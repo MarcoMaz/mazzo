@@ -3,10 +3,10 @@ import NavLink, { NavLinkProps } from "../../atoms/NavLink/NavLink";
 import "./Navigation.css";
 
 interface NavigationProps {
-  navigationData: NavLinkProps[];
+  navLinks: NavLinkProps[];
 }
 
-const Navigation: React.FC<NavigationProps> = ({ navigationData }) => {
+const Navigation: React.FC<NavigationProps> = ({ navLinks }) => {
   const chunkArray = (array: NavLinkProps[], size: number) => {
     const chunks = [];
     for (let i = 0; i < array.length; i += size) {
@@ -15,12 +15,10 @@ const Navigation: React.FC<NavigationProps> = ({ navigationData }) => {
     return chunks;
   };
 
-  const chunkedNavigation = chunkArray(navigationData, 2);
-
   return (
     <nav className="navigation">
       <ul>
-        {navigationData.map(({ label, url }) => (
+        {navLinks.map(({ label, url }) => (
           <NavLink key={label} url={url} label={label} />
         ))}
       </ul>
