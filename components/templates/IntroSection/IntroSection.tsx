@@ -6,8 +6,8 @@ import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
 import Image from "next/image";
-import ParagraphGroup from "../../organisms/ParagraphGroup/ParagraphGroup";
 import { useEffect, useState } from "react";
+import Paragraph from "@/components/molecules/Paragraph/Paragraph";
 
 const IntroSection: React.FC = () => {
   const { container, avatar, heading, image, paragraphGroup } = styles;
@@ -54,11 +54,15 @@ const IntroSection: React.FC = () => {
           className={heading}
         />
       </div>
-      <ParagraphGroup
-        className={paragraphGroup}
-        dataCy="hi-paragraph-group"
-        paragraphs={paragraphs}
-      />
+      <div data-cy={"hi-paragraph-group"} className={paragraphGroup}>
+        {paragraphs.map((paragraph, index) => (
+          <Paragraph
+            key={index}
+            text={paragraph.text}
+            boldify={paragraph.boldify}
+          />
+        ))}
+      </div>
     </header>
   );
 };
