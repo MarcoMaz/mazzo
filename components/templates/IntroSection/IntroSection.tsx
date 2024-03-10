@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./IntroSection.module.css";
+import "./IntroSection.css";
 
 import data from "../../../public/assets/content/content.json";
 
@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import Paragraph from "@/components/molecules/Paragraph/Paragraph";
 
 const IntroSection: React.FC = () => {
-  const { container, avatar, heading, image, paragraphGroup } = styles;
+  // const { container, avatar, heading, image, paragraphGroup } = styles;
 
   const {
     headline,
@@ -35,10 +35,12 @@ const IntroSection: React.FC = () => {
   }, []);
 
   return (
-    <header className={container}>
-      <div className={avatar}>
+    <header className="footer-section">
+      <div 
+      // className={avatar}
+      >
         <Image
-          className={image}
+          // className={image}
           data-cy="hi-image"
           src={url}
           alt={alt}
@@ -51,10 +53,12 @@ const IntroSection: React.FC = () => {
           dataCy="hi-heading"
           level={1}
           label={headline}
-          className={heading}
+          // className={heading}
         />
       </div>
-      <div data-cy={"hi-paragraph-group"} className={paragraphGroup}>
+      <div data-cy={"hi-paragraph-group"} 
+      // className={paragraphGroup}
+      >
         {paragraphs.map((paragraph, index) => (
           <Paragraph
             key={index}
