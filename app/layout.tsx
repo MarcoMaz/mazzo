@@ -1,8 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 
-import Navigation from "./components/organisms/Navigation/Navigation";
-import WriteMe from "./components/templates/WriteMe/WriteMe";
+import Navigation from "../components/organisms/Navigation/Navigation";
+import WriteMe from "../components/templates/WriteMe/WriteMe";
 
 import content from "../public/assets/content/content.json";
 

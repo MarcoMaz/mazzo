@@ -2,7 +2,7 @@
 
 import styles from "./Hi.module.css";
 
-import data from "../../../../public/assets/content/content.json";
+import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
 import Image from "next/image";

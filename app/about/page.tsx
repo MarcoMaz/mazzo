@@ -1,4 +1,4 @@
-import SelectedWorks from "../components/templates/SelectedWorks/SelectedWorks";
+import SelectedWorks from "../../components/templates/SelectedWorks/SelectedWorks";
 
 export default function Page() {
   return (

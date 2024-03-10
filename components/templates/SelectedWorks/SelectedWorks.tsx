@@ -1,4 +1,4 @@
-import data from "../../../../public/assets/content/content.json";
+import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
 import CardGroup from "../../organisms/CardGroup/CardGroup";
