@@ -2,12 +2,13 @@ import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
 import CardGroup from "../../organisms/CardGroup/CardGroup";
-import ImageGroup from "../../molecules/ImageGroup/ImageGroup";
 import Accordion from "../../organisms/Accordion/Accordion";
 
 import styles from "./SelectedWorksSection.module.css";
 import ExternalLink from "@/components/atoms/ExternalLink/ExternalLink";
 import React from "react";
+
+import Image from "next/image";
 
 const SelectedWorksSection = () => {
   const {
@@ -41,11 +42,19 @@ const SelectedWorksSection = () => {
         level={3}
         label={nda.headline}
       />
-      <ImageGroup
-        dataCy="selected-works-nda-images"
-        images={nda.images}
-        className={ndaImages}
-      />
+      <div data-cy={"selected-works-nda-images"} className={ndaImages}>
+        {nda.images.map(({ src, alt }) => (
+          <Image
+            className={styles.image}
+            data-cy={src}
+            src={src}
+            alt={alt}
+            key={src}
+            height={45}
+            width={150}
+          />
+        ))}
+      </div>
       <Heading
         className={knowMoreHeading}
         dataCy="selected-works-know-more-heading"
