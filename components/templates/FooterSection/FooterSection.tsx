@@ -3,7 +3,7 @@ import data from "../../../public/assets/content/content.json";
 import Heading from "../../atoms/Heading/Heading";
 import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
 
-import styles from "./WriteMe.module.css";
+import styles from "./FooterSection.module.css";
 
 const FooterSection = () => {
   const {

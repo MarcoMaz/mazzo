@@ -1,39 +1,49 @@
 import styles from "./Paragraph.module.css";
 
-import UnderlineSpan from "../../atoms/UnderlineSpan/UnderlineSpan";
+import BoldSpan from "../../atoms/BoldSpan/BoldSpan";
 import React from "react";
 
 interface ParagraphProps {
   text: string;
-  underline?: string[];
+  boldify?: string[];
 }
 
-const Paragraph: React.FC<ParagraphProps> = ({ text, underline }) => {
-  const generateUnderlinedText = (text: string, underline: string[]) => {
+const Paragraph: React.FC<ParagraphProps> = ({ text, boldify }) => {
+  const generateBoldText = (text: string, boldify: string[]) => {
     let currentIndex = 0;
-    const underlinedText: JSX.Element[] = [];
+    const boldText: JSX.Element[] = [];
 
-    underline.forEach((term, index) => {
-      const termIndex = text.toLowerCase().indexOf(term.toLowerCase(), currentIndex);
+    boldify.forEach((term, index) => {
+      const termIndex = text
+        .toLowerCase()
+        .indexOf(term.toLowerCase(), currentIndex);
       if (termIndex !== -1) {
-        underlinedText.push(<React.Fragment key={`fragment-${index}`}>{text.substring(currentIndex, termIndex)}</React.Fragment>);
-        underlinedText.push(
-          <UnderlineSpan key={`highlight-${index}`}>
+        boldText.push(
+          <React.Fragment key={`fragment-${index}`}>
+            {text.substring(currentIndex, termIndex)}
+          </React.Fragment>
+        );
+        boldText.push(
+          <BoldSpan key={`highlight-${index}`}>
             {text.substring(termIndex, termIndex + term.length)}
-          </UnderlineSpan>
+          </BoldSpan>
         );
         currentIndex = termIndex + term.length;
       }
     });
 
-    underlinedText.push(<React.Fragment key={`fragment-last`}>{text.substring(currentIndex)}</React.Fragment>);
+    boldText.push(
+      <React.Fragment key={`fragment-last`}>
+        {text.substring(currentIndex)}
+      </React.Fragment>
+    );
 
-    return underlinedText;
+    return boldText;
   };
 
-  const underlinedText = generateUnderlinedText(text, underline || []);
+  const boldText = generateBoldText(text, boldify || []);
 
-  return <p className={styles.container}>{underlinedText}</p>;
+  return <p className={styles.container}>{boldText}</p>;
 };
 
 export default Paragraph;

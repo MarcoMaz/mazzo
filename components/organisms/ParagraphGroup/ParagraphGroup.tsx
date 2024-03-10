@@ -4,7 +4,7 @@ import Paragraph from "../../molecules/Paragraph/Paragraph";
 
 interface ParagraphGroupProps {
   dataCy: string;
-  paragraphs: { text: string; underline?: string[] }[];
+  paragraphs: { text: string; boldify?: string[] }[];
   className?: string;
 }
 
@@ -23,7 +23,7 @@ const ParagraphGroup: React.FC<ParagraphGroupProps> = ({
         <Paragraph
           key={index}
           text={paragraph.text}
-          underline={paragraph.underline}
+          boldify={paragraph.boldify}
         />
       ))}
     </div>
