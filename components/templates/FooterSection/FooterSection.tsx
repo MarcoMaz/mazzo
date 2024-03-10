@@ -3,7 +3,7 @@ import data from "../../../public/assets/content/content.json";
 import Heading from "../../atoms/Heading/Heading";
 import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
 
-import styles from "./FooterSection.module.css";
+import "./FooterSection.css";
 
 const FooterSection = () => {
   const {
@@ -12,9 +12,19 @@ const FooterSection = () => {
   } = data.writeMe;
 
   return (
-    <footer className={styles.container} id="contact">
-      <Heading dataCy="write-me-heading" level={2} label={headline} className={styles.headline} />
-      <ExternalLink dataCy="write-me-cta" url={url} label={label} className={styles.link}/>
+    <footer className="footer-section" id="contact">
+      <Heading
+        dataCy="write-me-heading"
+        level={2}
+        label={headline}
+        // className={styles.headline}
+      />
+      <ExternalLink
+        dataCy="write-me-cta"
+        url={url}
+        label={label}
+        // className={styles.link}
+      />
     </footer>
   );
 };

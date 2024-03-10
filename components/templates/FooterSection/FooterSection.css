@@ -1,8 +1,10 @@
-.container {
+.footer-section {
   background-color: var(--colorBlack);
   color: var(--colorWhite);
   padding-top: 3rem;
 }
+
+/* CLEAN UP DOWN HERE */
 
 .headline {
   grid-column: span 2;
