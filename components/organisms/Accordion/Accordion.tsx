@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Accordion.module.css";
+import "./Accordion.css";
 
 import AccordionHeader from "./parts/AccordionHeader/AccordionHeader";
 import AccordionPanel from "./parts/AccordionPanel/AccordionPanel";
@@ -18,16 +18,16 @@ interface AccordionProps {
 const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const combinedClassName = className
-    ? `${styles.container} ${className}`
-    : styles.container;
+  // const combinedClassName = className
+  //   ? `${styles.container} ${className}`
+  //   : styles.container;
 
   const handleHeaderClick = (index: number) => {
     setActiveIndex(index);
   };
 
   return (
-    <div data-cy={dataCy} className={combinedClassName}>
+    <div data-cy={dataCy} className="accordion">
       {cards.map(
         (
           { headline, subheadline, description, chips, CTA: { url, label } },
@@ -36,7 +36,7 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
           <React.Fragment key={index}>
             {index !== activeIndex && (
               <AccordionHeader
-                className={index === activeIndex - 1 ? "borderReset": ""}
+                className={index === activeIndex - 1 ? "borderReset" : ""}
                 headline={headline}
                 index={index}
                 dataCy={`selected-works-accordion-group-${headline}`}

@@ -1,8 +1,9 @@
-.container {
+.accordion-header {
   border-bottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
   margin-bottom: 0;
 }
 
+/* CLEAN UP */
 .borderReset {
   border-bottom: 0;
 }

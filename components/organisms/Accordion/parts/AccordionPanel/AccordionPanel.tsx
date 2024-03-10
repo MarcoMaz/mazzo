@@ -1,4 +1,4 @@
-import styles from "./AccordionPanel.module.css";
+import "./AccordionPanel.css";
 import dotStyles from "../../../../atoms/Dot/Dot.module.css";
 
 import ChipGroup from "../../../../molecules/ChipGroup/ChipGroup";
@@ -23,20 +23,30 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
   dataCy,
   buttonId,
 }) => {
-  const { container, hide, heading, subheading, dot } = styles;
+  // const { container, hide, heading, subheading, dot } = styles;
 
-  const className = `${container}`;
+  // const className = `${container}`;
 
   return (
     <div
       data-cy={dataCy}
       role="region"
       aria-labelledby={buttonId}
-      className={className}
+      className="accordion-panel"
     >
-      <div className={styles.content}>
-        <Heading level={3} label={headline} className={heading} />
-        <Heading level={4} label={subheadline} className={subheading} />
+      <div
+      // className={styles.content}
+      >
+        <Heading
+          level={3}
+          label={headline}
+          // className={heading}
+        />
+        <Heading
+          level={4}
+          label={subheadline}
+          // className={subheading}
+        />
         <Paragraph text={description} />
         <ChipGroup chips={chips} />
         <ExternalLink url={url} label={label} />
