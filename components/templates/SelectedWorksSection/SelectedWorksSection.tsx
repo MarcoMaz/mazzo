@@ -8,7 +8,7 @@ import Accordion from "../../organisms/Accordion/Accordion";
 
 import styles from "./SelectedWorks.module.css";
 
-const SelectedWorks = () => {
+const SelectedWorksSection = () => {
   const {
     container,
     heading,
@@ -56,4 +56,4 @@ const SelectedWorks = () => {
   );
 };
 
-export default SelectedWorks;
+export default SelectedWorksSection;

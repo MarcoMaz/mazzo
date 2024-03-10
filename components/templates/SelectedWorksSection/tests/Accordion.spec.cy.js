@@ -1,4 +1,4 @@
-import SelectedWorks from "../SelectedWorks";
+import SelectedWorksSection from "../SelectedWorksSection";
 
 const SELECTED_WORKS_ACCORDION_SELECTOR =
   "[data-cy='selected-works-accordion']";
@@ -21,7 +21,7 @@ const SELECTED_WORKS_ACCORDION_HEADER_3_SELECTOR =
 describe("Accordion", () => {
   beforeEach(() => {
     cy.viewport(1280, 800);
-    cy.mount(<SelectedWorks />);
+    cy.mount(<SelectedWorksSection />);
   });
 
   it("should display the component for desktop viewport", () => {

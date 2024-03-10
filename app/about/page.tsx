@@ -1,10 +1,10 @@
-import SelectedWorks from "../../components/templates/SelectedWorks/SelectedWorks";
+import SelectedWorksSection from "../../components/templates/SelectedWorksSection/SelectedWorksSection";
 
 export default function Page() {
   return (
     <h1>
       Hello, About page!
-      <SelectedWorks />
+      <SelectedWorksSection />
     </h1>
   );
 }

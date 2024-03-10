@@ -1,4 +1,4 @@
-import SelectedWorks from "../SelectedWorks";
+import SelectedWorksSection from "../SelectedWorksSection";
 
 const SELECTED_WORKS_CARDS_SELECTOR = "[data-cy='selected-works-cards']";
 const SELECTED_WORKS_CARD_1_SELECTOR = "[data-cy='RenatoDoList']";
@@ -9,7 +9,7 @@ const SELECTED_WORKS_DOTS_SELECTOR = "[data-cy='Dots']";
 describe("Cards", () => {
   beforeEach(() => {
     cy.viewport(300, 800);
-    cy.mount(<SelectedWorks />);
+    cy.mount(<SelectedWorksSection />);
   });
 
   it("Should display the component for mobile viewport", () => {

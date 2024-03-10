@@ -1,4 +1,4 @@
-import SelectedWorks from "../SelectedWorks";
+import SelectedWorksSection from "../SelectedWorksSection";
 
 const SELECTED_WORKS_NDA_HEADING_SELECTOR =
   "[data-cy='selected-works-nda-heading']";
@@ -8,7 +8,7 @@ const SELECTED_WORKS_NDA_IMAGES_SELECTOR =
 describe("NDA", () => {
   describe("Headline", () => {
     beforeEach(() => {
-      cy.mount(<SelectedWorks />);
+      cy.mount(<SelectedWorksSection />);
     });
 
     it("should exists", () => {
@@ -25,7 +25,7 @@ describe("NDA", () => {
 
   describe("Images", () => {
     beforeEach(() => {
-      cy.mount(<SelectedWorks />);
+      cy.mount(<SelectedWorksSection />);
     });
 
     it("should exist", () => {

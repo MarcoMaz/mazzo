@@ -1,4 +1,4 @@
-import SelectedWorks from "../SelectedWorks";
+import SelectedWorksSection from "../SelectedWorksSection";
 
 const SELECTED_WORKS_KNOW_MORE_HEADING_SELECTOR =
   "[data-cy='selected-works-know-more-heading']";
@@ -6,7 +6,7 @@ const SELECTED_WORKS_LINKS_SELECTOR = "[data-cy='selected-works-links']";
 
 describe("Know more", () => {
   beforeEach(() => {
-    cy.mount(<SelectedWorks />);
+    cy.mount(<SelectedWorksSection />);
   });
 
   describe("Headline", () => {

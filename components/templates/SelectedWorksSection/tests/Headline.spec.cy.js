@@ -1,10 +1,10 @@
-import SelectedWorks from "../SelectedWorks";
+import SelectedWorksSection from "../SelectedWorksSection";
 
 const SELECTED_WORKS_HEADING_SELECTOR = "[data-cy='selected-works-heading']";
 
 describe("Headline", () => {
   beforeEach(() => {
-    cy.mount(<SelectedWorks />);
+    cy.mount(<SelectedWorksSection />);
   });
 
   it("should exists", () => {
