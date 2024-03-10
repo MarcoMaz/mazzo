@@ -10,12 +10,11 @@ import { useState } from "react";
 import React from "react";
 
 interface AccordionProps {
-  dataCy: string;
   cards: CardProps[];
   className?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
+const Accordion: React.FC<AccordionProps> = ({ cards, className }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // const combinedClassName = className
@@ -27,7 +26,7 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
   };
 
   return (
-    <div data-cy={dataCy} className="accordion">
+    <div className="accordion">
       {cards.map(
         (
           { headline, subheadline, description, chips, CTA: { url, label } },
@@ -39,13 +38,11 @@ const Accordion: React.FC<AccordionProps> = ({ cards, dataCy, className }) => {
                 className={index === activeIndex - 1 ? "borderReset" : ""}
                 headline={headline}
                 index={index}
-                dataCy={`selected-works-accordion-group-${headline}`}
                 onClick={() => handleHeaderClick(index)}
               />
             )}
             {index === activeIndex && (
               <AccordionPanel
-                dataCy={`selected-works-accordion-panel-${headline}`}
                 buttonId={`accordion-${index}-id`}
                 headline={headline}
                 subheadline={subheadline}

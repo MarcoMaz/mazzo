@@ -3,7 +3,6 @@ import "./DotGroup.css";
 import { CardProps } from "../Card/Card";
 
 interface DotsProps {
-  dataCy: string;
   dots: CardProps[];
   className?: string;
   activeIndex?: number;
@@ -12,7 +11,6 @@ interface DotsProps {
 
 const Dots: React.FC<DotsProps> = ({
   dots,
-  dataCy,
   className,
   activeIndex,
   onClick,
@@ -28,7 +26,7 @@ const Dots: React.FC<DotsProps> = ({
   };
 
   return (
-    <div data-cy={dataCy} className="dots">
+    <div className="dots">
       {dots.map((dot, index) => (
         <div
           key={index}

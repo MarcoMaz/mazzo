@@ -3,7 +3,6 @@ import "./AccordionHeader.css";
 import dotStyles from "../../../../atoms/Dot/Dot.module.css";
 
 interface AccordionHeaderProps {
-  dataCy: string;
   headline: string;
   index: number;
   onClick?: () => void;
@@ -11,11 +10,10 @@ interface AccordionHeaderProps {
 }
 
 const AccordionHeader: React.FC<AccordionHeaderProps> = ({
-  dataCy,
   headline,
   index,
   onClick,
-  className
+  className,
 }) => {
   // const combinedClassName = className
   // ? `${styles.container} ${styles.borderReset}`
@@ -24,16 +22,19 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   // const { button, heading, dot } = styles;
 
   return (
-    <h3 data-cy={dataCy} 
-    // className={combinedClassName} 
-    onClick={onClick}>
+    <h3
+      // className={combinedClassName}
+      onClick={onClick}
+    >
       <button
         // className={button}
         type="button"
       >
-        <span 
+        <span
         // className={heading}
-        >{headline}</span>
+        >
+          {headline}
+        </span>
         {/* 
               THIS SHOULD BE "CIRCLE SELECTION"
 

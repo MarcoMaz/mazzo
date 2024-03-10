@@ -25,20 +25,17 @@ const SelectedWorksSection = () => {
   return (
     <section className="selected-works-section" id="selected-works">
       <Heading
-        dataCy="selected-works-heading"
         level={2}
         label={headline}
         // className={heading}
       />
       <Accordion
-        dataCy="selected-works-accordion"
         cards={cards}
         // className={styles.accordion}
       />
-      <CardCarousel dataCy="selected-works-cards" cards={cards} />
+      <CardCarousel cards={cards} />
       <Heading
         // className={ndaHeading}
-        dataCy="selected-works-nda-heading"
         level={3}
         label={nda.headline}
       />
@@ -60,7 +57,6 @@ const SelectedWorksSection = () => {
       </div>
       <Heading
         // className={knowMoreHeading}
-        dataCy="selected-works-know-more-heading"
         level={3}
         label={knowMore.headline}
       />

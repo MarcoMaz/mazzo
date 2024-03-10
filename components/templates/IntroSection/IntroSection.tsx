@@ -50,7 +50,6 @@ const IntroSection: React.FC = () => {
         />
 
         <Heading
-          dataCy="hi-heading"
           level={1}
           label={headline}
           // className={heading}

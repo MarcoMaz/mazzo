@@ -7,11 +7,10 @@ import Card, { CardProps } from "./parts/Card/Card";
 import { useEffect, useRef, useState } from "react";
 
 interface CardCarouselProps {
-  dataCy: string;
   cards: CardProps[];
 }
 
-const CardCarousel: React.FC<CardCarouselProps> = ({ cards, dataCy }) => {
+const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -66,7 +65,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards, dataCy }) => {
 
   return (
     <>
-      <div data-cy={dataCy} className="card-carousel" ref={containerRef}>
+      <div className="card-carousel" ref={containerRef}>
         {cards.map(
           (
             { headline, subheadline, description, chips, CTA: { url, label } },
@@ -78,7 +77,6 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards, dataCy }) => {
               description={description}
               chips={chips}
               CTA={{ url, label }}
-              dataCy={headline}
               key={index}
             />
           )
@@ -86,7 +84,6 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards, dataCy }) => {
       </div>
       {/* <Dots
         dots={cards}
-        dataCy="Dots"
         className={styles.dotGroup}
         activeIndex={activeIndex}
         onClick={handleDotClick}
