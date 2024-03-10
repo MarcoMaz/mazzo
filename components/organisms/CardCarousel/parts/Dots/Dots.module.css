@@ -1,8 +1,0 @@
-.container {
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.container div:last-child {
-  margin-right: 0;
-}

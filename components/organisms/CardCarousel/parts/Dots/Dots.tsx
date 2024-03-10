@@ -1,4 +1,4 @@
-import styles from "./DotGroup.module.css";
+import "./DotGroup.css";
 
 import { CardProps } from "../Card/Card";
 
@@ -17,9 +17,9 @@ const Dots: React.FC<DotsProps> = ({
   activeIndex,
   onClick,
 }) => {
-  const combinedClassName = className
-    ? `${styles.container} ${className}`
-    : styles.container;
+  // const combinedClassName = className
+  //   ? `${styles.container} ${className}`
+  //   : styles.container;
 
   const handleClick = (index: number) => {
     if (onClick) {
@@ -28,11 +28,13 @@ const Dots: React.FC<DotsProps> = ({
   };
 
   return (
-    <div data-cy={dataCy} className={combinedClassName}>
+    <div data-cy={dataCy} className="dots">
       {dots.map((dot, index) => (
         <div
           key={index}
-          className={index === activeIndex ? "dotStyles.full" : "dotStyles.empty"}
+          className={
+            index === activeIndex ? "dotStyles.full" : "dotStyles.empty"
+          }
           onClick={() => handleClick(index)}
         />
       ))}

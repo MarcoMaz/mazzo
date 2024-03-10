@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./CardCarousel.module.css";
+import "./CardCarousel.css";
 
 import Card, { CardProps } from "./parts/Card/Card";
 // import Dots from "./parts/Dots/Dots";
@@ -66,7 +66,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards, dataCy }) => {
 
   return (
     <>
-      <div data-cy={dataCy} className={styles.container} ref={containerRef}>
+      <div data-cy={dataCy} className="card-carousel" ref={containerRef}>
         {cards.map(
           (
             { headline, subheadline, description, chips, CTA: { url, label } },

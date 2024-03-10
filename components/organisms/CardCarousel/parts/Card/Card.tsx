@@ -1,4 +1,4 @@
-import styles from "./Card.module.css";
+import "./Card.css";
 
 import ChipGroup from "../../../../molecules/ChipGroup/ChipGroup";
 import ExternalLink from "../../../../atoms/ExternalLink/ExternalLink";
@@ -26,12 +26,12 @@ const Card: React.FC<CardProps> = ({
   dataCy,
 }) => {
   return (
-    <div data-cy={dataCy} className={styles.container}>
-      <Heading level={3} label={headline}/>
-      <Heading level={4} label={subheadline}/>
-      <Paragraph text={description}/>
+    <div data-cy={dataCy} className="card">
+      <Heading level={3} label={headline} />
+      <Heading level={4} label={subheadline} />
+      <Paragraph text={description} />
       <ChipGroup chips={chips} />
-      <ExternalLink url={url} label={label}/>
+      <ExternalLink url={url} label={label} />
     </div>
   );
 };

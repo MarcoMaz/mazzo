@@ -1,0 +1,8 @@
+.dots {
+  justify-content: center;
+  margin: 2rem 0;
+
+  & div:last-child {
+    margin-right: 0;
+  }
+}
