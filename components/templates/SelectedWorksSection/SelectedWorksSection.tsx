@@ -29,10 +29,7 @@ const SelectedWorksSection = () => {
         label={headline}
         // className={heading}
       />
-      <Accordion
-        cards={cards}
-        // className={styles.accordion}
-      />
+      <Accordion cards={cards} />
       <CardCarousel cards={cards} />
       <Heading
         // className={ndaHeading}

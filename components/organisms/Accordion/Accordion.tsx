@@ -11,15 +11,10 @@ import React from "react";
 
 interface AccordionProps {
   cards: CardProps[];
-  className?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ cards, className }) => {
+const Accordion: React.FC<AccordionProps> = ({ cards }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // const combinedClassName = className
-  //   ? `${styles.container} ${className}`
-  //   : styles.container;
 
   const handleHeaderClick = (index: number) => {
     setActiveIndex(index);
@@ -35,9 +30,7 @@ const Accordion: React.FC<AccordionProps> = ({ cards, className }) => {
           <React.Fragment key={index}>
             {index !== activeIndex && (
               <AccordionHeader
-                className={index === activeIndex - 1 ? "borderReset" : ""}
                 headline={headline}
-                index={index}
                 onClick={() => handleHeaderClick(index)}
               />
             )}

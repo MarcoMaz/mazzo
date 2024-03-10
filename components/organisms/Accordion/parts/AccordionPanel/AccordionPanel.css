@@ -5,10 +5,23 @@
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 0 calc(1.5rem + 2px); /* 2px keeps in mind the a link's border bottom*/
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+  }
 }
 
-/* CLEAN UP DOWN HERE */
-.content {
+.accordion-panel__content {
   flex: 1;
 }
 
@@ -18,20 +31,6 @@
 
 .hide {
   display: none;
-}
-
-.heading {
-  font-size: 2rem;
-  margin-bottom: 0;
-  text-transform: none;
-}
-
-.subheading {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 1.5rem;
-  text-transform: none;
 }
 
 .dot {
