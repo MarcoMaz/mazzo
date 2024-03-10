@@ -61,6 +61,10 @@ button {
   border: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 h1 {
   font-size: 7rem;
   margin-bottom: 6rem;

@@ -1,5 +1,6 @@
-import Link from "next/link";
 import "./NavLink.css";
+
+import Link from "next/link";
 
 export interface NavLinkProps {
   url: string;

@@ -1,11 +1,9 @@
-.nav-link:nth-of-type(2) {
-  text-align: right;
-  width: 11rem;
-}
-
-.link {
+.nav-link {
   font-size: 2rem;
   font-weight: bold;
-  text-decoration: none;
   text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+  }
 }
