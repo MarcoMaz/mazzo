@@ -1,11 +1,10 @@
-.container {
+.navigation {
   color: var(--colorWhite);
   mix-blend-mode: difference;
   position: fixed;
   z-index: 999;
-}
 
-.container ul:last-child {
-  align-items: end;
+  & ul:last-child {
+    align-items: end;
+  }
 }
-

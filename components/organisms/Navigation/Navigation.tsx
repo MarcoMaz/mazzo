@@ -1,6 +1,6 @@
 import NavLink, { NavLinkProps } from "../../atoms/NavLink/NavLink";
 
-import styles from "./Navigation.module.css";
+import "./Navigation.css";
 
 interface NavigationProps {
   navigationData: NavLinkProps[];
@@ -18,8 +18,8 @@ const Navigation: React.FC<NavigationProps> = ({ navigationData }) => {
   const chunkedNavigation = chunkArray(navigationData, 2);
 
   return (
-    <nav className={styles.container}>
-      <ul className={styles.container}>
+    <nav className="navigation">
+      <ul>
         {navigationData.map(({ label, url }) => (
           <NavLink key={label} url={url} label={label} />
         ))}
