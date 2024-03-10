@@ -1,4 +1,4 @@
-import styles from "./Paragraph.module.css";
+import "./Paragraph.css";
 
 import BoldSpan from "../../atoms/BoldSpan/BoldSpan";
 import React from "react";
@@ -43,7 +43,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, boldify }) => {
 
   const boldText = generateBoldText(text, boldify || []);
 
-  return <p className={styles.container}>{boldText}</p>;
+  return <p className="paragraph">{boldText}</p>;
 };
 
 export default Paragraph;
