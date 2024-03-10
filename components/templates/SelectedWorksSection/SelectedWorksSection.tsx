@@ -1,7 +1,7 @@
 import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
-import CardGroup from "../../organisms/CardGroup/CardGroup";
+import CardCarousel from "../../organisms/CardCarousel/CardCarousel";
 import Accordion from "../../organisms/Accordion/Accordion";
 
 import styles from "./SelectedWorksSection.module.css";
@@ -35,7 +35,7 @@ const SelectedWorksSection = () => {
         cards={cards}
         className={styles.accordion}
       />
-      <CardGroup dataCy="selected-works-cards" cards={cards} />
+      <CardCarousel dataCy="selected-works-cards" cards={cards} />
       <Heading
         className={ndaHeading}
         dataCy="selected-works-nda-heading"

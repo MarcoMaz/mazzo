@@ -1,9 +1,9 @@
 import styles from "./Card.module.css";
 
-import ChipGroup from "../ChipGroup/ChipGroup";
-import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
-import Heading from "../../atoms/Heading/Heading";
-import Paragraph from "../Paragraph/Paragraph";
+import ChipGroup from "../../../../molecules/ChipGroup/ChipGroup";
+import ExternalLink from "../../../../atoms/ExternalLink/ExternalLink";
+import Heading from "../../../../atoms/Heading/Heading";
+import Paragraph from "../../../../molecules/Paragraph/Paragraph";
 
 export interface CardProps {
   headline: string;

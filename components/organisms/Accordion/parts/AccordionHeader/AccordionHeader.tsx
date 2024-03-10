@@ -1,4 +1,4 @@
-import Dot from "../../../../atoms/Dot/Dot";
+// import Dot from "../../../../atoms/Dot/Dot";
 import styles from "./AccordionHeader.module.css";
 import dotStyles from "../../../../atoms/Dot/Dot.module.css";
 
@@ -30,7 +30,10 @@ const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         type="button"
       >
         <span className={heading}>{headline}</span>
-        <Dot className={`${dot} ${dotStyles.empty}`} />
+        {/* 
+              THIS SHOULD BE "CIRCLE SELECTION"
+
+        <Dot className={`${dot} ${dotStyles.empty}`} /> */}
       </button>
     </h3>
   );

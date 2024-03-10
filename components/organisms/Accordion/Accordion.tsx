@@ -5,7 +5,7 @@ import styles from "./Accordion.module.css";
 import AccordionHeader from "./parts/AccordionHeader/AccordionHeader";
 import AccordionPanel from "./parts/AccordionPanel/AccordionPanel";
 
-import { CardProps } from "../../molecules/Card/Card";
+import { CardProps } from "../CardCarousel/parts/Card/Card";
 import { useState } from "react";
 import React from "react";
 

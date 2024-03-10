@@ -1,17 +1,17 @@
 "use client";
 
-import styles from "./CardGroup.module.css";
+import styles from "./CardCarousel.module.css";
 
-import Card, { CardProps } from "../../molecules/Card/Card";
-import Dots from "../../molecules/Dots/Dots";
+import Card, { CardProps } from "./parts/Card/Card";
+// import Dots from "./parts/Dots/Dots";
 import { useEffect, useRef, useState } from "react";
 
-interface CardGroupProps {
+interface CardCarouselProps {
   dataCy: string;
   cards: CardProps[];
 }
 
-const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
+const CardCarousel: React.FC<CardCarouselProps> = ({ cards, dataCy }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -84,15 +84,15 @@ const CardGroup: React.FC<CardGroupProps> = ({ cards, dataCy }) => {
           )
         )}
       </div>
-      <Dots
+      {/* <Dots
         dots={cards}
         dataCy="Dots"
         className={styles.dotGroup}
         activeIndex={activeIndex}
         onClick={handleDotClick}
-      />
+      /> */}
     </>
   );
 };
 
-export default CardGroup;
+export default CardCarousel;

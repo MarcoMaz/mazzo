@@ -2,12 +2,12 @@ import styles from "./AccordionPanel.module.css";
 import dotStyles from "../../../../atoms/Dot/Dot.module.css";
 
 import ChipGroup from "../../../../molecules/ChipGroup/ChipGroup";
-import Dot from "../../../../atoms/Dot/Dot";
+// import Dot from "../../../../atoms/Dot/Dot";
 import ExternalLink from "../../../../atoms/ExternalLink/ExternalLink";
 import Heading from "../../../../atoms/Heading/Heading";
 import Paragraph from "../../../../molecules/Paragraph/Paragraph";
 
-import { CardProps } from "../../../../molecules/Card/Card";
+import { CardProps } from "../../../CardCarousel/parts/Card/Card";
 
 interface AccordionPanelProps extends CardProps {
   dataCy: string;
@@ -41,7 +41,9 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
         <ChipGroup chips={chips} />
         <ExternalLink url={url} label={label} />
       </div>
-      <Dot className={`${dot} ${dotStyles.full}`} />
+      {/* 
+      THIS SHOULD BE "CIRCLE SELECTION"
+      <Dot className={`${dot} ${dotStyles.full}`} /> */}
     </div>
   );
 };
