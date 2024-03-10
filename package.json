@@ -24,5 +24,6 @@
   },
   "devDependencies": {
     "cypress": "^12.13.0"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
