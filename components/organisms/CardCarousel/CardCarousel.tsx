@@ -3,7 +3,7 @@
 import "./CardCarousel.css";
 
 import Card, { CardProps } from "./parts/Card/Card";
-// import Dots from "./parts/Dots/Dots";
+import Dots from "./parts/Dots/Dots";
 import { useEffect, useRef, useState } from "react";
 
 interface CardCarouselProps {
@@ -82,12 +82,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
           )
         )}
       </div>
-      {/* <Dots
-        dots={cards}
-        className={styles.dotGroup}
-        activeIndex={activeIndex}
-        onClick={handleDotClick}
-      /> */}
+      <Dots dots={cards} activeIndex={activeIndex} onClick={handleDotClick} />
     </>
   );
 };

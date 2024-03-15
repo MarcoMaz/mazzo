@@ -1,23 +1,20 @@
-import "./DotGroup.css";
+import "./Dots.css";
+
+import { Circle } from "react-feather";
 
 import { CardProps } from "../Card/Card";
 
 interface DotsProps {
-  dots: CardProps[];
-  className?: string;
   activeIndex?: number;
+  dots: CardProps[];
   onClick?: (index: number) => void;
 }
 
 const Dots: React.FC<DotsProps> = ({
-  dots,
-  className,
   activeIndex,
+  dots,
   onClick,
 }) => {
-  // const combinedClassName = className
-  //   ? `${styles.container} ${className}`
-  //   : styles.container;
 
   const handleClick = (index: number) => {
     if (onClick) {
@@ -27,37 +24,21 @@ const Dots: React.FC<DotsProps> = ({
 
   return (
     <div className="dots">
-      {dots.map((dot, index) => (
-        <div
-          key={index}
-          className={
-            index === activeIndex ? "dotStyles.full" : "dotStyles.empty"
-          }
-          onClick={() => handleClick(index)}
-        />
-      ))}
+      {dots.map((dot, index) => {
+        const dotClassName = `dot${index === activeIndex ? " -full" : ""}`;
+        return (
+          <div
+            key={index}
+            className={dotClassName}
+            onClick={() => handleClick(index)}
+          >
+            <Circle />
+          </div>
+        );
+      })}
     </div>
   );
 };
 
 export default Dots;
 
-/*
-DOT Legacy code
-
-.container {
-  border-radius: 50%;
-  height: 1rem;
-  margin-right: 1rem;
-  width: 1rem;
-}
-
-.full {
-  background-color: var(--colorBlack);
-}
-
-.empty {
-  border: calc(2 / 16 * 1rem) solid var(--colorBlack);
-}
-
-*/
