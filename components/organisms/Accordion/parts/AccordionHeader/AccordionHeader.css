@@ -15,9 +15,8 @@
       padding: 1rem 0;
     }
   }
-}
 
-/* CLEAN UP */
-.borderReset {
-  border-bottom: 0;
+  &.-border-reset {
+    border-bottom: 0;
+  }
 }
