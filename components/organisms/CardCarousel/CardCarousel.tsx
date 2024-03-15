@@ -1,16 +1,16 @@
 "use client";
 
+import React from "react";
 import "./CardCarousel.css";
 
-import Card, { CardProps } from "./parts/Card/Card";
-import Dots from "./parts/Dots/Dots";
+import Dots from "./Dots/Dots";
 import { useEffect, useRef, useState } from "react";
 
 interface CardCarouselProps {
-  cards: CardProps[];
+  children: React.ReactNode;
 }
 
-const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
+const CardCarousel: React.FC<CardCarouselProps> = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -66,23 +66,17 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ cards }) => {
   return (
     <>
       <div className="card-carousel" ref={containerRef}>
-        {cards.map(
-          (
-            { headline, subheadline, description, chips, CTA: { url, label } },
-            index
-          ) => (
-            <Card
-              headline={headline}
-              subheadline={subheadline}
-              description={description}
-              chips={chips}
-              CTA={{ url, label }}
-              key={index}
-            />
-          )
-        )}
+        {React.Children.map(children, (child, index) => (
+          <div key={index} className="card">
+            {child}
+          </div>
+        ))}
       </div>
-      <Dots dots={cards} activeIndex={activeIndex} onClick={handleDotClick} />
+      <Dots
+        dots={React.Children.toArray(children)}
+        activeIndex={activeIndex}
+        onClick={handleDotClick}
+      />
     </>
   );
 };

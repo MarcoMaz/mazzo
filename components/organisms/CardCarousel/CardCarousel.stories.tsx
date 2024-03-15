@@ -12,47 +12,35 @@ type Story = StoryObj<typeof CardCarousel>;
 
 export const CardCarouselStory: Story = {
   name: "CardCarousel",
-  render: (props) => <CardCarousel {...props} />,
+  render: () => (
+    <CardCarousel>
+      <>
+        <h1>Heading 1</h1>
+        <h2>SubHeading 1</h2>
+        <p>This is some text</p>
+      </>
+      <>
+        <h1>Heading 2</h1>
+        <h2>SubHeading 2</h2>
+        <p>This is some text</p>
+      </>
+      <>
+        <h1>Heading 3</h1>
+        <h2>SubHeading 3</h2>
+        <p>This is some text</p>
+      </>
+      <>
+        <h1>Heading 4</h1>
+        <h2>SubHeading 4</h2>
+        <p>This is some text</p>
+      </>
+    </CardCarousel>
+  ),
   argTypes: {
-    cards: {
+    children: {
       control: {
         type: "object",
       },
     },
   },
-  args: {
-    cards: [
-      {
-        headline: "Sample Title",
-        subheadline: "Sample Subtitle",
-        description: "Sample Description",
-        chips: ["Chip 1", "Chip 2"],
-        CTA: {
-          url: "#",
-          label: "Read More",
-        },
-      },
-      {
-        headline: "Sample Title 2",
-        subheadline: "Sample Subtitle",
-        description: "Sample Description",
-        chips: ["Chip 1", "Chip 2"],
-        CTA: {
-          url: "#",
-          label: "Read More",
-        },
-      },
-      {
-        headline: "Sample Title 3",
-        subheadline: "Sample Subtitle",
-        description: "Sample Description",
-        chips: ["Chip 1", "Chip 2"],
-        CTA: {
-          url: "#",
-          label: "Read More",
-        },
-      },
-    ],
-  },
-
 };

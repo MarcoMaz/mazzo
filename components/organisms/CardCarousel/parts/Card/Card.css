@@ -1,6 +1,0 @@
-.card {
-  border-right: .25rem solid var(--colorBlack);
-  min-width: 20rem;
-  padding: 2rem;
-  scroll-snap-align: start;
-}
