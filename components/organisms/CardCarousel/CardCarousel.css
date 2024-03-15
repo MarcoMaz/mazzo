@@ -1,21 +1,9 @@
 .card-carousel {
   display: flex;
-  margin-bottom: 2rem;
-  min-height: 20rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-}
 
-/* CLEAN UP DOWN HERE */
-
-.container div:last-child {
-  border-right: 0;
-}
-
-/* Tablet and Desktop */
-@media (min-width: 701px) {
-  .container,
-  .dotGroup {
-    display: none;
+  div:last-child {
+    border-right: 0;
   }
 }
