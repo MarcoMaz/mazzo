@@ -1,17 +1,9 @@
-@media (max-width: 700px) {
-  .accordion {
-    display: none;
-  }
-}
+.accordion {
+  display: block;
+  grid-column: 4 / span 6;
 
-@media (min-width: 701px) {
-  .accordion {
-    display: block;
-    grid-column: 4 / span 6;
-
-    svg {
-      height: 2rem;
-      width: 2rem;
-    }
+  svg {
+    height: 2rem;
+    width: 2rem;
   }
 }
