@@ -20,6 +20,8 @@ const Accordion: React.FC<AccordionProps> = ({ cards }) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
+  console.log("activeIndex", activeIndex);
+
   return (
     <div className="accordion">
       {cards.map(
@@ -31,7 +33,6 @@ const Accordion: React.FC<AccordionProps> = ({ cards }) => {
             {index !== activeIndex && (
               <AccordionHeader
                 headline={headline}
-                isActive={index === activeIndex}
                 onClick={() => handleToggle(index)}
               />
             )}

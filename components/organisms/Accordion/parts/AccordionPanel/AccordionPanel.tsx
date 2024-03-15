@@ -7,8 +7,11 @@ import Paragraph from "../../../../molecules/Paragraph/Paragraph";
 
 import { CardProps } from "../../../CardCarousel/parts/Card/Card";
 
+import { Circle } from 'react-feather';
+
 interface AccordionPanelProps extends CardProps {
   buttonId: string;
+  onClick?: () => void;
 }
 
 const AccordionPanel: React.FC<AccordionPanelProps> = ({
@@ -28,7 +31,7 @@ const AccordionPanel: React.FC<AccordionPanelProps> = ({
         <ChipGroup chips={chips} />
         <ExternalLink url={url} label={label} />
       </div>
-      {/* THIS SHOULD BE "CIRCLE SELECTION" --> <Dot className={`${dot} ${dotStyles.full}`} /> */}
+      <Circle />
     </div>
   );
 };
