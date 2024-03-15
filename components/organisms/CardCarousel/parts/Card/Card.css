@@ -1,23 +1,6 @@
 .card {
   border-right: .25rem solid var(--colorBlack);
-  display: grid;
-  grid-template-rows: 4rem 3rem 6rem 3rem 2rem;
   min-width: 20rem;
   padding: 2rem;
   scroll-snap-align: start;
-}
-
-/* CLEAN UP DOWN HERE */
-.container a {
-  width: fit-content;
-}
-
-.container h3 {
-  text-transform: none;
-}
-
-.container h4 {
-  font-style: italic;
-  font-weight: normal;
-  text-transform: none;
 }

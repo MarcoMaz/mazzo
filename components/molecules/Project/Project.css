@@ -1,0 +1,14 @@
+.project {
+  display: grid;
+  grid-template-rows: 4rem 3rem 6rem 3rem 2rem;
+
+  h3 {
+    text-transform: none;
+  }
+
+  h4 {
+    font-style: italic;
+    text-transform: none;
+    font-weight: normal;
+  }
+}
