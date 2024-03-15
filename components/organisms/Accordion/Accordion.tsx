@@ -14,10 +14,10 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ cards }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
-  const handleHeaderClick = (index: number) => {
-    setActiveIndex(index);
+  const handleToggle = (index: number) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
   return (
@@ -31,7 +31,8 @@ const Accordion: React.FC<AccordionProps> = ({ cards }) => {
             {index !== activeIndex && (
               <AccordionHeader
                 headline={headline}
-                onClick={() => handleHeaderClick(index)}
+                isActive={index === activeIndex}
+                onClick={() => handleToggle(index)}
               />
             )}
             {index === activeIndex && (
@@ -42,6 +43,7 @@ const Accordion: React.FC<AccordionProps> = ({ cards }) => {
                 description={description}
                 chips={chips}
                 CTA={{ url, label }}
+                onClick={() => handleToggle(index)}
               />
             )}
           </React.Fragment>

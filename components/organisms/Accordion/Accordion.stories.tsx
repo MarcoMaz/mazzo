@@ -32,6 +32,26 @@ export const AccordionStory: Story = {
           label: "Read More",
         },
       },
+      {
+        headline: "Sample Title 2",
+        subheadline: "Sample Subtitle",
+        description: "Sample Description",
+        chips: ["Chip 1", "Chip 2"],
+        CTA: {
+          url: "#",
+          label: "Read More",
+        },
+      },
+      {
+        headline: "Sample Title 3",
+        subheadline: "Sample Subtitle",
+        description: "Sample Description",
+        chips: ["Chip 1", "Chip 2"],
+        CTA: {
+          url: "#",
+          label: "Read More",
+        },
+      },
     ],
   },
 };
