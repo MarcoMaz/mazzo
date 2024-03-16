@@ -20,10 +20,6 @@
   ],
   "hi": {
     "headline": "Hi!",
-    "image": {
-      "url": "/assets/images/mm.jpeg",
-      "alt": "Picture of Marco Mazzai"
-    },
     "paragraphs": [
       {
         "text": "I'm Marco, a certified Accessibility and Front End Developer.",
