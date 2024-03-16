@@ -5,15 +5,19 @@ import "./Accordion.css";
 import AccordionHeader from "./parts/AccordionHeader/AccordionHeader";
 import AccordionPanel from "./parts/AccordionPanel/AccordionPanel";
 
-import { CardProps } from "../CardCarousel/parts/Card/Card";
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 
-interface AccordionProps {
-  cards: CardProps[];
+interface AccordionItem {
+  headline: string;
+  children: React.ReactNode;
+  buttonId: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ cards }) => {
+interface AccordionProps {
+  items: AccordionItem[];
+}
+
+const Accordion: React.FC<AccordionProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const handleToggle = (index: number) => {
@@ -22,33 +26,20 @@ const Accordion: React.FC<AccordionProps> = ({ cards }) => {
 
   return (
     <div className="accordion">
-      {cards.map(
-        (
-          { headline, subheadline, description, chips, CTA: { url, label } },
-          index
-        ) => (
-          <React.Fragment key={index}>
-            {activeIndex !== null && index !== activeIndex && (
-              <AccordionHeader
-                hasBorderReset={index === activeIndex - 1}
-                headline={headline}
-                onClick={() => handleToggle(index)}
-              />
-            )}
-            {index === activeIndex && (
-              <AccordionPanel
-                buttonId={`accordion-${index}-id`}
-                headline={headline}
-                subheadline={subheadline}
-                description={description}
-                chips={chips}
-                CTA={{ url, label }}
-                onClick={() => handleToggle(index)}
-              />
-            )}
-          </React.Fragment>
-        )
-      )}
+      {items.map(({ headline, children, buttonId }, index) => (
+        <React.Fragment key={index}>
+          {activeIndex !== null && index !== activeIndex && (
+            <AccordionHeader
+              hasBorderReset={index === activeIndex - 1}
+              headline={headline}
+              onClick={() => handleToggle(index)}
+            />
+          )}
+          {index === activeIndex && (
+            <AccordionPanel buttonId={buttonId}>{children}</AccordionPanel>
+          )}
+        </React.Fragment>
+      ))}
     </div>
   );
 };

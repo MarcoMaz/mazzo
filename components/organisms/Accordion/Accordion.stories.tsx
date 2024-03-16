@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Accordion from "./Accordion";
+import AccordionPanel from "./parts/AccordionPanel/AccordionPanel";
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
@@ -14,43 +15,28 @@ export const AccordionStory: Story = {
   name: "Accordion",
   render: (props) => <Accordion {...props} />,
   argTypes: {
-    cards: {
+    items: {
       control: {
         type: "object",
       },
     },
   },
   args: {
-    cards: [
+    items: [
       {
-        headline: "Sample Title",
-        subheadline: "Sample Subtitle",
-        description: "Sample Description",
-        chips: ["Chip 1", "Chip 2"],
-        CTA: {
-          url: "#",
-          label: "Read More",
-        },
+        buttonId: "1",
+        headline: "Sample Title 1",
+        children: <>Sample Content 1</>,
       },
       {
+        buttonId: "2",
         headline: "Sample Title 2",
-        subheadline: "Sample Subtitle",
-        description: "Sample Description",
-        chips: ["Chip 1", "Chip 2"],
-        CTA: {
-          url: "#",
-          label: "Read More",
-        },
+        children: <>Sample Content 2</>,
       },
       {
+        buttonId: "3",
         headline: "Sample Title 3",
-        subheadline: "Sample Subtitle",
-        description: "Sample Description",
-        chips: ["Chip 1", "Chip 2"],
-        CTA: {
-          url: "#",
-          label: "Read More",
-        },
+        children: <>Sample Content 3</>,
       },
     ],
   },

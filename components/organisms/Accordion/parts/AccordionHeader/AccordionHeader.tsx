@@ -2,15 +2,15 @@ import "./AccordionHeader.css";
 
 import { Circle } from "react-feather";
 
-interface AccordionHeaderProps {
-  headline: string;
+export interface AccordionHeaderProps {
   hasBorderReset: boolean;
+  headline: string;
   onClick?: () => void;
 }
 
 const AccordionHeader: React.FC<AccordionHeaderProps> = ({
-  headline,
   hasBorderReset,
+  headline,
   onClick,
 }) => {
   const accordionHeaderClassName = `accordion-header ${
