@@ -2,7 +2,7 @@ import "./AccordionPanel.css";
 
 import { Circle } from "react-feather";
 
-interface AccordionPanelProps {
+export interface AccordionPanelProps {
   buttonId: string;
   children: React.ReactNode;
 }

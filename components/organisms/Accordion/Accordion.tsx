@@ -2,16 +2,16 @@
 
 import "./Accordion.css";
 
-import AccordionHeader from "./parts/AccordionHeader/AccordionHeader";
-import AccordionPanel from "./parts/AccordionPanel/AccordionPanel";
+import AccordionHeader, {
+  AccordionHeaderProps,
+} from "./parts/AccordionHeader/AccordionHeader";
+import AccordionPanel, {
+  AccordionPanelProps,
+} from "./parts/AccordionPanel/AccordionPanel";
 
 import React, { useState } from "react";
 
-interface AccordionItem {
-  headline: string;
-  children: React.ReactNode;
-  buttonId: string;
-}
+interface AccordionItem extends AccordionHeaderProps, AccordionPanelProps {}
 
 interface AccordionProps {
   items: AccordionItem[];
