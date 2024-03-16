@@ -2,67 +2,69 @@
   background-color: var(--colorBlack);
   color: var(--colorWhite);
   padding-top: 3rem;
-}
 
-/* CLEAN UP DOWN HERE */
+  h2 {
+    grid-column: span 2;
+  }
 
-.headline {
-  grid-column: span 2;
-}
-
-.link {
-  align-items: center;
-  background: var(--colorWhite);
-  border-radius: 50%;
-  color: var(--colorBlack);
-  display: flex;
-  font-size: 3.5rem;
-  grid-column: 2 / span 3;
-  height: 16rem;
-  justify-content: center;
-  position: relative;
-  text-decoration: none;
-  top: calc(-90 / 16 * 1rem);
-  width: 16rem;
+  a {
+    align-items: center;
+    background: var(--colorWhite);
+    border-radius: 50%;
+    color: var(--colorBlack);
+    display: flex;
+    font-size: 3.5rem;
+    grid-column: 2 / span 3;
+    height: 16rem;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    top: calc(-90 / 16 * 1rem);
+    width: 16rem;
+  }
 }
 
 @media (min-width: 630px) {
-  .link {
+  .footer-section a {
     margin-top: 5rem;
   }
 }
 
 @media (min-width: 701px) {
-  .container {
+  .footer-section {
     padding-top: 6rem;
-  }
 
-  .headline,
-  .link {
-    font-size: 7rem;
-  }
+    h2,
+    a {
+      font-size: 7rem;
+    }
 
-  .headline {
-    grid-column: 4 / span 4;
-  }
+    h2 {
+      grid-column: 4 / span 4;
+    }
 
-  .link {
-    grid-column: 6 / span 4;
-    height: 30rem;
-    margin-top: 0;
-    width: 30rem;
-  }
+    a {
+      grid-column: 6 / span 4;
+      height: 30rem;
+      margin-top: 0;
+      width: 30rem;
 
-  .link::after {
-    animation: underline-animation 2s linear infinite;
-    background-color: var(--colorBlack);
-    bottom: calc(170 / 16 * 1rem);
-    content: "";
-    height: calc(10 / 16 * 1rem);
-    left: calc(99 / 16 * 1rem);
-    position: absolute;
-    transition: width 0.5s ease-in-out;
-    width: 0;
+      &::after {
+        animation: underline-animation 2s linear infinite;
+        background-color: var(--colorBlack);
+        bottom: calc(170 / 16 * 1rem);
+        content: "";
+        height: calc(10 / 16 * 1rem);
+        left: calc(99 / 16 * 1rem);
+        position: absolute;
+        transition: width 0.5s ease-in-out;
+        width: 0;    
+      }
+
+      &:hover::after {
+        animation: none;
+      }    
+    }
   }
 
   @keyframes underline-animation {
@@ -73,14 +75,10 @@
       width: 285px;
     }
   }
-
-  .link:hover::after {
-    animation: none;
-  }
 }
 
 @media (min-width: 1201px) {
-  .container {
+  .footer-section {
     height: 100vh;
   }
 }

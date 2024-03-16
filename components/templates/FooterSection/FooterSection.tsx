@@ -13,16 +13,8 @@ const FooterSection = () => {
 
   return (
     <footer className="footer-section" id="contact">
-      <Heading
-        level={2}
-        label={headline}
-        // className={styles.headline}
-      />
-      <ExternalLink
-        url={url}
-        label={label}
-        // className={styles.link}
-      />
+      <Heading level={2} label={headline} />
+      <ExternalLink url={url} label={label} />
     </footer>
   );
 };
