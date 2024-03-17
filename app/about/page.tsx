@@ -2,9 +2,8 @@ import SelectedWorksSection from "../../components/templates/SelectedWorksSectio
 
 export default function Page() {
   return (
-    <h1>
-      Hello, About page!
+    <div className="container">
       <SelectedWorksSection />
-    </h1>
+    </div>
   );
 }

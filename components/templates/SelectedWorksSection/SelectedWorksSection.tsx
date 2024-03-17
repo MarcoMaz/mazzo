@@ -11,38 +11,17 @@ import React from "react";
 import Image from "next/image";
 
 const SelectedWorksSection = () => {
-  // const {
-  //   container,
-  //   heading,
-  //   ndaHeading,
-  //   ndaImages,
-  //   knowMoreHeading,
-  //   knowMoreCTA,
-  // } = styles;
-
   const { headline, cards, nda, knowMore } = data.selectedWorks;
 
   return (
-    <section className="selected-works-section" id="selected-works">
-      <Heading
-        level={2}
-        label={headline}
-        // className={heading}
-      />
-      <Accordion cards={cards} />
-      <CardCarousel cards={cards} />
-      <Heading
-        // className={ndaHeading}
-        level={3}
-        label={nda.headline}
-      />
-      <div
-        data-cy={"selected-works-nda-images"}
-        // className={ndaImages}
-      >
+    <div className="selected-works-section" id="selected-works">
+      <Heading level={2} label={headline} />
+      {/* <Accordion cards={cards} />
+      <CardCarousel cards={cards} /> */}
+      <Heading level={3} label={nda.headline} />
+      <div data-cy={"selected-works-nda-images"}>
         {nda.images.map(({ src, alt }) => (
           <Image
-            // className={styles.image}
             data-cy={src}
             src={src}
             alt={alt}
@@ -52,18 +31,14 @@ const SelectedWorksSection = () => {
           />
         ))}
       </div>
-      <Heading
-        // className={knowMoreHeading}
-        level={3}
-        label={knowMore.headline}
-      />
+      <Heading level={3} label={knowMore.headline} />
       {knowMore.CTA.map(({ url, label }, index) => (
         <React.Fragment key={index}>
           <ExternalLink url={url} label={label} />
           {index !== knowMore.CTA.length - 1 && <span> or </span>}
         </React.Fragment>
       ))}
-    </section>
+    </div>
   );
 };
 
