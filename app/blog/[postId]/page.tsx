@@ -1,3 +1,5 @@
+import "./page.css";
+
 import getFormattedDate from "@/lib/getFormattedDate";
 import { getSortedPostsData, getPostData, getPrevNextPosts } from "@/lib/posts";
 import { notFound } from "next/navigation";
@@ -39,29 +41,23 @@ export default async function Post({ params }: { params: { postId: string } }) {
   const pubDate = getFormattedDate(date);
   const { prevPost, nextPost } = getPrevNextPosts(postId as string);
 
-  console.log(nextPost);
-
   return (
     <main>
-      <h1>{title}</h1>
-      <p>{pubDate}</p>
-      <article>
-        <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        <div>
-          {prevPost && (
-            <Link href={`/blog/${prevPost.id}`}>
-              Previous Post: {prevPost.title}
-            </Link>
-          )}
-        </div>
-        <div>
-          {nextPost && (
-            <Link href={`/blog/${nextPost.id}`}>
-              Next Post: {nextPost.title}
-            </Link>
-          )}
-        </div>
-      </article>
+      <section className="post">
+        <h1>{title}</h1>
+        <span>{pubDate}</span>
+        <article>
+          <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </article>
+        {prevPost && (
+          <Link href={`/blog/${prevPost.id}`}>
+            Previous Post: {prevPost.title}
+          </Link>
+        )}
+        {nextPost && (
+          <Link href={`/blog/${nextPost.id}`}>Next Post: {nextPost.title}</Link>
+        )}
+      </section>
     </main>
   );
 }
