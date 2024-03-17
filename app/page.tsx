@@ -1,5 +1,5 @@
 import IntroSection from "../components/templates/IntroSection/IntroSection";
-import PostsLists from "../components/templates/PostsSection/PostsSection";
+import PostsSection from "../components/templates/PostsSection/PostsSection";
 
 export default function Home() {
 
@@ -7,7 +7,9 @@ export default function Home() {
     <div className="container">
       <IntroSection />
       <main>
-        <PostsLists />
+        <section>
+          <PostsSection />
+        </section>
       </main>
     </div>
   );

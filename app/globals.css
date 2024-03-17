@@ -87,7 +87,6 @@ h4 {
 
 /* Mobile */
 header,
-section,
 footer {
   column-gap: 1.5rem;
   display: grid;
@@ -97,7 +96,6 @@ footer {
 /* Mobile */
 @media (max-width: 700px) {
   header,
-  section,
   footer {
     grid-template-columns: repeat(4, 1fr);
 
@@ -114,7 +112,6 @@ footer {
 /* Tablet and Desktop */
 @media (min-width: 701px) {
   header,
-  section,
   footer {
     grid-template-columns: repeat(12, 1fr);
     min-height: 100vh;

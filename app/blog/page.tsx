@@ -1,11 +1,11 @@
-import PostsLists from "../../components/templates/PostsSection/PostsSection";
+import PostsSection from "../../components/templates/PostsSection/PostsSection";
 
 const Posts = () => {
 
   return (
-    <div>
-      <PostsLists />
-    </div>
+    <section>
+      <PostsSection />
+    </section>
   );
 };
 

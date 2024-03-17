@@ -2,7 +2,7 @@ import Link from "next/link";
 import getFormattedDate from "../../../lib/getFormattedDate";
 import React from "react";
 
-interface Blogpost {
+export interface Blogpost {
   id: string;
   title: string;
   date: string;
@@ -18,11 +18,10 @@ const PostsLink: React.FC<PostsLinkProps> = ({ blogPost }) => {
 
   return (
     <li>
-      <strong>
+      <h3>
         <Link href={`/blog/${id}`}>{title}</Link>
-      </strong>
-      <br />
-      <p>{formattedDate}</p>
+      </h3>
+      <span>{formattedDate}</span>
     </li>
   );
 };

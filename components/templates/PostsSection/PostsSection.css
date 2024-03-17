@@ -1,0 +1,14 @@
+.posts-section {
+  background: var(--colorPrimary);
+  padding: 3rem;
+
+  li {
+    margin-bottom: 3rem;
+  }
+
+  a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+}
