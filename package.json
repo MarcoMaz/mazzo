@@ -17,7 +17,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "gray-matter": "^4.0.3",
-    "next": "13.4.3",
+    "next": "^14.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "^14.0.3",
@@ -25,18 +25,19 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.17",
-    "@storybook/addon-interactions": "^7.6.17",
-    "@storybook/addon-links": "^7.6.17",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.17",
-    "@storybook/nextjs": "^7.6.17",
-    "@storybook/react": "^7.6.17",
-    "@storybook/test": "^7.6.17",
+    "@storybook/addon-a11y": "^8.2.8",
+    "@storybook/addon-essentials": "^8.2.8",
+    "@storybook/addon-interactions": "^8.2.8",
+    "@storybook/addon-links": "^8.2.8",
+    "@storybook/addon-onboarding": "^8.2.8",
+    "@storybook/blocks": "^8.2.8",
+    "@storybook/nextjs": "^8.2.8",
+    "@storybook/react": "^8.2.8",
+    "@storybook/test": "^8.2.8",
     "cypress": "^12.13.0",
     "eslint-plugin-storybook": "^0.8.0",
     "react-feather": "^2.0.10",
-    "storybook": "^7.6.17"
+    "storybook": "^8.2.8"
   },
   "packageManager": "yarn@4.1.1"
 }
