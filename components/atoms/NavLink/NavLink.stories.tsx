@@ -13,7 +13,7 @@ type Story = StoryObj<typeof NavLink>;
 
 export const NavLinkStory: Story = {
   name: "NavLink",
-  render: (props) => <NavLink {...props} />,
+  render: (props) => <ul><NavLink {...props} /></ul>,
   argTypes: {
     label: {
       control: "text",

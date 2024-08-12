@@ -4,6 +4,10 @@
   position: fixed;
   z-index: 999;
 
+  .nav-link {
+    position: fixed;
+  }
+
   .nav-link:nth-of-type(1) {
     top: 2rem;
     left: 2rem;
