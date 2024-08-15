@@ -17,7 +17,7 @@ export const ChipGroupStory: Story = {
   argTypes: {
     chips: {
       control: {
-        type: "array",
+        type: "object",
       },
     },
   },
