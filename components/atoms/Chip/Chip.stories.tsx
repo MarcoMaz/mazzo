@@ -4,16 +4,6 @@ import Chip from "./Chip";
 
 const meta: Meta<typeof Chip> = {
   component: Chip,
-  tags: ["autodocs"],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Chip>;
-
-export const ChipStory: Story = {
-  name: "Chip",
-  render: (props) => <Chip {...props}/>,
   argTypes: {
     label: {
       control: "text",
@@ -22,4 +12,14 @@ export const ChipStory: Story = {
   args: {
     label: "Sample Text",
   },
+  render: (props) => <Chip {...props} />,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Chip>;
+
+export const ChipStory: Story = {
+  name: "Default",
 };

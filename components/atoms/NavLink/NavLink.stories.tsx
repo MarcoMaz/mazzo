@@ -4,16 +4,6 @@ import NavLink from "./NavLink";
 
 const meta: Meta<typeof NavLink> = {
   component: NavLink,
-  tags: ["autodocs"],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof NavLink>;
-
-export const NavLinkStory: Story = {
-  name: "NavLink",
-  render: (props) => <ul><NavLink {...props} /></ul>,
   argTypes: {
     label: {
       control: "text",
@@ -26,4 +16,14 @@ export const NavLinkStory: Story = {
     label: "Sample Text",
     url: "#",
   },
+  render: (props) => <ul><NavLink {...props} /></ul>,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof NavLink>;
+
+export const NavLinkStory: Story = {
+  name: "Default",
 };

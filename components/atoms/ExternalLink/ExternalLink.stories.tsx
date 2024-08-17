@@ -4,16 +4,6 @@ import ExternalLink from "./ExternalLink";
 
 const meta: Meta<typeof ExternalLink> = {
   component: ExternalLink,
-  tags: ["autodocs"],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof ExternalLink>;
-
-export const ExternalLinkStory: Story = {
-  name: "ExternalLink",
-  render: (props) => <ExternalLink {...props} />,
   argTypes: {
     url: {
       control: "text",
@@ -26,4 +16,14 @@ export const ExternalLinkStory: Story = {
     url: "#",
     label: "Sample Text",
   },
+  render: (props) => <ExternalLink {...props} />,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ExternalLink>;
+
+export const ExternalLinkStory: Story = {
+  name: "Default",
 };
