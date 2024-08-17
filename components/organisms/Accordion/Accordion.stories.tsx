@@ -3,7 +3,6 @@ import Accordion from "./Accordion";
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
-  tags: ["autodocs"],
 };
 
 export default meta;

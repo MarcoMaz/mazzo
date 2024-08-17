@@ -13,7 +13,6 @@ const meta: Meta<typeof BoldSpan> = {
     children: "Sample Text",
   },
   render: (props) => <BoldSpan {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

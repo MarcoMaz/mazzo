@@ -17,7 +17,6 @@ const meta: Meta<typeof Paragraph> = {
     },
   },
   render: (props) => <Paragraph {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

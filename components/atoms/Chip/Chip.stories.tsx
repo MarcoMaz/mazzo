@@ -13,7 +13,6 @@ const meta: Meta<typeof Chip> = {
     label: "Sample Text",
   },
   render: (props) => <Chip {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

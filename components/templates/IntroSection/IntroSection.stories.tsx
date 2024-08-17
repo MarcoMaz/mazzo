@@ -4,7 +4,6 @@ import IntroSection from "./IntroSection";
 
 const meta: Meta<typeof IntroSection> = {
   component: IntroSection,
-  tags: ["autodocs"],
 };
 
 export default meta;

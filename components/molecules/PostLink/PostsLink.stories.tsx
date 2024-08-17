@@ -19,7 +19,6 @@ const meta: Meta<typeof PostsLink> = {
     },
   },
   render: (props) => <PostsLink {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

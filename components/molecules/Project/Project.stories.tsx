@@ -22,7 +22,6 @@ const meta: Meta<typeof Project> = {
     },
   },
   render: (props) => <Project {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

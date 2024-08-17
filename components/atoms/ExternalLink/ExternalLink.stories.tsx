@@ -17,7 +17,6 @@ const meta: Meta<typeof ExternalLink> = {
     label: "Sample Text",
   },
   render: (props) => <ExternalLink {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

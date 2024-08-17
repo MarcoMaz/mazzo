@@ -3,7 +3,6 @@ import CardCarousel from "./CardCarousel";
 
 const meta: Meta<typeof CardCarousel> = {
   component: CardCarousel,
-  tags: ["autodocs"],
 };
 
 export default meta;

@@ -35,7 +35,6 @@ const meta: Meta<typeof ChipGroup> = {
     ],
   },
   render: (props) => <ChipGroup {...props} />,
-  tags: ["autodocs"],
 };
 
 export default meta;

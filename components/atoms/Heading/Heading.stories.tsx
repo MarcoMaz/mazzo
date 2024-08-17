@@ -17,7 +17,6 @@ const meta: Meta<typeof Heading> = {
     label: "Sample Text",
     level: 1
   },
-  tags: ["autodocs"],
 };
 
 export default meta;

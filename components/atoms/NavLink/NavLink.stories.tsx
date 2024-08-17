@@ -17,7 +17,6 @@ const meta: Meta<typeof NavLink> = {
     url: "#",
   },
   render: (props) => <ul><NavLink {...props} /></ul>,
-  tags: ["autodocs"],
 };
 
 export default meta;

@@ -4,7 +4,6 @@ import FooterSection from "./FooterSection";
 
 const meta: Meta<typeof FooterSection> = {
   component: FooterSection,
-  tags: ["autodocs"],
 };
 
 export default meta;

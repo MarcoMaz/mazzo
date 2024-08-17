@@ -3,7 +3,6 @@ import Navigation from "./Navigation";
 
 const meta: Meta<typeof Navigation> = {
   component: Navigation,
-  tags: ["autodocs"],
 };
 
 export default meta;
