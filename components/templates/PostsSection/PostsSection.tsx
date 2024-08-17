@@ -18,7 +18,9 @@ const PostsSection = () => {
       <h2>{title}</h2>
       <ul>
         {posts.map((post) => (
-          <PostLink key={post.id} blogPost={post} />
+          <li key={post.id}>
+            <PostLink  blogPost={post} />
+          </li>
         ))}
       </ul>
       {activePath === "/" ? <Link href={"/blog"}>All Blog Posts</Link> : null}

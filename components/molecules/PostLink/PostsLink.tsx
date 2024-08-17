@@ -17,12 +17,12 @@ const PostsLink: React.FC<PostsLinkProps> = ({ blogPost }) => {
   const formattedDate = getFormattedDate(date);
 
   return (
-    <li>
+    <>
       <h3>
         <Link href={`/blog/${id}`}>{title}</Link>
       </h3>
       <span>{formattedDate}</span>
-    </li>
+    </>
   );
 };
 

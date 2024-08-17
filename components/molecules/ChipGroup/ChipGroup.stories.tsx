@@ -4,16 +4,6 @@ import ChipGroup from "./ChipGroup";
 
 const meta: Meta<typeof ChipGroup> = {
   component: ChipGroup,
-  tags: ["autodocs"],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof ChipGroup>;
-
-export const ChipGroupStory: Story = {
-  name: "ChipGroup",
-  render: (props) => <ChipGroup {...props} />,
   argTypes: {
     chips: {
       control: {
@@ -44,4 +34,14 @@ export const ChipGroupStory: Story = {
       "Text",
     ],
   },
+  render: (props) => <ChipGroup {...props} />,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ChipGroup>;
+
+export const ChipGroupStory: Story = {
+  name: "Default",
 };

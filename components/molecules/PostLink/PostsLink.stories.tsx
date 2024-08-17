@@ -4,16 +4,6 @@ import PostsLink from "./PostsLink";
 
 const meta: Meta<typeof PostsLink> = {
   component: PostsLink,
-  tags: ["autodocs"],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof PostsLink>;
-
-export const PostsLinkStory: Story = {
-  name: "PostsLink",
-  render: (props) => <PostsLink {...props} />,
   argTypes: {
     blogPost: {
       control: {
@@ -28,4 +18,14 @@ export const PostsLinkStory: Story = {
       date: "2022-01-01",
     },
   },
+  render: (props) => <PostsLink {...props} />,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof PostsLink>;
+
+export const PostsLinkStory: Story = {
+  name: "Default",
 };

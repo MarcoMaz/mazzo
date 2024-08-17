@@ -4,16 +4,6 @@ import Project from "./Project";
 
 const meta: Meta<typeof Project> = {
   component: Project,
-  tags: ["autodocs"],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Project>;
-
-export const ProjectStory: Story = {
-  name: "Project",
-  render: (props) => <Project {...props} />,
   argTypes: {
     headline: {
       control: {
@@ -31,4 +21,14 @@ export const ProjectStory: Story = {
       label: "Read More",
     },
   },
+  render: (props) => <Project {...props} />,
+  tags: ["autodocs"],
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Project>;
+
+export const ProjectStory: Story = {
+  name: "Default",
 };
