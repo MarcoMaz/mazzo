@@ -1,10 +1,10 @@
-import "./Project.css";
+import './Project.css';
 
-import Heading from "../../../components/atoms/Heading/Heading";
-import Paragraph from "../Paragraph/Paragraph";
-import ChipGroup from "../ChipGroup/ChipGroup";
-import ExternalLink from "../../../components/atoms/ExternalLink/ExternalLink";
-import { FunctionComponent } from "react";
+import Heading from '../../../components/atoms/Heading/Heading';
+import Paragraph from '../Paragraph/Paragraph';
+import ChipGroup from '../ChipGroup/ChipGroup';
+import ExternalLink from '../../../components/atoms/ExternalLink/ExternalLink';
+import { FunctionComponent } from 'react';
 
 interface ProjectProps {
   headline: string;
@@ -25,12 +25,12 @@ const Project: FunctionComponent<ProjectProps> = ({
   CTA: { url, label },
 }) => {
   return (
-    <div className="project">
+    <div className='project'>
       <Heading level={3} label={headline} />
-      <Heading level={4} label={subheadline} />
+      <Heading id='project-summary' level={4} label={subheadline} />
       <Paragraph text={description} />
       <ChipGroup chips={chips} />
-      <ExternalLink url={url} label={label} />
+      <ExternalLink ariaLabelledBy='project-summary' url={url} label={label} />
     </div>
   );
 };

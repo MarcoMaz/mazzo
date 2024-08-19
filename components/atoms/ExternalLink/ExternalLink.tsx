@@ -1,13 +1,23 @@
-import "./ExternalLink.css";
+import './ExternalLink.css';
 
 interface ExternalLinkProps {
-  url: string;
+  ariaLabelledBy?: string;
   label: string;
+  url: string;
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({ url, label }) => {
+const ExternalLink: React.FC<ExternalLinkProps> = ({
+  ariaLabelledBy,
+  label,
+  url,
+}) => {
   return (
-    <a href={url} target="_blank" className="external-link">
+    <a
+      aria-labelledby={ariaLabelledBy}
+      href={url}
+      target='_blank'
+      className='external-link'
+    >
       {label}
     </a>
   );
