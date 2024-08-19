@@ -1,29 +1,29 @@
-import { headers } from "next/headers";
+import { headers } from 'next/headers';
 
-import "./PostsSection.css";
+import './PostsSection.css';
 
-import { getSortedPostsData } from "../../../lib/posts";
-import PostLink from "../../molecules/PostLink/PostsLink";
-import Link from "next/link";
+import { getSortedPostsData } from '../../../lib/posts';
+import PostLink from '../../molecules/PostLink/PostsLink';
+import Link from 'next/link';
 
 const PostsSection = () => {
   const headersList = headers();
-  const activePath = headersList.get("x-invoke-path");
-  const title = activePath === "/blog" ? "Blog" : "Latest Posts";
+  const activePath = headersList.get('x-invoke-path');
+  const title = activePath === '/blog' ? 'Blog' : 'Latest Posts';
 
   const posts = getSortedPostsData();
 
   return (
-    <div className="posts-section">
+    <div className='posts-section'>
       <h2>{title}</h2>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <PostLink  blogPost={post} />
+            <PostLink blogPost={post} />
           </li>
         ))}
       </ul>
-      {activePath === "/" ? <Link href={"/blog"}>All Blog Posts</Link> : null}
+      {activePath === '/' ? <Link href={'/blog'}>All Blog Posts</Link> : null}
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import getFormattedDate from "../../../lib/getFormattedDate";
-import React from "react";
+import Link from 'next/link';
+import getFormattedDate from '../../../lib/getFormattedDate';
+import React from 'react';
 
 export interface Blogpost {
   id: string;
@@ -21,7 +21,7 @@ const PostsLink: React.FC<PostsLinkProps> = ({ blogPost }) => {
       <h3>
         <Link href={`/blog/${id}`}>{title}</Link>
       </h3>
-      <span>{formattedDate}</span>
+      <time dateTime={date}>{formattedDate}</time>
     </>
   );
 };
