@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import './PostsSection.css';
 
 import { getSortedPostsData } from '../../../lib/posts';
-import PostLink from '../../molecules/PostLink/PostsLink';
+import PostLink from '../../molecules/PostsLink/PostsLink';
 import Link from 'next/link';
 
 const PostsSection = () => {
