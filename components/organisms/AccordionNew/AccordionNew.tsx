@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './AccordionNew.css';
 
 interface AccordionItemNewProps {
@@ -11,6 +11,24 @@ const AccordionNewItem: React.FC<
   AccordionItemNewProps & { isActive: boolean; onClick: () => void }
 > = ({ id, title, content, isActive, onClick }) => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (isActive && contentRef.current) {
+      contentRef.current.focus(); // Focus on the panel when it becomes active
+      if (headerRef.current) {
+        headerRef.current.tabIndex = -1; // Make the header not focusable when the panel is active
+      }
+    } else if (headerRef.current) {
+      headerRef.current.tabIndex = 0; // Restore the focusability of the header when the panel is closed
+    }
+  }, [isActive]);
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      onClick();
+    }
+  };
 
   return (
     <div className='accordion-section'>
@@ -21,6 +39,9 @@ const AccordionNewItem: React.FC<
           aria-expanded={isActive ? 'true' : 'false'}
           aria-controls={`sect${id}-panel`}
           onClick={onClick}
+          onKeyPress={handleKeyPress}
+          ref={headerRef}
+          tabIndex={0} // Set the default tabIndex to 0 (focusable)
         >
           {title}
         </button>
@@ -43,13 +64,13 @@ interface AccordionNewProps {
 }
 
 const AccordionNew: React.FC<AccordionNewProps> = ({ items }) => {
-  // Initialize the first item as active
   const [activeItemId, setActiveItemId] = useState<string>(items[0]?.id || '');
 
   const handleAccordionClick = (id: string) => {
-    // Ensure that an element is always open
     if (id !== activeItemId) {
       setActiveItemId(id);
+    } else {
+      setActiveItemId(''); // Close the panel if it's already open
     }
   };
 
