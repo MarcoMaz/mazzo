@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './AccordionNew.css';
 
 interface AccordionItemNewProps {
@@ -11,12 +11,6 @@ const AccordionNewItem: React.FC<
   AccordionItemNewProps & { isActive: boolean; onClick: () => void }
 > = ({ id, title, content, isActive, onClick }) => {
   const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (isActive && contentRef.current) {
-      contentRef.current.focus();
-    }
-  }, [isActive]);
 
   return (
     <div className='accordion-section'>
