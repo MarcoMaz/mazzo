@@ -23,18 +23,18 @@ export const AccordionNewStory: Story = {
     items: [
       {
         id: "1",
-        title: "Sample Title 1",
-        content: "content1",
+        headline: "Sample Title 1",
+        children: <p>Sample Content 1</p>,
       },
       {
         id: "2",
-        title: "Sample Title 2",
-        content: "content2",
+        headline: "Sample Title 2",
+        children: <p>Sample Content 2</p>,
       },
       {
         id: "3",
-        title: "Sample Title 3",
-        content: "content3",
+        headline: "Sample Title 3",
+        children: <p>Sample Content 3</p>,
       },
     ],
   },

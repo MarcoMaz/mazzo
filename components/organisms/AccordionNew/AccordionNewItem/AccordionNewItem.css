@@ -15,7 +15,7 @@
     }
 
     .accordionNewItem__dot svg {
-      fill: black;
+      fill: var(--colorBlack);
     }
   }
 
