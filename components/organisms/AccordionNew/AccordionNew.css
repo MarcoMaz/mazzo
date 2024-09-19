@@ -1,5 +1,5 @@
 .accordionNewItem {
-  border-bottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
+  border-bottom: var(--borderBottom);
   position: relative;
 
   &.-active {

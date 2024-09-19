@@ -1,6 +1,6 @@
 import './AccordionNew.css';
 
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { Circle } from 'react-feather';
 
@@ -15,7 +15,7 @@ interface AccordionItemNewProps {
 
 const AccordionNewItem: React.FC<AccordionItemNewProps> = ({
   content,
-  hasBorderReset,
+  hasBorderReset = false,
   id,
   isActive,
   title,
@@ -27,19 +27,20 @@ const AccordionNewItem: React.FC<AccordionItemNewProps> = ({
     >
       <h3 className='accordionNewItem__header'>
         <button
-          id={`accordionNewItem__button${id}`}
+          id={`accordionNewItem__button-${id}`}
           className='accordionNewItem__button'
           type='button'
-          aria-expanded={isActive ? 'true' : 'false'}
-          aria-controls={`accordionNewItem__panel${id}`}
+          aria-expanded={isActive}
+          aria-controls={`accordionNewItem__panel-${id}`}
           onClick={onClick}
         >
           {title}
         </button>
       </h3>
       <div
-        id={`accordionNewItem__panel${id}`}
+        id={`accordionNewItem__panel-${id}`}
         className='accordionNewItem__panel'
+        aria-hidden={!isActive}
       >
         <p>{content}</p>
       </div>
