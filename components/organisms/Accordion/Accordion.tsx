@@ -1,44 +1,37 @@
-"use client";
+'use client';
 
-import "./Accordion.css";
+import AccordionItem, {
+  AccordionItemProps,
+} from './AccordionItem/AccordionItem';
 
-import AccordionHeader, {
-  AccordionHeaderProps,
-} from "./parts/AccordionHeader/AccordionHeader";
-import AccordionPanel, {
-  AccordionPanelProps,
-} from "./parts/AccordionPanel/AccordionPanel";
-
-import React, { useState } from "react";
-
-interface AccordionItem extends AccordionHeaderProps, AccordionPanelProps {}
+import React, { useState } from 'react';
 
 interface AccordionProps {
-  items: AccordionItem[];
+  items: AccordionItemProps[];
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeItemId, setActiveItemId] = useState<string>(items[0]?.id || '');
 
-  const handleToggle = (index: number) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  const handleAccordionClick = (id: string) => {
+    if (id !== activeItemId) {
+      setActiveItemId(id);
+    }
   };
 
   return (
-    <div className="accordion">
-      {items.map(({ headline, children, buttonId }, index) => (
-        <React.Fragment key={index}>
-          {activeIndex !== null && index !== activeIndex && (
-            <AccordionHeader
-              hasBorderReset={index === activeIndex - 1}
-              headline={headline}
-              onClick={() => handleToggle(index)}
-            />
-          )}
-          {index === activeIndex && (
-            <AccordionPanel buttonId={buttonId}>{children}</AccordionPanel>
-          )}
-        </React.Fragment>
+    <div className='accordion'>
+      {items.map(({ id, headline, children }) => (
+        <AccordionItem
+          key={id}
+          id={id}
+          headline={headline}
+          hasBorderReset={+id === +activeItemId - 1}
+          isActive={id === activeItemId}
+          onClick={() => handleAccordionClick(id)}
+        >
+          {children}
+        </AccordionItem>
       ))}
     </div>
   );

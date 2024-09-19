@@ -1,4 +1,4 @@
-.accordionNewItem {
+.accordionItem {
   border-bottom: var(--borderBottom);
   position: relative;
 
@@ -6,15 +6,15 @@
     border-top: 5px solid var(--colorBlack);
     border-bottom: 5px solid var(--colorBlack);
 
-    .accordionNewItem__button {
+    .accordionItem__button {
       cursor: auto;
     }
 
-    .accordionNewItem__panel {
+    .accordionItem__panel {
       display: flex;
     }
 
-    .accordionNewItem__dot svg {
+    .accordionItem__dot svg {
       fill: var(--colorBlack);
     }
   }
@@ -24,12 +24,12 @@
   }
 }
 
-.accordionNewItem__header {
+.accordionItem__header {
   font-size: unset;
   margin-bottom: 0;
 }
 
-.accordionNewItem__button {
+.accordionItem__button {
   cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
@@ -39,12 +39,12 @@
   width: 100%;
 }
 
-.accordionNewItem__panel {
+.accordionItem__panel {
   display: none;
   padding: 0 4rem 1rem 0;
 }
 
-.accordionNewItem__dot {
+.accordionItem__dot {
   height: 2rem;
   position: absolute;
   right: 1rem;

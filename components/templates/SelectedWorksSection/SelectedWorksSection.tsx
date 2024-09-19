@@ -2,7 +2,7 @@ import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
 import CardCarousel from "../../organisms/CardCarousel/CardCarousel";
-import AccordionNew from "../../organisms/AccordionNew/AccordionNew";
+import AccordionNew from "../../organisms/Accordion/Accordion";
 
 import "./SelectedWorksSection.css";
 import ExternalLink from "@/components/atoms/ExternalLink/ExternalLink";

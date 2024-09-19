@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Accordion>;
 
 export const AccordionStory: Story = {
   name: "Accordion",
-  render: (props) => <Accordion {...props} />,
+  render: (props) => <Accordion {...props}/>,
   argTypes: {
     items: {
       control: {
@@ -22,22 +22,19 @@ export const AccordionStory: Story = {
   args: {
     items: [
       {
-        buttonId: "accordion-item-1",
-        hasBorderReset: true,
+        id: "1",
         headline: "Sample Title 1",
-        children: <>Sample Content 1</>,
+        children: <p>Sample Content 1</p>,
       },
       {
-        buttonId: "accordion-item-2",
-        hasBorderReset: false,
+        id: "2",
         headline: "Sample Title 2",
-        children: <>Sample Content 2</>,
+        children: <p>Sample Content 2</p>,
       },
       {
-        buttonId: "accordion-item-3",
-        hasBorderReset: false,
+        id: "3",
         headline: "Sample Title 3",
-        children: <>Sample Content 3</>,
+        children: <p>Sample Content 3</p>,
       },
     ],
   },
