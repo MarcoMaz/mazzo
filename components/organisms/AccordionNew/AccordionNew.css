@@ -1,21 +1,17 @@
 .accordionNewItem {
   border-bottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
-  display: grid;
-  grid-template-areas:
-    'header header dot'
-    'footer footer dot';
-  padding: 1.5rem 1rem 1.5rem 0;
+  position: relative;
 
   &.-active {
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+    border-top: 5px solid var(--colorBlack);
+    border-bottom: 5px solid var(--colorBlack);
 
     .accordionNewItem__button {
-      margin-bottom: 1.5rem;
+      cursor: auto;
     }
 
     .accordionNewItem__panel {
-      display: block;
+      display: flex;
     }
 
     .accordionNewItem__dot svg {
@@ -29,27 +25,30 @@
 }
 
 .accordionNewItem__header {
-  grid-area: header;
+  font-size: unset;
   margin-bottom: 0;
 }
 
 .accordionNewItem__button {
+  cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 0;
+  padding: 1.5rem 0;
+  text-align: left;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .accordionNewItem__panel {
   display: none;
-  grid-area: footer;
+  padding: 0 4rem 1rem 0;
 }
 
 .accordionNewItem__dot {
-  grid-area: dot;
-  align-self: center;
-  justify-self: end;
   height: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: calc(50% - 1rem);
   width: 2rem;
 
   svg {
