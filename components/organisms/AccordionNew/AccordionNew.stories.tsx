@@ -22,17 +22,17 @@ export const AccordionNewStory: Story = {
   args: {
     items: [
       {
-        id: "accordion-item-1",
+        id: "1",
         title: "Sample Title 1",
         content: "content1",
       },
       {
-        id: "accordion-item-2",
+        id: "2",
         title: "Sample Title 2",
         content: "content2",
       },
       {
-        id: "accordion-item-3",
+        id: "3",
         title: "Sample Title 3",
         content: "content3",
       },

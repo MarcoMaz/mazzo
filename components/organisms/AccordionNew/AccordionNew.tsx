@@ -1,40 +1,50 @@
-import React, { useState, useEffect, useRef } from 'react';
 import './AccordionNew.css';
 
+import React, { useState } from 'react';
+
+import { Circle } from 'react-feather';
+
 interface AccordionItemNewProps {
-  id: string;
-  title: string;
   content: string;
+  hasBorderReset?: boolean;
+  id: string;
+  isActive: boolean;
+  title: string;
+  onClick: () => void;
 }
 
-const AccordionNewItem: React.FC<
-  AccordionItemNewProps & { isActive: boolean; onClick: () => void }
-> = ({ id, title, content, isActive, onClick }) => {
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      onClick();
-    }
-  };
-
+const AccordionNewItem: React.FC<AccordionItemNewProps> = ({
+  content,
+  hasBorderReset,
+  id,
+  isActive,
+  title,
+  onClick,
+}) => {
   return (
-    <div className='accordion-section'>
-      <h3 className={`accordion-header ${isActive ? '' : 'collapsed'}`}>
+    <div
+      className={`accordionNewItem ${isActive ? '-active' : ''} ${hasBorderReset ? '-border-reset' : ''}`}
+    >
+      <h3 className='accordionNewItem__header'>
         <button
-          id={`sect${id}-button`}
+          id={`accordionNewItem__button${id}`}
+          className='accordionNewItem__button'
           type='button'
           aria-expanded={isActive ? 'true' : 'false'}
-          aria-controls={`sect${id}-panel`}
+          aria-controls={`accordionNewItem__panel${id}`}
           onClick={onClick}
         >
           {title}
         </button>
       </h3>
       <div
-        id={`sect${id}-panel`}
-        className={`tab-panel ${isActive ? 'active' : ''}`}
-        style={{ display: isActive ? 'block' : 'none' }}
+        id={`accordionNewItem__panel${id}`}
+        className='accordionNewItem__panel'
       >
         <p>{content}</p>
+      </div>
+      <div className='accordionNewItem__dot'>
+        <Circle />
       </div>
     </div>
   );
@@ -50,21 +60,20 @@ const AccordionNew: React.FC<AccordionNewProps> = ({ items }) => {
   const handleAccordionClick = (id: string) => {
     if (id !== activeItemId) {
       setActiveItemId(id);
-    } else {
-      setActiveItemId(''); // Close the panel if it's already open
     }
   };
 
   return (
-    <div id='accordion'>
-      {items.map((item) => (
+    <div className='accordionNew'>
+      {items.map(({ id, title, content }) => (
         <AccordionNewItem
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          content={item.content}
-          isActive={item.id === activeItemId}
-          onClick={() => handleAccordionClick(item.id)}
+          key={id}
+          id={id}
+          title={title}
+          content={content}
+          hasBorderReset={+id === +activeItemId - 1}
+          isActive={id === activeItemId}
+          onClick={() => handleAccordionClick(id)}
         />
       ))}
     </div>
