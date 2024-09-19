@@ -1,7 +1,7 @@
 import './ExternalLink.css';
 
 interface ExternalLinkProps {
-  ariaLabelledBy?: string;
+  ariaLabelledBy?: string | undefined;
   label: string;
   url: string;
 }

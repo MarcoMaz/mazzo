@@ -1,20 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import ExternalLink from "./ExternalLink";
+import ExternalLink from './ExternalLink';
 
 const meta: Meta<typeof ExternalLink> = {
   component: ExternalLink,
   argTypes: {
-    url: {
-      control: "text",
+    ariaLabelledBy: {
+      control: 'text',
     },
     label: {
-      control: "text",
+      control: 'text',
+    },
+    url: {
+      control: 'text',
     },
   },
   args: {
-    url: "#",
-    label: "Sample Text",
+    ariaLabelledBy: undefined,
+    label: 'Sample Text',
+    url: '#',
   },
   render: (props) => <ExternalLink {...props} />,
 };
@@ -24,5 +28,5 @@ export default meta;
 type Story = StoryObj<typeof ExternalLink>;
 
 export const ExternalLinkStory: Story = {
-  name: "Default",
+  name: 'Default',
 };
