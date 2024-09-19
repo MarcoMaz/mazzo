@@ -3,7 +3,7 @@ import './Heading.css';
 import React from 'react';
 
 interface HeadingProps {
-  id?: string;
+  id?: string | undefined;
   label: string;
   level: number;
 }

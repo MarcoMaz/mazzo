@@ -5,6 +5,9 @@ import Heading from "./Heading";
 const meta: Meta<typeof Heading> = {
   component: Heading,
   argTypes: {
+    id: {
+      control: "text",
+    },
     label: {
       control: "text",
     },
@@ -14,6 +17,7 @@ const meta: Meta<typeof Heading> = {
     },
   },
   args: {
+    id: undefined,
     label: "Sample Text",
     level: 1
   },
