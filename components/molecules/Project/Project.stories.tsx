@@ -10,6 +10,33 @@ const meta: Meta<typeof Project> = {
         type: 'text',
       },
     },
+    subheadline: {
+      control: {
+        type: 'text',
+      },
+    },
+    description: {
+      control: {
+        type: 'text',
+      },
+    },
+    chips: {
+      control: {
+        type: 'object',
+      },
+    },
+    CTA: {
+      url: {
+        control: {
+          type: 'text',
+        },
+      },
+      label: {
+        control: {
+          type: 'text',
+        },
+      },
+    },
   },
   args: {
     headline: 'Project Headline',
