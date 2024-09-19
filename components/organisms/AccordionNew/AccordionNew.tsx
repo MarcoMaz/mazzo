@@ -1,24 +1,26 @@
+'use client';
+
 import './AccordionNew.css';
 
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Circle } from 'react-feather';
 
 interface AccordionItemNewProps {
-  content: string;
+  children: React.ReactNode;
   hasBorderReset?: boolean;
+  headline: string;
   id: string;
-  isActive: boolean;
-  title: string;
-  onClick: () => void;
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
 const AccordionNewItem: React.FC<AccordionItemNewProps> = ({
-  content,
+  children,
   hasBorderReset = false,
+  headline,
   id,
   isActive,
-  title,
   onClick,
 }) => {
   return (
@@ -34,7 +36,7 @@ const AccordionNewItem: React.FC<AccordionItemNewProps> = ({
           aria-controls={`accordionNewItem__panel-${id}`}
           onClick={onClick}
         >
-          {title}
+          {headline}
         </button>
       </h3>
       <div
@@ -42,7 +44,7 @@ const AccordionNewItem: React.FC<AccordionItemNewProps> = ({
         className='accordionNewItem__panel'
         aria-hidden={!isActive}
       >
-        <p>{content}</p>
+        {children}
       </div>
       <div className='accordionNewItem__dot'>
         <Circle />
@@ -66,16 +68,17 @@ const AccordionNew: React.FC<AccordionNewProps> = ({ items }) => {
 
   return (
     <div className='accordionNew'>
-      {items.map(({ id, title, content }) => (
+      {items.map(({ id, headline, children }) => (
         <AccordionNewItem
           key={id}
           id={id}
-          title={title}
-          content={content}
+          headline={headline}
           hasBorderReset={+id === +activeItemId - 1}
           isActive={id === activeItemId}
           onClick={() => handleAccordionClick(id)}
-        />
+        >
+          {children}
+        </AccordionNewItem>
       ))}
     </div>
   );

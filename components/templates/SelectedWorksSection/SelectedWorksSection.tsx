@@ -2,7 +2,7 @@ import data from "../../../public/assets/content/content.json";
 
 import Heading from "../../atoms/Heading/Heading";
 import CardCarousel from "../../organisms/CardCarousel/CardCarousel";
-import Accordion from "../../organisms/Accordion/Accordion";
+import AccordionNew from "../../organisms/AccordionNew/AccordionNew";
 
 import "./SelectedWorksSection.css";
 import ExternalLink from "@/components/atoms/ExternalLink/ExternalLink";
@@ -16,22 +16,22 @@ const SelectedWorksSection = () => {
   return (
     <div className="selected-works-section" id="selected-works">
       <Heading level={2} label={headline} />
-      <Accordion
+      <AccordionNew
         items={[
           {
-            buttonId: "accordion-item-1",
+            id: "accordion-item-1",
             hasBorderReset: true,
             headline: "Sample Title 1",
             children: <>Sample Content 1</>,
           },
           {
-            buttonId: "accordion-item-2",
+            id: "accordion-item-2",
             hasBorderReset: false,
             headline: "Sample Title 2",
             children: <>Sample Content 2</>,
           },
           {
-            buttonId: "accordion-item-3",
+            id: "accordion-item-3",
             hasBorderReset: false,
             headline: "Sample Title 3",
             children: <>Sample Content 3</>,
