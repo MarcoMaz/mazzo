@@ -1,21 +1,16 @@
-import "./Dots.css";
+import './Dots.css';
 
-import { Circle } from "react-feather";
+import { Circle } from 'react-feather';
 
-import { CardProps } from "../Card/Card";
+import { CardCarouselProps } from '../CardCarousel';
 
 interface DotsProps {
   activeIndex?: number;
-  dots: CardProps[];
+  dots: CardCarouselProps[];
   onClick?: (index: number) => void;
 }
 
-const Dots: React.FC<DotsProps> = ({
-  activeIndex,
-  dots,
-  onClick,
-}) => {
-
+const Dots: React.FC<DotsProps> = ({ activeIndex, dots, onClick }) => {
   const handleClick = (index: number) => {
     if (onClick) {
       onClick(index);
@@ -23,9 +18,9 @@ const Dots: React.FC<DotsProps> = ({
   };
 
   return (
-    <div className="dots">
+    <div className='dots'>
       {dots.map((dot, index) => {
-        const dotClassName = `dot${index === activeIndex ? " -full" : ""}`;
+        const dotClassName = `dot${index === activeIndex ? ' -full' : ''}`;
         return (
           <div
             key={index}
@@ -41,4 +36,3 @@ const Dots: React.FC<DotsProps> = ({
 };
 
 export default Dots;
-

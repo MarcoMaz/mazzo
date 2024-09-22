@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
 import "./CardCarousel.css";
 
-import Dots from "./Dots/Dots";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-interface CardCarouselProps {
+import Dots from "./Dots/Dots";
+
+export interface CardCarouselProps {
   children: React.ReactNode;
 }
 

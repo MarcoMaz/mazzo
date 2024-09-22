@@ -1,6 +1,6 @@
-import { Circle } from 'react-feather';
-
 import './AccordionItem.css';
+
+import { Circle } from 'react-feather';
 
 export interface AccordionItemProps {
   children: React.ReactNode;

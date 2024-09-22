@@ -1,6 +1,6 @@
-import NavLink, { NavLinkProps } from "../../atoms/NavLink/NavLink";
-
 import "./Navigation.css";
+
+import NavLink, { NavLinkProps } from "../../atoms/NavLink/NavLink";
 
 interface NavigationProps {
   navLinks: NavLinkProps[];
