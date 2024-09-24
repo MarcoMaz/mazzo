@@ -1,6 +1,6 @@
-import "./NewCarousel.css";
+import './NewCarousel.css';
 
-import { Circle } from 'react-feather';
+import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 
 interface NewCarouselNavigationProps {
   items: NewCarouselItemProps[];
@@ -27,12 +27,12 @@ const NewCarouselControls = () => {
     <ul className='controls'>
       <li>
         <button type='button' className='btn-prev'>
-          Left
+          <ChevronLeft />
         </button>
       </li>
       <li>
         <button type='button' className='btn-next'>
-          Right
+          <ChevronRight />
         </button>
       </li>
     </ul>
@@ -45,7 +45,11 @@ interface NewCarouselItemProps {
 }
 
 const NewCarouselItem: React.FC<NewCarouselItemProps> = ({ id, children }) => {
-  return <li className="card" key={id}>{children}</li>;
+  return (
+    <li className='card' key={id}>
+      {children}
+    </li>
+  );
 };
 
 interface NewCarouselProps {

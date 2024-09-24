@@ -44,6 +44,16 @@
   display: inline-flex;
   justify-content: space-between;
   width: 100%;
+
+  li {
+    background-color: white;
+    height: 1.5rem;
+
+    button {
+      cursor: pointer;
+      height: inherit;
+    }
+  }
 }
 
 .slidenav {
