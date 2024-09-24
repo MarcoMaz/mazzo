@@ -1,5 +1,7 @@
 import "./NewCarousel.css";
 
+import { Circle } from 'react-feather';
+
 interface NewCarouselNavigationProps {
   items: NewCarouselItemProps[];
 }
@@ -12,7 +14,7 @@ const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
       {items.map((_, index) => (
         <li key={index}>
           <button data-slide={index} type='button'>
-            {index + 1}
+            <Circle />
           </button>
         </li>
       ))}
