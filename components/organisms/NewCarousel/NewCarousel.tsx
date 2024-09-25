@@ -1,19 +1,26 @@
+import { useEffect, useRef, useState } from 'react';
 import './NewCarousel.css';
 
 import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 
 interface NewCarouselNavigationProps {
   items: NewCarouselItemProps[];
+  activeIndex: number; // Pass the activeIndex
 }
 
 const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
   items,
+  activeIndex,
 }) => {
   return (
     <ul className='slidenav'>
       {items.map((_, index) => (
         <li key={index}>
-          <button data-slide={index} type='button'>
+          <button
+            data-slide={index}
+            className={index === activeIndex ? '-full' : ''}
+            type='button'
+          >
             <Circle />
           </button>
         </li>
@@ -57,9 +64,38 @@ interface NewCarouselProps {
 }
 
 const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const container = containerRef.current;
+      if (container) {
+        const scrollLeft = container.scrollLeft;
+        const itemWidth = container.scrollWidth / items.length; // Calculate the width of each item
+
+        // Calculate the index of the item at the leftmost position
+        const newIndex = Math.round(scrollLeft / itemWidth);
+        setActiveIndex(newIndex);
+        console.log('Active Index:', newIndex); // Log the active index
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [items.length]);
+
   return (
     <section className='carousel' aria-label='Recent news'>
-      <ul className='cards'>
+      <ul className='cards' ref={containerRef}>
         {items.map(({ id, children }) => (
           <NewCarouselItem id={id} key={id}>
             {children}
@@ -67,7 +103,7 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         ))}
       </ul>
       <NewCarouselControls />
-      <NewCarouselNavigation items={items} />
+      <NewCarouselNavigation items={items} activeIndex={activeIndex} />
     </section>
   );
 };
