@@ -6,11 +6,15 @@ import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 interface NewCarouselNavigationProps {
   items: NewCarouselItemProps[];
   activeIndex: number; // Pass the activeIndex
+  setActiveIndex: (index: number) => void;
+  scrollToIndex: (index: number) => void;
 }
 
 const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
   items,
   activeIndex,
+  setActiveIndex,
+  scrollToIndex,
 }) => {
   return (
     <ul className='slidenav'>
@@ -20,6 +24,16 @@ const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
             data-slide={index}
             className={index === activeIndex ? '-full' : undefined}
             type='button'
+            onClick={() => {
+              setActiveIndex(index);
+              scrollToIndex(index);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setActiveIndex(index);
+                scrollToIndex(index);
+              }
+            }}
           >
             <Circle />
           </button>
@@ -75,18 +89,31 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const container = containerRef.current;
-      if (container) {
-        const scrollLeft = container.scrollLeft;
-        const itemWidth = container.scrollWidth / items.length; // Calculate the width of each item
+  const scrollToIndex = (index: number) => {
+    const container = containerRef.current;
+    if (container) {
+      const itemWidth = container.scrollWidth / items.length; // Calculate the width of each item
+      container.scrollTo({
+        left: index * itemWidth,
+        behavior: 'smooth',
+      });
+    }
+  };
 
-        // Calculate the index of the item at the leftmost position
-        const newIndex = Math.round(scrollLeft / itemWidth);
-        setActiveIndex(newIndex);
-      }
-    };
+  const handleScroll = () => {
+    const container = containerRef.current;
+    if (container) {
+      const scrollLeft = container.scrollLeft;
+      const itemWidth = container.scrollWidth / items.length; // Calculate the width of each item
+
+      // Calculate the index of the item at the leftmost position
+      const newIndex = Math.round(scrollLeft / itemWidth);
+      setActiveIndex(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
 
     const container = containerRef.current;
     if (container) {
@@ -98,7 +125,7 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         container.removeEventListener('scroll', handleScroll);
       }
     };
-  }, [items.length]);
+  });
 
   const handleNext = () => {
     const container = containerRef.current;
@@ -147,7 +174,12 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         ))}
       </ul>
       <NewCarouselControls onNext={handleNext} onPrev={handlePrev} />
-      <NewCarouselNavigation items={items} activeIndex={activeIndex} />
+      <NewCarouselNavigation
+        items={items}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        scrollToIndex={scrollToIndex}
+      />
     </section>
   );
 };
