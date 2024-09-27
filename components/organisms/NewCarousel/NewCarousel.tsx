@@ -56,12 +56,22 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
   return (
     <ul className='controls'>
       <li>
-        <button type='button' className='btn-prev' onClick={onPrev} aria-label='Previous item'>
+        <button
+          type='button'
+          className='btn-prev'
+          onClick={onPrev}
+          aria-label='Previous item'
+        >
           <ChevronLeft role='img' />
         </button>
       </li>
       <li>
-        <button type='button' className='btn-next' onClick={onNext} aria-label='Next item'>
+        <button
+          type='button'
+          className='btn-next'
+          onClick={onNext}
+          aria-label='Next item'
+        >
           <ChevronRight />
         </button>
       </li>
@@ -89,6 +99,19 @@ interface NewCarouselProps {
 const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLUListElement>(null);
+  const [liveText, setLiveText] = useState('');
+
+  useEffect(() => {
+    // Clear the liveText immediately when user interaction begins
+    setLiveText('');
+
+    const timeoutId = setTimeout(() => {
+      setLiveText(`Item ${activeIndex + 1} of ${items.length}`);
+    }, 300); // Adjust the delay to ensure it waits before announcing (e.g., 300ms)
+
+    // Cleanup timeout if the component re-renders before the timeout finishes
+    return () => clearTimeout(timeoutId);
+  }, [activeIndex, items.length]);
 
   const scrollToIndex = (index: number) => {
     const container = containerRef.current;
@@ -180,6 +203,11 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         scrollToIndex={scrollToIndex}
+      />
+      <div
+        aria-live='polite'
+        aria-atomic='true'
+        aria-label={liveText}
       />
     </section>
   );
