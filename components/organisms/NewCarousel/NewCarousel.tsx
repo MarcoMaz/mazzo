@@ -5,7 +5,7 @@ import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 
 interface NewCarouselNavigationProps {
   items: NewCarouselItemProps[];
-  activeIndex: number; // Pass the activeIndex
+  activeIndex: number;
   setActiveIndex: (index: number) => void;
   scrollToIndex: (index: number) => void;
 }
@@ -102,21 +102,19 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
   const [liveText, setLiveText] = useState('');
 
   useEffect(() => {
-    // Clear the liveText immediately when user interaction begins
     setLiveText('');
 
     const timeoutId = setTimeout(() => {
       setLiveText(`Item ${activeIndex + 1} of ${items.length}`);
-    }, 300); // Adjust the delay to ensure it waits before announcing (e.g., 300ms)
+    }, 300);
 
-    // Cleanup timeout if the component re-renders before the timeout finishes
     return () => clearTimeout(timeoutId);
   }, [activeIndex, items.length]);
 
   const scrollToIndex = (index: number) => {
     const container = containerRef.current;
     if (container) {
-      const itemWidth = container.scrollWidth / items.length; // Calculate the width of each item
+      const itemWidth = container.scrollWidth / items.length;
       container.scrollTo({
         left: index * itemWidth,
         behavior: 'smooth',
@@ -128,9 +126,8 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
     const container = containerRef.current;
     if (container) {
       const scrollLeft = container.scrollLeft;
-      const itemWidth = container.scrollWidth / items.length; // Calculate the width of each item
+      const itemWidth = container.scrollWidth / items.length;
 
-      // Calculate the index of the item at the leftmost position
       const newIndex = Math.round(scrollLeft / itemWidth);
       setActiveIndex(newIndex);
     }
@@ -163,17 +160,16 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         behavior: 'smooth',
       });
 
-      // Update the activeIndex after a short delay to allow scrolling to complete
       setTimeout(() => {
         setActiveIndex(newIndex);
-      }, 500); // Adjust the timeout duration based on your scroll animation duration
+      }, 500);
     }
   };
 
   const handlePrev = () => {
     const container = containerRef.current;
     if (container) {
-      const newIndex = Math.max(activeIndex - 1, 0); // Calculate new index
+      const newIndex = Math.max(activeIndex - 1, 0);
       const itemWidth = container.scrollWidth / items.length;
 
       container.scrollTo({
@@ -181,10 +177,9 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         behavior: 'smooth',
       });
 
-      // Update the activeIndex after a short delay to allow scrolling to complete
       setTimeout(() => {
         setActiveIndex(newIndex);
-      }, 500); // Adjust the timeout duration based on your scroll animation duration
+      }, 500);
     }
   };
 
@@ -204,11 +199,7 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
         setActiveIndex={setActiveIndex}
         scrollToIndex={scrollToIndex}
       />
-      <div
-        aria-live='polite'
-        aria-atomic='true'
-        aria-label={liveText}
-      />
+      <div aria-live='polite' aria-atomic='true' aria-label={liveText} />
     </section>
   );
 };
