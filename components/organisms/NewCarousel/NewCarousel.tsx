@@ -104,17 +104,8 @@ const NewCarousel: React.FC<NewCarouselProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [liveText, setLiveText] = useState('');
 
+  const SHORT_DELAY: number = 500;
   const containerRef = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    setLiveText('');
-
-    const timeoutId = setTimeout(() => {
-      setLiveText(`Item ${activeIndex + 1} of ${items.length}`);
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [activeIndex, items.length]);
 
   const scrollToIndex = (index: number) => {
     const container = containerRef.current;
@@ -132,11 +123,46 @@ const NewCarousel: React.FC<NewCarouselProps> = ({
     if (container) {
       const scrollLeft = container.scrollLeft;
       const itemWidth = container.scrollWidth / items.length;
-
       const newIndex = Math.round(scrollLeft / itemWidth);
       setActiveIndex(newIndex);
     }
   };
+
+  const updateActiveIndex = (newIndex: number) => {
+    const container = containerRef.current;
+    if (container) {
+      const itemWidth = container.scrollWidth / items.length;
+      container.scrollTo({
+        left: newIndex * itemWidth,
+        behavior: 'smooth',
+      });
+
+      setTimeout(() => {
+        setActiveIndex(newIndex);
+      }, SHORT_DELAY);
+    }
+  };
+
+  const handleNext = () => {
+    const newIndex = Math.min(activeIndex + 1, items.length - 1);
+    updateActiveIndex(newIndex);
+  };
+
+  const handlePrev = () => {
+    const newIndex = Math.max(activeIndex - 1, 0);
+    updateActiveIndex(newIndex);
+  };
+
+
+  useEffect(() => {
+    setLiveText('');
+
+    const timeoutId = setTimeout(() => {
+      setLiveText(`Item ${activeIndex + 1} of ${items.length}`);
+    }, SHORT_DELAY);
+
+    return () => clearTimeout(timeoutId);
+  }, [activeIndex, items.length]);
 
   useEffect(() => {
     handleScroll();
@@ -152,41 +178,6 @@ const NewCarousel: React.FC<NewCarouselProps> = ({
       }
     };
   });
-
-  const handleNext = () => {
-    const container = containerRef.current;
-    if (container) {
-      const newIndex = Math.min(activeIndex + 1, items.length - 1);
-
-      const itemWidth = container.scrollWidth / items.length;
-
-      container.scrollTo({
-        left: newIndex * itemWidth,
-        behavior: 'smooth',
-      });
-
-      setTimeout(() => {
-        setActiveIndex(newIndex);
-      }, 500);
-    }
-  };
-
-  const handlePrev = () => {
-    const container = containerRef.current;
-    if (container) {
-      const newIndex = Math.max(activeIndex - 1, 0);
-      const itemWidth = container.scrollWidth / items.length;
-
-      container.scrollTo({
-        left: newIndex * itemWidth,
-        behavior: 'smooth',
-      });
-
-      setTimeout(() => {
-        setActiveIndex(newIndex);
-      }, 500);
-    }
-  };
 
   return (
     <section className='newCarousel' aria-label={ariaLabelMainTopic}>
