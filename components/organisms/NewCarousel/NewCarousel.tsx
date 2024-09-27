@@ -4,42 +4,50 @@ import './NewCarousel.css';
 import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 
 interface NewCarouselNavigationProps {
-  items: NewCarouselCardProps[];
   activeIndex: number;
+  items: NewCarouselCardProps[];
+  ariaLabelTopic: string;
   setActiveIndex: (index: number) => void;
   scrollToIndex: (index: number) => void;
 }
 
 const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
-  items,
   activeIndex,
+  items,
+  ariaLabelTopic,
   setActiveIndex,
   scrollToIndex,
 }) => {
   return (
     <ul className='newCarousel__navigation'>
-      {items.map((_, index) => (
-        <li key={index}>
-          <button
-            aria-label={`News ${index + 1}`}
-            data-slide={index}
-            className={index === activeIndex ? '-full' : undefined}
-            type='button'
-            onClick={() => {
-              setActiveIndex(index);
-              scrollToIndex(index);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                setActiveIndex(index);
-                scrollToIndex(index);
-              }
-            }}
-          >
-            <Circle />
-          </button>
-        </li>
-      ))}
+      {items.map((_, index) => {
+        const navigationAriaLabel = `${ariaLabelTopic} ${index + 1}`;
+        const navigationClassName = index === activeIndex ? '-full' : undefined;
+
+        const handleNavigation = (index: number) => {
+          setActiveIndex(index);
+          scrollToIndex(index);
+        };
+
+        return (
+          <li key={index}>
+            <button
+              type='button'
+              aria-label={navigationAriaLabel}
+              data-slide={index}
+              className={navigationClassName}
+              onClick={() => handleNavigation(index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleNavigation(index);
+                }
+              }}
+            >
+              <Circle />
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 };
@@ -83,11 +91,16 @@ const NewCarouselCard: React.FC<NewCarouselCardProps> = ({ id, children }) => {
 };
 
 interface NewCarouselProps {
-  ariaLabel: string;
+  ariaLabelMainTopic: string;
   items: NewCarouselCardProps[];
+  ariaLabelTopic: string;
 }
 
-const NewCarousel: React.FC<NewCarouselProps> = ({ ariaLabel, items }) => {
+const NewCarousel: React.FC<NewCarouselProps> = ({
+  ariaLabelMainTopic,
+  items,
+  ariaLabelTopic,
+}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [liveText, setLiveText] = useState('');
 
@@ -176,7 +189,7 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ ariaLabel, items }) => {
   };
 
   return (
-    <section className='newCarousel' aria-label={ariaLabel}>
+    <section className='newCarousel' aria-label={ariaLabelMainTopic}>
       <ul className='newCarousel__cards' ref={containerRef}>
         {items.map(({ id, children }) => (
           <NewCarouselCard id={id} key={id}>
@@ -186,8 +199,9 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ ariaLabel, items }) => {
       </ul>
       <NewCarouselControls onNext={handleNext} onPrev={handlePrev} />
       <NewCarouselNavigation
-        items={items}
         activeIndex={activeIndex}
+        items={items}
+        ariaLabelTopic={ariaLabelTopic}
         setActiveIndex={setActiveIndex}
         scrollToIndex={scrollToIndex}
       />

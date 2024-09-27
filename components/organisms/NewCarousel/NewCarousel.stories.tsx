@@ -48,7 +48,8 @@ export const NewCarouselStory: Story = {
   name: 'NewCarousel',
   args: {
     items: items,
-    ariaLabel: 'Main Topic',
+    ariaLabelMainTopic: 'Main Topic',
+    ariaLabelTopic: 'Topic',
   },
   render: (props) => <NewCarousel {...props} />,
 };
