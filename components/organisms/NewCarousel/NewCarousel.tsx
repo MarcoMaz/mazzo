@@ -4,7 +4,7 @@ import './NewCarousel.css';
 import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 
 interface NewCarouselNavigationProps {
-  items: NewCarouselItemProps[];
+  items: NewCarouselCardProps[];
   activeIndex: number;
   setActiveIndex: (index: number) => void;
   scrollToIndex: (index: number) => void;
@@ -69,12 +69,12 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
   );
 };
 
-interface NewCarouselItemProps {
+interface NewCarouselCardProps {
   id: string;
   children: React.ReactNode;
 }
 
-const NewCarouselItem: React.FC<NewCarouselItemProps> = ({ id, children }) => {
+const NewCarouselCard: React.FC<NewCarouselCardProps> = ({ id, children }) => {
   return (
     <li className='newCarousel__card' key={id}>
       {children}
@@ -84,13 +84,14 @@ const NewCarouselItem: React.FC<NewCarouselItemProps> = ({ id, children }) => {
 
 interface NewCarouselProps {
   ariaLabel: string;
-  items: NewCarouselItemProps[];
+  items: NewCarouselCardProps[];
 }
 
 const NewCarousel: React.FC<NewCarouselProps> = ({ ariaLabel, items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const containerRef = useRef<HTMLUListElement>(null);
   const [liveText, setLiveText] = useState('');
+
+  const containerRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     setLiveText('');
@@ -178,9 +179,9 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ ariaLabel, items }) => {
     <section className='newCarousel' aria-label={ariaLabel}>
       <ul className='newCarousel__cards' ref={containerRef}>
         {items.map(({ id, children }) => (
-          <NewCarouselItem id={id} key={id}>
+          <NewCarouselCard id={id} key={id}>
             {children}
-          </NewCarouselItem>
+          </NewCarouselCard>
         ))}
       </ul>
       <NewCarouselControls onNext={handleNext} onPrev={handlePrev} />
