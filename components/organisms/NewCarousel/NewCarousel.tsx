@@ -56,20 +56,12 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
   return (
     <ul className='newCarousel__controls'>
       <li>
-        <button
-          type='button'
-          onClick={onPrev}
-          aria-label='Previous item'
-        >
+        <button type='button' onClick={onPrev} aria-label='Previous item'>
           <ChevronLeft role='img' />
         </button>
       </li>
       <li>
-        <button
-          type='button'
-          onClick={onNext}
-          aria-label='Next item'
-        >
+        <button type='button' onClick={onNext} aria-label='Next item'>
           <ChevronRight />
         </button>
       </li>
@@ -91,10 +83,11 @@ const NewCarouselItem: React.FC<NewCarouselItemProps> = ({ id, children }) => {
 };
 
 interface NewCarouselProps {
+  ariaLabel: string;
   items: NewCarouselItemProps[];
 }
 
-const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
+const NewCarousel: React.FC<NewCarouselProps> = ({ ariaLabel, items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLUListElement>(null);
   const [liveText, setLiveText] = useState('');
@@ -182,7 +175,7 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
   };
 
   return (
-    <section className='newCarousel' aria-label='Recent news'>
+    <section className='newCarousel' aria-label={ariaLabel}>
       <ul className='newCarousel__cards' ref={containerRef}>
         {items.map(({ id, children }) => (
           <NewCarouselItem id={id} key={id}>
