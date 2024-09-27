@@ -55,12 +55,12 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
   return (
     <ul className='controls'>
       <li>
-        <button type='button' className='btn-prev' onClick={onPrev}>
-          <ChevronLeft />
+        <button type='button' className='btn-prev' onClick={onPrev} aria-label='Previous item'>
+          <ChevronLeft role='img' />
         </button>
       </li>
       <li>
-        <button type='button' className='btn-next' onClick={onNext}>
+        <button type='button' className='btn-next' onClick={onNext} aria-label='Next item'>
           <ChevronRight />
         </button>
       </li>
