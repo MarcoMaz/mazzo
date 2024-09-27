@@ -65,7 +65,7 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
     <ul className='newCarousel__controls'>
       <li>
         <button type='button' onClick={onPrev} aria-label='Previous item'>
-          <ChevronLeft role='img' />
+          <ChevronLeft />
         </button>
       </li>
       <li>
