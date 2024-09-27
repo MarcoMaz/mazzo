@@ -21,6 +21,7 @@ const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
       {items.map((_, index) => (
         <li key={index}>
           <button
+            aria-label={`News ${index + 1}`}
             data-slide={index}
             className={index === activeIndex ? '-full' : undefined}
             type='button'
