@@ -82,6 +82,16 @@ interface NewCarouselCardProps {
   children: React.ReactNode;
 }
 
+interface NewCarouselLiveRegionProps {
+  liveText: string;
+}
+
+const NewCarouselLiveRegion: React.FC<NewCarouselLiveRegionProps> = ({
+  liveText,
+}) => {
+  return <div aria-live='polite' aria-atomic='true' aria-label={liveText} />;
+};
+
 const NewCarouselCard: React.FC<NewCarouselCardProps> = ({ id, children }) => {
   return (
     <li className='newCarousel__card' key={id}>
@@ -153,7 +163,6 @@ const NewCarousel: React.FC<NewCarouselProps> = ({
     updateActiveIndex(newIndex);
   };
 
-
   useEffect(() => {
     setLiveText('');
 
@@ -196,7 +205,7 @@ const NewCarousel: React.FC<NewCarouselProps> = ({
         setActiveIndex={setActiveIndex}
         scrollToIndex={scrollToIndex}
       />
-      <div aria-live='polite' aria-atomic='true' aria-label={liveText} />
+      <NewCarouselLiveRegion liveText={liveText} />
     </section>
   );
 };
