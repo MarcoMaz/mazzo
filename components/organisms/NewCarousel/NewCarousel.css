@@ -1,29 +1,16 @@
-/* .carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.cards {
-  border-right: 0.25rem solid var(--colorBlack);
-  min-width: 20rem;
-  padding: 2rem;
-  scroll-snap-align: start;
-} */
-
-.carousel {
+.newCarousel {
   border: 1px solid black;
   position: relative;
   width: 60rem;
 }
 
-.cards {
+.newCarousel__cards {
   display: flex;
   overflow-x: auto;
   min-height: 8rem;
   scroll-snap-type: x mandatory;
 
-  .card {
+  .newCarousel__card {
     min-width: 60rem;
     padding: 2rem;
     display: flex;
@@ -33,7 +20,7 @@
   }
 }
 
-.controls {
+.newCarousel__controls {
   top: calc(50% - 1rem - 1rem);
   position: absolute;
   height: 2rem;
@@ -52,7 +39,7 @@
   }
 }
 
-.slidenav {
+.newCarousel__navigation {
   align-items: center;
   display: flex;
   justify-content: center;

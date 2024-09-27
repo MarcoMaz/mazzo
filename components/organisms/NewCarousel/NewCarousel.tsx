@@ -17,7 +17,7 @@ const NewCarouselNavigation: React.FC<NewCarouselNavigationProps> = ({
   scrollToIndex,
 }) => {
   return (
-    <ul className='slidenav'>
+    <ul className='newCarousel__navigation'>
       {items.map((_, index) => (
         <li key={index}>
           <button
@@ -54,11 +54,10 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
   onPrev,
 }) => {
   return (
-    <ul className='controls'>
+    <ul className='newCarousel__controls'>
       <li>
         <button
           type='button'
-          className='btn-prev'
           onClick={onPrev}
           aria-label='Previous item'
         >
@@ -68,7 +67,6 @@ const NewCarouselControls: React.FC<NewCarouselControlsProps> = ({
       <li>
         <button
           type='button'
-          className='btn-next'
           onClick={onNext}
           aria-label='Next item'
         >
@@ -86,7 +84,7 @@ interface NewCarouselItemProps {
 
 const NewCarouselItem: React.FC<NewCarouselItemProps> = ({ id, children }) => {
   return (
-    <li className='card' key={id}>
+    <li className='newCarousel__card' key={id}>
       {children}
     </li>
   );
@@ -184,8 +182,8 @@ const NewCarousel: React.FC<NewCarouselProps> = ({ items }) => {
   };
 
   return (
-    <section className='carousel' aria-label='Recent news'>
-      <ul className='cards' ref={containerRef}>
+    <section className='newCarousel' aria-label='Recent news'>
+      <ul className='newCarousel__cards' ref={containerRef}>
         {items.map(({ id, children }) => (
           <NewCarouselItem id={id} key={id}>
             {children}
