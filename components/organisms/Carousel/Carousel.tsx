@@ -53,23 +53,54 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
 };
 
 interface CarouselControlsProps {
-  onNext: () => void;
-  onPrev: () => void;
+  activeIndex: number;
+  setActiveIndex: (index: number) => void;
+  items: CarouselCardProps[];
+  containerRef: React.RefObject<HTMLUListElement>;
 }
 
 const CarouselControls: React.FC<CarouselControlsProps> = ({
-  onNext,
-  onPrev,
+  activeIndex,
+  setActiveIndex,
+  items,
+  containerRef,
 }) => {
+  const SHORT_DELAY: number = 500;
+
+  const updateActiveIndex = (newIndex: number) => {
+    const container = containerRef.current;
+    if (container) {
+      const itemWidth = container.scrollWidth / items.length;
+      container.scrollTo({
+        left: newIndex * itemWidth,
+        behavior: 'smooth',
+      });
+
+      setTimeout(() => {
+        setActiveIndex(newIndex);
+      }, SHORT_DELAY);
+    }
+  };
+
+  const handleNext = () => {
+    const newIndex = Math.min(activeIndex + 1, items.length - 1);
+    updateActiveIndex(newIndex);
+  };
+
+  const handlePrev = () => {
+    const newIndex = Math.max(activeIndex - 1, 0);
+    updateActiveIndex(newIndex);
+  };
+
   return (
     <ul className='carousel__controls'>
       <li>
-        <button type='button' onClick={onPrev} aria-label='Previous item'>
+        <button type='button' onClick={handlePrev} aria-label='Previous item'>
           <ChevronLeft />
         </button>
       </li>
       <li>
-        <button type='button' onClick={onNext} aria-label='Next item'>
+        <button type='button' onClick={handleNext} aria-label='Next item'>
           <ChevronRight />
         </button>
       </li>
@@ -131,8 +162,6 @@ const Carousel: React.FC<CarouselProps> = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [liveText, setLiveText] = useState('');
-
-  const SHORT_DELAY: number = 500;
   const containerRef = useRef<HTMLUListElement>(null);
 
   const scrollToIndex = (index: number) => {
@@ -154,31 +183,6 @@ const Carousel: React.FC<CarouselProps> = ({
       const newIndex = Math.round(scrollLeft / itemWidth);
       setActiveIndex(newIndex);
     }
-  };
-
-  const updateActiveIndex = (newIndex: number) => {
-    const container = containerRef.current;
-    if (container) {
-      const itemWidth = container.scrollWidth / items.length;
-      container.scrollTo({
-        left: newIndex * itemWidth,
-        behavior: 'smooth',
-      });
-
-      setTimeout(() => {
-        setActiveIndex(newIndex);
-      }, SHORT_DELAY);
-    }
-  };
-
-  const handleNext = () => {
-    const newIndex = Math.min(activeIndex + 1, items.length - 1);
-    updateActiveIndex(newIndex);
-  };
-
-  const handlePrev = () => {
-    const newIndex = Math.max(activeIndex - 1, 0);
-    updateActiveIndex(newIndex);
   };
 
   useEffect(() => {
@@ -205,7 +209,12 @@ const Carousel: React.FC<CarouselProps> = ({
           </CarouselCard>
         ))}
       </ul>
-      <CarouselControls onNext={handleNext} onPrev={handlePrev} />
+      <CarouselControls
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        items={items}
+        containerRef={containerRef}
+      />
       <CarouselNavigation
         activeIndex={activeIndex}
         items={items}
