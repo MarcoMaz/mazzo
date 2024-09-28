@@ -12,6 +12,7 @@
   .carousel__card {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     min-width: 60rem;
     padding: 2rem;
@@ -28,7 +29,7 @@
   width: 100%;
 
   li {
-    background-color: var(--colorWhite);
+    background-color: transparent;
     height: 1.5rem;
 
     button {

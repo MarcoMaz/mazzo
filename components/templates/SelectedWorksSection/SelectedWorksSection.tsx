@@ -1,67 +1,132 @@
-import data from "../../../public/assets/content/content.json";
+import data from '../../../public/assets/content/content.json';
 
-import Heading from "../../atoms/Heading/Heading";
-import CardCarousel from "../../organisms/CardCarousel/CardCarousel";
-import AccordionNew from "../../organisms/Accordion/Accordion";
+import Heading from '../../atoms/Heading/Heading';
+import CardCarousel from '../../organisms/CardCarousel/CardCarousel';
+import AccordionNew from '../../organisms/Accordion/Accordion';
 
-import "./SelectedWorksSection.css";
-import ExternalLink from "@/components/atoms/ExternalLink/ExternalLink";
-import React from "react";
+import './SelectedWorksSection.css';
+import ExternalLink from '@/components/atoms/ExternalLink/ExternalLink';
+import React from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
+import Carousel from '@/components/organisms/Carousel/Carousel';
 
 const SelectedWorksSection = () => {
   const { headline, nda, knowMore } = data.selectedWorks;
 
   return (
-    <div className="selected-works-section" id="selected-works">
+    <div className='selected-works-section' id='selected-works'>
       <Heading level={2} label={headline} />
       <AccordionNew
         items={[
           {
-            id: "accordion-item-1",
+            id: 'accordion-item-1',
             hasBorderReset: true,
-            headline: "Sample Title 1",
+            headline: 'Sample Title 1',
             children: <>Sample Content 1</>,
           },
           {
-            id: "accordion-item-2",
+            id: 'accordion-item-2',
             hasBorderReset: false,
-            headline: "Sample Title 2",
+            headline: 'Sample Title 2',
             children: <>Sample Content 2</>,
           },
           {
-            id: "accordion-item-3",
+            id: 'accordion-item-3',
             hasBorderReset: false,
-            headline: "Sample Title 3",
+            headline: 'Sample Title 3',
             children: <>Sample Content 3</>,
           },
         ]}
       />
-    <CardCarousel>
-      <>
-        <h1>Heading 1</h1>
-        <h2>SubHeading 1</h2>
-        <p>This is some text</p>
-      </>
-      <>
-        <h1>Heading 2</h1>
-        <h2>SubHeading 2</h2>
-        <p>This is some text</p>
-      </>
-      <>
-        <h1>Heading 3</h1>
-        <h2>SubHeading 3</h2>
-        <p>This is some text</p>
-      </>
-      <>
-        <h1>Heading 4</h1>
-        <h2>SubHeading 4</h2>
-        <p>This is some text</p>
-      </>
-    </CardCarousel>
+      <Carousel
+        ariaLabelMainTopic='Main Topic'
+        ariaLabelTopic='Topic'
+        items={[
+          {
+            id: '1',
+            children: (
+              <article>
+                <h2>Heading 1</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 1</a>
+              </article>
+            ),
+          },
+          {
+            id: '2',
+            children: (
+              <>
+                <h2>Heading 2</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 2</a>
+              </>
+            ),
+          },
+          {
+            id: '3',
+            children: (
+              <>
+                <h2>Heading 3</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 3</a>
+              </>
+            ),
+          },
+          {
+            id: '4',
+            children: (
+              <>
+                <h2>Heading 4</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 4</a>
+              </>
+            ),
+          },
+          {
+            id: '5',
+            children: (
+              <>
+                <h2>Heading 5</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 5</a>
+              </>
+            ),
+          },
+          {
+            id: '6',
+            children: (
+              <>
+                <h2>Heading 6</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 6</a>
+              </>
+            ),
+          },
+          {
+            id: '7',
+            children: (
+              <>
+                <h2>Heading 7</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 7</a>
+              </>
+            ),
+          },
+          {
+            id: '8',
+            children: (
+              <>
+                <h2>Heading 8</h2>
+                <p>This is some text</p>
+                <a href='#'>Link 8</a>
+              </>
+            ),
+          },
+        ]}
+      ></Carousel>
       <Heading level={3} label={nda.headline} />
-      <div data-cy={"selected-works-nda-images"}>
+      <div data-cy={'selected-works-nda-images'}>
         {nda.images.map(({ src, alt }) => (
           <Image
             data-cy={src}
