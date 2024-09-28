@@ -1,4 +1,11 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import {
+  Dispatch,
+  RefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import './Carousel.css';
 
 import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
@@ -108,11 +115,6 @@ const CarouselControls: React.FC<CarouselControlsProps> = ({
   );
 };
 
-interface CarouselCardProps {
-  id: string;
-  children: React.ReactNode;
-}
-
 interface CarouselLiveRegionProps {
   activeIndex: number;
   items: CarouselCardProps[];
@@ -140,6 +142,31 @@ const CarouselLiveRegion: React.FC<CarouselLiveRegionProps> = ({
 
   return <div aria-live='polite' aria-atomic='true' aria-label={liveText} />;
 };
+
+interface CarouselCardsProps {
+  containerRef: RefObject<HTMLUListElement>;
+  items: CarouselCardProps[];
+}
+
+const CarouselCards: React.FC<CarouselCardsProps> = ({
+  containerRef,
+  items,
+}) => {
+  return (
+    <ul className='carousel__cards' ref={containerRef}>
+      {items.map(({ id, children }) => (
+        <CarouselCard id={id} key={id}>
+          {children}
+        </CarouselCard>
+      ))}
+    </ul>
+  );
+};
+
+interface CarouselCardProps {
+  id: string;
+  children: React.ReactNode;
+}
 
 const CarouselCard: React.FC<CarouselCardProps> = ({ id, children }) => {
   return (
@@ -202,13 +229,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <section className='carousel' aria-label={ariaLabelMainTopic}>
-      <ul className='carousel__cards' ref={containerRef}>
-        {items.map(({ id, children }) => (
-          <CarouselCard id={id} key={id}>
-            {children}
-          </CarouselCard>
-        ))}
-      </ul>
+      <CarouselCards containerRef={containerRef} items={items} />
       <CarouselControls
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
