@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import './Carousel.css';
 
 import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
@@ -83,12 +83,30 @@ interface CarouselCardProps {
 }
 
 interface CarouselLiveRegionProps {
+  activeIndex: number;
+  items: CarouselCardProps[];
   liveText: string;
+  setLiveText: Dispatch<SetStateAction<string>>;
 }
 
-const NewCarouselLiveRegion: React.FC<CarouselLiveRegionProps> = ({
+const CarouselLiveRegion: React.FC<CarouselLiveRegionProps> = ({
+  activeIndex,
+  items,
   liveText,
+  setLiveText,
 }) => {
+  const SHORT_DELAY: number = 500;
+
+  useEffect(() => {
+    setLiveText('');
+
+    const timeoutId = setTimeout(() => {
+      setLiveText(`Item ${activeIndex + 1} of ${items.length}`);
+    }, SHORT_DELAY);
+
+    return () => clearTimeout(timeoutId);
+  }, [activeIndex, items.length, setLiveText]);
+
   return <div aria-live='polite' aria-atomic='true' aria-label={liveText} />;
 };
 
@@ -164,16 +182,6 @@ const Carousel: React.FC<CarouselProps> = ({
   };
 
   useEffect(() => {
-    setLiveText('');
-
-    const timeoutId = setTimeout(() => {
-      setLiveText(`Item ${activeIndex + 1} of ${items.length}`);
-    }, SHORT_DELAY);
-
-    return () => clearTimeout(timeoutId);
-  }, [activeIndex, items.length]);
-
-  useEffect(() => {
     handleScroll();
 
     const container = containerRef.current;
@@ -205,7 +213,12 @@ const Carousel: React.FC<CarouselProps> = ({
         setActiveIndex={setActiveIndex}
         scrollToIndex={scrollToIndex}
       />
-      <NewCarouselLiveRegion liveText={liveText} />
+      <CarouselLiveRegion
+        activeIndex={activeIndex}
+        items={items}
+        liveText={liveText}
+        setLiveText={setLiveText}
+      />
     </section>
   );
 };
