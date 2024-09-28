@@ -1,35 +1,34 @@
 .carousel {
-  border: 1px solid black;
   position: relative;
   width: 60rem;
 }
 
 .carousel__cards {
   display: flex;
-  overflow-x: auto;
   min-height: 8rem;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
 
   .carousel__card {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     min-width: 60rem;
     padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     scroll-snap-align: start;
   }
 }
 
 .carousel__controls {
-  top: calc(50% - 1rem - 1rem);
-  position: absolute;
-  height: 2rem;
+  align-items: center;
   display: inline-flex;
   justify-content: space-between;
+  position: absolute;
+  top: calc(50% - 1rem - 1rem);
   width: 100%;
 
   li {
-    background-color: white;
+    background-color: var(--colorWhite);
     height: 1.5rem;
 
     button {
@@ -42,21 +41,20 @@
 .carousel__navigation {
   align-items: center;
   display: flex;
-  justify-content: center;
-  height: 2rem;
   gap: 1rem;
+  height: 2rem;
+  justify-content: center;
 
   li button {
-    cursor: pointer;
-    height: 1.5rem;
-    width: 1.5rem;
-    display: flex;
     align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 1.5rem;
     justify-content: center;
-    
+    width: 1.5rem;
+
     &.-full svg {
       fill: var(--colorBlack);
     }
   }
 }
-
