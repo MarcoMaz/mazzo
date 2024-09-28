@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import NewCarousel from './NewCarousel';
+import Carousel from './Carousel';
 
-const meta: Meta<typeof NewCarousel> = {
-  component: NewCarousel,
+const meta: Meta<typeof Carousel> = {
+  component: Carousel,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof NewCarousel>;
+type Story = StoryObj<typeof Carousel>;
 
 const items = [
   {
@@ -44,12 +44,12 @@ const items = [
   },
 ];
 
-export const NewCarouselStory: Story = {
-  name: 'NewCarousel',
+export const CarouselStory: Story = {
+  name: 'Carousel',
   args: {
     items: items,
     ariaLabelMainTopic: 'Main Topic',
     ariaLabelTopic: 'Topic',
   },
-  render: (props) => <NewCarousel {...props} />,
+  render: (props) => <Carousel {...props} />,
 };

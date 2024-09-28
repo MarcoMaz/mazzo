@@ -1,16 +1,16 @@
-.newCarousel {
+.carousel {
   border: 1px solid black;
   position: relative;
   width: 60rem;
 }
 
-.newCarousel__cards {
+.carousel__cards {
   display: flex;
   overflow-x: auto;
   min-height: 8rem;
   scroll-snap-type: x mandatory;
 
-  .newCarousel__card {
+  .carousel__card {
     min-width: 60rem;
     padding: 2rem;
     display: flex;
@@ -20,7 +20,7 @@
   }
 }
 
-.newCarousel__controls {
+.carousel__controls {
   top: calc(50% - 1rem - 1rem);
   position: absolute;
   height: 2rem;
@@ -39,7 +39,7 @@
   }
 }
 
-.newCarousel__navigation {
+.carousel__navigation {
   align-items: center;
   display: flex;
   justify-content: center;
