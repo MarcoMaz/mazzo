@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import {
   Dispatch,
@@ -146,18 +146,20 @@ const CarouselLiveRegion: React.FC<CarouselLiveRegionProps> = ({
 };
 
 interface CarouselCardsProps {
+  activeIndex: number;
   containerRef: RefObject<HTMLUListElement>;
   items: CarouselCardProps[];
 }
 
 const CarouselCards: React.FC<CarouselCardsProps> = ({
+  activeIndex,
   containerRef,
   items,
 }) => {
   return (
     <ul className='carousel__cards' ref={containerRef}>
-      {items.map(({ id, children }) => (
-        <CarouselCard id={id} key={id}>
+      {items.map(({ id, children }, index) => (
+        <CarouselCard id={id} key={id} isActive={index === activeIndex}>
           {children}
         </CarouselCard>
       ))}
@@ -167,12 +169,39 @@ const CarouselCards: React.FC<CarouselCardsProps> = ({
 
 interface CarouselCardProps {
   id: string;
+  isActive?: boolean;
   children: React.ReactNode;
 }
 
-const CarouselCard: React.FC<CarouselCardProps> = ({ id, children }) => {
+const CarouselCard: React.FC<CarouselCardProps> = ({
+  id,
+  isActive,
+  children,
+}) => {
+  const cardRef = useRef<HTMLLIElement>(null); // Ref to the card element
+
+  useEffect(() => {
+    const card = cardRef.current;
+
+    if (card) {
+      const focusableElements = card.querySelectorAll<HTMLElement>(
+        'button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+      );
+
+      console.log('focusableElements', focusableElements);
+
+      focusableElements.forEach((element) => {
+        if (!isActive) {
+          element.setAttribute('tabIndex', '-1');
+        } else {
+          element.removeAttribute('tabIndex');
+        }
+      });
+    }
+  }, [isActive]);
+
   return (
-    <li className='carousel__card' key={id}>
+    <li className='carousel__card' key={id} ref={cardRef}>
       {children}
     </li>
   );
@@ -231,7 +260,11 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <section className='carousel' aria-label={ariaLabelMainTopic}>
-      <CarouselCards containerRef={containerRef} items={items} />
+      <CarouselCards
+        activeIndex={activeIndex}
+        containerRef={containerRef}
+        items={items}
+      />
       <CarouselControls
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
