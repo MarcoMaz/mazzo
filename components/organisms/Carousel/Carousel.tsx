@@ -14,19 +14,27 @@ import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
 
 interface CarouselNavigationProps {
   activeIndex: number;
-  items: CarouselCardProps[];
   ariaLabelTopic: string;
+  items: CarouselCardProps[];
   setActiveIndex: (index: number) => void;
   scrollToIndex: (index: number) => void;
 }
 
 const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   activeIndex,
-  items,
   ariaLabelTopic,
+  items,
   setActiveIndex,
   scrollToIndex,
 }) => {
+  const activeDotRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (activeDotRef.current) {
+      activeDotRef.current.focus();
+    }
+  }, [activeIndex]);
+
   return (
     <ul className='carousel__navigation'>
       {items.map((_, index) => {
@@ -42,6 +50,7 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
           <li key={index}>
             <button
               type='button'
+              ref={index === activeIndex ? activeDotRef : null}
               aria-label={navigationAriaLabel}
               data-slide={index}
               className={navigationClassName}
