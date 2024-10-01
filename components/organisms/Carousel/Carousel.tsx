@@ -200,8 +200,6 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
         'button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])'
       );
 
-      console.log('focusableElements', focusableElements);
-
       focusableElements.forEach((element) => {
         if (!isActive) {
           element.setAttribute('tabIndex', '-1');
