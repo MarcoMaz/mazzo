@@ -28,9 +28,12 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   scrollToIndex,
 }) => {
   const activeDotRef = useRef<HTMLButtonElement | null>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (activeDotRef.current) {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+    } else if (activeDotRef.current) {
       activeDotRef.current.focus();
     }
   }, [activeIndex]);
