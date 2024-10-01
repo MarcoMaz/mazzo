@@ -16,6 +16,8 @@ interface CarouselNavigationProps {
   activeIndex: number;
   ariaLabelTopic: string;
   items: CarouselCardProps[];
+  lastInteraction: 'button' | 'dot';
+  setLastInteraction: React.Dispatch<SetStateAction<'button' | 'dot'>>;
   setActiveIndex: (index: number) => void;
   scrollToIndex: (index: number) => void;
 }
@@ -24,6 +26,8 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   activeIndex,
   ariaLabelTopic,
   items,
+  lastInteraction,
+  setLastInteraction,
   setActiveIndex,
   scrollToIndex,
 }) => {
@@ -33,10 +37,10 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
-    } else if (activeDotRef.current) {
+    } else if (lastInteraction !== 'button' && activeDotRef.current) {
       activeDotRef.current.focus();
     }
-  }, [activeIndex]);
+  }, [activeIndex, lastInteraction]);
 
   return (
     <ul className='carousel__navigation'>
@@ -47,6 +51,7 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
         const handleNavigation = (index: number) => {
           setActiveIndex(index);
           scrollToIndex(index);
+          setLastInteraction('dot');
         };
 
         return (
@@ -78,6 +83,7 @@ interface CarouselControlsProps {
   setActiveIndex: (index: number) => void;
   items: CarouselCardProps[];
   containerRef: React.RefObject<HTMLUListElement>;
+  setLastInteraction: React.Dispatch<SetStateAction<'button' | 'dot'>>;
 }
 
 const CarouselControls: React.FC<CarouselControlsProps> = ({
@@ -85,8 +91,11 @@ const CarouselControls: React.FC<CarouselControlsProps> = ({
   setActiveIndex,
   items,
   containerRef,
+  setLastInteraction,
 }) => {
   const SHORT_DELAY: number = 500;
+  const prevButtonRef = useRef<HTMLButtonElement | null>(null);
+  const nextButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const updateActiveIndex = (newIndex: number) => {
     const container = containerRef.current;
@@ -106,22 +115,36 @@ const CarouselControls: React.FC<CarouselControlsProps> = ({
   const handleNext = () => {
     const newIndex = Math.min(activeIndex + 1, items.length - 1);
     updateActiveIndex(newIndex);
+    setLastInteraction('button');
+    nextButtonRef.current?.focus();
   };
 
   const handlePrev = () => {
     const newIndex = Math.max(activeIndex - 1, 0);
     updateActiveIndex(newIndex);
+    setLastInteraction('button');
+    prevButtonRef.current?.focus();
   };
 
   return (
     <ul className='carousel__controls'>
       <li>
-        <button type='button' onClick={handlePrev} aria-label='Previous item'>
+        <button
+          type='button'
+          onClick={handlePrev}
+          aria-label='Previous item'
+          ref={prevButtonRef}
+        >
           <ChevronLeft />
         </button>
       </li>
       <li>
-        <button type='button' onClick={handleNext} aria-label='Next item'>
+        <button
+          type='button'
+          onClick={handleNext}
+          aria-label='Next item'
+          ref={nextButtonRef}
+        >
           <ChevronRight />
         </button>
       </li>
@@ -231,6 +254,9 @@ const Carousel: React.FC<CarouselProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [liveText, setLiveText] = useState('');
   const containerRef = useRef<HTMLUListElement>(null);
+  const [lastInteraction, setLastInteraction] = useState<'button' | 'dot'>(
+    'button'
+  );
 
   const scrollToIndex = (index: number) => {
     const container = containerRef.current;
@@ -280,6 +306,7 @@ const Carousel: React.FC<CarouselProps> = ({
         setActiveIndex={setActiveIndex}
         items={items}
         containerRef={containerRef}
+        setLastInteraction={setLastInteraction}
       />
       <CarouselNavigation
         activeIndex={activeIndex}
@@ -287,6 +314,8 @@ const Carousel: React.FC<CarouselProps> = ({
         ariaLabelTopic={ariaLabelTopic}
         setActiveIndex={setActiveIndex}
         scrollToIndex={scrollToIndex}
+        lastInteraction={lastInteraction}
+        setLastInteraction={setLastInteraction}
       />
       <CarouselLiveRegion
         activeIndex={activeIndex}
