@@ -5,6 +5,7 @@
   --colorPrimary: #f6f3ea;
   --colorWhite: #ffffff;
   --borderBottom: calc(2 / 16 * 1rem) solid var(--colorBlack);
+  --defaultOutline: 2.5px solid #f4a26e;
 }
 
 * {
@@ -59,6 +60,10 @@ a {
 button {
   background: transparent;
   border: 0;
+
+  &:focus {
+    outline: var(--defaultOutline);
+  }
 }
 
 li {
