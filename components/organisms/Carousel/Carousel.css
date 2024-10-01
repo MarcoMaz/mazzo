@@ -54,6 +54,11 @@
     justify-content: center;
     width: 1.5rem;
 
+    &:focus {
+      outline: 2.5px solid #F4A26E;
+      border-radius: 50%;
+    }
+
     &.-full svg {
       fill: var(--colorBlack);
     }
