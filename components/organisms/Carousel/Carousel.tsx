@@ -5,6 +5,7 @@ import {
   RefObject,
   SetStateAction,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
 } from 'react';
@@ -34,11 +35,18 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   const activeDotRef = useRef<HTMLButtonElement | null>(null);
   const isFirstRender = useRef(true);
 
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-    } else if (lastInteraction !== 'button' && activeDotRef.current) {
-      activeDotRef.current.focus();
+  useLayoutEffect(() => {
+    if (
+      !isFirstRender.current &&
+      lastInteraction === 'dot' &&
+      activeDotRef.current
+    ) {
+      // Delay the focus for keyboard interaction to prevent flickering
+      const timerId = setTimeout(() => {
+        activeDotRef.current?.focus({ preventScroll: true });
+      }, 0);
+
+      return () => clearTimeout(timerId);
     }
   }, [activeIndex, lastInteraction]);
 
@@ -62,10 +70,14 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
               aria-label={navigationAriaLabel}
               data-slide={index}
               className={navigationClassName}
-              onClick={() => handleNavigation(index)}
+              onClick={() => {
+                handleNavigation(index);
+                setLastInteraction('button');
+              }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   handleNavigation(index);
+                  setLastInteraction('dot');
                 }
               }}
             >
