@@ -1,7 +1,6 @@
 import data from '../../../public/assets/content/content.json';
 
 import Heading from '../../atoms/Heading/Heading';
-import Accordion from '../../organisms/Accordion/Accordion';
 
 import './SelectedWorksSection.css';
 import ExternalLink from '@/components/atoms/ExternalLink/ExternalLink';
@@ -9,6 +8,7 @@ import React from 'react';
 
 import Image from 'next/image';
 import Carousel from '@/components/organisms/Carousel/Carousel';
+import Accordion from '@/components/organisms/Accordion/Accordion';
 
 const SelectedWorksSection = () => {
   const { headline, nda, knowMore } = data.selectedWorks;
@@ -19,19 +19,19 @@ const SelectedWorksSection = () => {
       <Accordion
         items={[
           {
-            id: 'accordion-item-1',
+            id: '1',
             headline: 'Sample Title 1',
-            children: <>Sample Content 1</>,
+            children: <p>Sample Content 1</p>,
           },
           {
-            id: 'accordion-item-2',
+            id: '2',
             headline: 'Sample Title 2',
-            children: <>Sample Content 2</>,
+            children: <p>Sample Content 2</p>,
           },
           {
-            id: 'accordion-item-3',
+            id: '3',
             headline: 'Sample Title 3',
-            children: <>Sample Content 3</>,
+            children: <p>Sample Content 3</p>,
           },
         ]}
       />
