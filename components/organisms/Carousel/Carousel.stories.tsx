@@ -94,10 +94,27 @@ const items = [
 
 export const CarouselStory: Story = {
   name: 'Carousel',
+  render: (props) => <Carousel {...props} />,
+  argTypes: {
+    items: {
+      control: {
+        type: 'object',
+      },
+    },
+    ariaLabelMainTopic: {
+      control: {
+        type: 'text',
+      },
+    },
+    ariaLabelTopic: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
   args: {
     items: items,
     ariaLabelMainTopic: 'Main Topic',
     ariaLabelTopic: 'Topic',
   },
-  render: (props) => <Carousel {...props} />,
 };
