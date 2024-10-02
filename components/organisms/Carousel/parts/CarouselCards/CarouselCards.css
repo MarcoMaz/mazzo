@@ -1,0 +1,18 @@
+.carousel__cards {
+  display: flex;
+  min-height: 8rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox fix */
+
+  .carousel__card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+    padding: 2rem;
+    scroll-snap-align: start;
+    z-index: 1;
+  }
+}

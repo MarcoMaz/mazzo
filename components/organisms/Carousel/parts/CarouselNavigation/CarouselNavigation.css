@@ -1,0 +1,24 @@
+.carousel__navigation {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  height: 2rem;
+  justify-content: center;
+
+  li button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 1.5rem;
+    justify-content: center;
+    width: 1.5rem;
+
+    &:focus {
+      border-radius: 50%;
+    }
+
+    &.-full svg {
+      fill: var(--colorBlack);
+    }
+  }
+}

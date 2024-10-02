@@ -1,0 +1,22 @@
+.carousel__controls {
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+  position: absolute;
+  top: calc(50% - 1rem - 1rem);
+  width: 100%;
+
+  li {
+    background-color: transparent;
+    height: 1.5rem;
+
+    button {
+      cursor: pointer;
+      height: inherit;
+
+      &:focus {
+        border-radius: 2.5px;
+      }
+    }
+  }
+}

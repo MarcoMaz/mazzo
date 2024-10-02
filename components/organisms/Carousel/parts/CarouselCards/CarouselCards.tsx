@@ -1,5 +1,7 @@
 import { RefObject, useEffect, useRef } from 'react';
 
+import './CarouselCards.css';
+
 interface CarouselCardsProps {
   activeIndex: number;
   containerRef: RefObject<HTMLUListElement>;

@@ -1,3 +1,5 @@
+import './CarouselControls.css';
+
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 import { SetStateAction, useRef } from 'react';

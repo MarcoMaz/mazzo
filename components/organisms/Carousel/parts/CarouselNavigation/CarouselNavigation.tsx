@@ -1,3 +1,5 @@
+import './CarouselNavigation.css';
+
 import { Circle } from 'react-feather';
 
 import { SetStateAction, useLayoutEffect, useRef } from 'react';
