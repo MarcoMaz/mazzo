@@ -189,7 +189,7 @@ const CarouselLiveRegion: React.FC<CarouselLiveRegionProps> = ({
     return () => clearTimeout(timeoutId);
   }, [activeIndex, items.length, setLiveText]);
 
-  return <div aria-live='polite' aria-atomic='true' aria-label={liveText} />;
+  return <div role="status" aria-live='polite' aria-atomic='true' aria-label={liveText} />;
 };
 
 interface CarouselCardsProps {
