@@ -16,6 +16,7 @@
     min-width: 100%;
     padding: 2rem;
     scroll-snap-align: start;
+    z-index: 1;
   }
 }
 
