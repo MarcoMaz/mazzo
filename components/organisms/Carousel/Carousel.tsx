@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
 } from 'react';
+
 import './Carousel.css';
 
 import { Circle, ChevronLeft, ChevronRight } from 'react-feather';
@@ -18,9 +19,9 @@ interface CarouselNavigationProps {
   ariaLabelTopic: string;
   items: CarouselCardProps[];
   lastInteraction: 'button' | 'dot';
+  scrollToIndex: (index: number) => void;
   setLastInteraction: React.Dispatch<SetStateAction<'button' | 'dot'>>;
   setActiveIndex: (index: number) => void;
-  scrollToIndex: (index: number) => void;
 }
 
 const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
@@ -28,9 +29,9 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
   ariaLabelTopic,
   items,
   lastInteraction,
+  scrollToIndex,
   setLastInteraction,
   setActiveIndex,
-  scrollToIndex,
 }) => {
   const activeDotRef = useRef<HTMLButtonElement | null>(null);
   const isFirstRender = useRef(true);
@@ -41,7 +42,6 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
       lastInteraction === 'dot' &&
       activeDotRef.current
     ) {
-      // Delay the focus for keyboard interaction to prevent flickering
       const timerId = setTimeout(() => {
         activeDotRef.current?.focus({ preventScroll: true });
       }, 0);
@@ -55,6 +55,7 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
       {items.map((_, index) => {
         const navigationAriaLabel = `${ariaLabelTopic} ${index + 1}`;
         const navigationClassName = index === activeIndex ? '-full' : undefined;
+        const navigationRef = index === activeIndex ? activeDotRef : null;
 
         const handleNavigation = (index: number) => {
           setActiveIndex(index);
@@ -66,7 +67,7 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
           <li key={index}>
             <button
               type='button'
-              ref={index === activeIndex ? activeDotRef : null}
+              ref={navigationRef}
               aria-label={navigationAriaLabel}
               data-slide={index}
               className={navigationClassName}
@@ -92,17 +93,17 @@ const CarouselNavigation: React.FC<CarouselNavigationProps> = ({
 
 interface CarouselControlsProps {
   activeIndex: number;
-  setActiveIndex: (index: number) => void;
-  items: CarouselCardProps[];
   containerRef: React.RefObject<HTMLUListElement>;
+  items: CarouselCardProps[];
+  setActiveIndex: (index: number) => void;
   setLastInteraction: React.Dispatch<SetStateAction<'button' | 'dot'>>;
 }
 
 const CarouselControls: React.FC<CarouselControlsProps> = ({
   activeIndex,
-  setActiveIndex,
-  items,
   containerRef,
+  items,
+  setActiveIndex,
   setLastInteraction,
 }) => {
   const SHORT_DELAY: number = 500;
@@ -189,7 +190,14 @@ const CarouselLiveRegion: React.FC<CarouselLiveRegionProps> = ({
     return () => clearTimeout(timeoutId);
   }, [activeIndex, items.length, setLiveText]);
 
-  return <div role="status" aria-live='polite' aria-atomic='true' aria-label={liveText} />;
+  return (
+    <div
+      role='status'
+      aria-live='polite'
+      aria-atomic='true'
+      aria-label={liveText}
+    />
+  );
 };
 
 interface CarouselCardsProps {
@@ -205,11 +213,15 @@ const CarouselCards: React.FC<CarouselCardsProps> = ({
 }) => {
   return (
     <ul className='carousel__cards' ref={containerRef}>
-      {items.map(({ id, children }, index) => (
-        <CarouselCard id={id} key={id} isActive={index === activeIndex}>
-          {children}
-        </CarouselCard>
-      ))}
+      {items.map(({ id, children }, index) => {
+        const cardsIsActive = index === activeIndex;
+
+        return (
+          <CarouselCard id={id} key={id} isActive={cardsIsActive}>
+            {children}
+          </CarouselCard>
+        );
+      })}
     </ul>
   );
 };
@@ -225,7 +237,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   isActive,
   children,
 }) => {
-  const cardRef = useRef<HTMLLIElement>(null); // Ref to the card element
+  const cardRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -254,14 +266,14 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 
 interface CarouselProps {
   ariaLabelMainTopic: string;
-  items: CarouselCardProps[];
   ariaLabelTopic: string;
+  items: CarouselCardProps[];
 }
 
 const Carousel: React.FC<CarouselProps> = ({
   ariaLabelMainTopic,
-  items,
   ariaLabelTopic,
+  items,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [liveText, setLiveText] = useState('');

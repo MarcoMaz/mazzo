@@ -7,7 +7,7 @@
   min-height: 8rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Firefox fix */
 
   .carousel__card {
     align-items: center;
