@@ -7,6 +7,7 @@
   min-height: 8rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 
   .carousel__card {
     align-items: center;
