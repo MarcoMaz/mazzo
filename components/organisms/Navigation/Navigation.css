@@ -20,11 +20,11 @@
 
   .nav-link:nth-of-type(3) {
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem;
   }
 
   .nav-link:nth-of-type(4) {
     bottom: 2rem;
-    left: 2rem;
+    right: 2rem;
   }
 }

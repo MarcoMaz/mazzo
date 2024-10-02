@@ -1,22 +1,14 @@
-import "./Navigation.css";
+import './Navigation.css';
 
-import NavLink, { NavLinkProps } from "../../atoms/NavLink/NavLink";
+import NavLink, { NavLinkProps } from '../../atoms/NavLink/NavLink';
 
 interface NavigationProps {
   navLinks: NavLinkProps[];
 }
 
 const Navigation: React.FC<NavigationProps> = ({ navLinks }) => {
-  const chunkArray = (array: NavLinkProps[], size: number) => {
-    const chunks = [];
-    for (let i = 0; i < array.length; i += size) {
-      chunks.push(array.slice(i, i + size));
-    }
-    return chunks;
-  };
-
   return (
-    <nav className="navigation">
+    <nav className='navigation'>
       <ul>
         {navLinks.map(({ label, url }) => (
           <NavLink key={label} url={url} label={label} />
