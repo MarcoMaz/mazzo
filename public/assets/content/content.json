@@ -99,6 +99,7 @@
   "writeMe": {
     "headline": "Write me",
     "CTA": {
+      "ariaLabel": "send me an email",
       "label": "here",
       "url": "mailto:mazzai.marco@gmail.com"
     }

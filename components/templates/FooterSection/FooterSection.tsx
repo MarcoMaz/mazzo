@@ -1,20 +1,20 @@
-import data from "../../../public/assets/content/content.json";
+import data from '../../../public/assets/content/content.json';
 
-import Heading from "../../atoms/Heading/Heading";
-import ExternalLink from "../../atoms/ExternalLink/ExternalLink";
+import Heading from '../../atoms/Heading/Heading';
+import ExternalLink from '../../atoms/ExternalLink/ExternalLink';
 
-import "./FooterSection.css";
+import './FooterSection.css';
 
-const FooterSection = () => {
+const FooterSection: React.FC = () => {
   const {
     headline,
-    CTA: { url, label },
+    CTA: { ariaLabel, label, url },
   } = data.writeMe;
 
   return (
-    <footer className="footer-section" id="contact">
+    <footer className='footer-section' id='contact'>
       <Heading level={2} label={headline} />
-      <ExternalLink url={url} label={label} />
+      <ExternalLink ariaLabel={ariaLabel} url={url} label={label} />
     </footer>
   );
 };
