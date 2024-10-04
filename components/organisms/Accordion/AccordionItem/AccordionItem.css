@@ -12,6 +12,8 @@
 
     .accordionItem__panel {
       display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .accordionItem__dot svg {

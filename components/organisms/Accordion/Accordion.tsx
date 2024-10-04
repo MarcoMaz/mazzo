@@ -24,14 +24,13 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
       {items.map(({ id, headline, children }) => (
         <AccordionItem
           key={id}
+          children={children}
           id={id}
           headline={headline}
           hasBorderReset={+id === +activeItemId - 1}
           isActive={id === activeItemId}
           onClick={() => handleAccordionClick(id)}
-        >
-          {children}
-        </AccordionItem>
+        />
       ))}
     </div>
   );

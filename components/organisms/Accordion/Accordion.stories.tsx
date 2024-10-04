@@ -15,17 +15,17 @@ const meta: Meta<typeof Accordion> = {
       {
         id: '1',
         headline: 'Sample Title 1',
-        children: <p>Sample Content 1</p>,
+        children: '<p>Sample Content 1</p>',
       },
       {
         id: '2',
         headline: 'Sample Title 2',
-        children: <p>Sample Content 2</p>,
+        children: '<p>Sample Content 2</p>',
       },
       {
         id: '3',
         headline: 'Sample Title 3',
-        children: <p>Sample Content 3</p>,
+        children: '<p>Sample Content 3</p>',
       },
     ],
   },

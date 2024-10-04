@@ -3,7 +3,7 @@ import './AccordionItem.css';
 import { Circle } from 'react-feather';
 
 export interface AccordionItemProps {
-  children: React.ReactNode;
+  children: string;
   hasBorderReset?: boolean;
   headline: string;
   id: string;
@@ -39,9 +39,8 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         id={`accordionItem__panel-${id}`}
         className='accordionItem__panel'
         aria-hidden={!isActive}
-      >
-        {children}
-      </div>
+        dangerouslySetInnerHTML={{ __html: children }}
+      />
       <div className='accordionItem__dot'>
         <Circle />
       </div>

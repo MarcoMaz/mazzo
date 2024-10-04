@@ -16,7 +16,6 @@
       "label": "let's talk",
       "url": "#contact"
     }
-    
   ],
   "hi": {
     "headline": "Hi!",
@@ -35,37 +34,22 @@
     }
   },
   "selectedWorks": {
-    "headline": "Selected works",
-    "cards": [
+    "headline": "Selected Works", 
+    "items": [
       {
+        "id": "1",
         "headline": "RenatoDoList",
-        "subheadline": "PWA",
-        "description": "Basic metronome with tempo and time signature customisation.",
-        "chips": ["JS", "React", "HTML"],
-        "CTA": {
-          "label": "Check it out",
-          "url": "#"
-        }
+        "children": "<em>PWA</em><p>Basic metronome with tempo and time signature customisation.</p><div class=\"chip-group\"><span class=\"chip\">JS</span><span class=\"chip\">React</span><span class=\"chip\">HTML</span></div><a href=\"#\" target=\"_blank\" class=\"external-link\">Sample Text</a>"
       },
       {
-        "headline": "Metronome",
-        "subheadline": "WebApp",
-        "description": "Something somtehing...",
-        "chips": ["JS", "React", "HTML"],
-        "CTA": {
-          "label": "Check it out",
-          "url": "#"
-        }
+        "id": "2",
+        "headline": "Polyrhythmic Metronome",
+        "children": "<em>Web App</em><p>Something somtehing...</p><div class=\"chip-group\"><span class=\"chip\">JS</span><span class=\"chip\">React</span><span class=\"chip\">HTML</span></div><a href=\"#\" target=\"_blank\" class=\"external-link\">Sample Text</a>"
       },
       {
+        "id": "3",
         "headline": "Picker",
-        "subheadline": "Web Component",
-        "description": "LALALALLALALALAalllala.",
-        "chips": ["JS", "React", "HTML"],
-        "CTA": {
-          "label": "Check it out",
-          "url": "#"
-        }
+        "children": "<em>Web Component</em><p>LALALALLALALALAalllala</p><div class=\"chip-group\"><span class=\"chip\">JS</span><span class=\"chip\">React</span><span class=\"chip\">HTML</span></div><a href=\"#\" target=\"_blank\" class=\"external-link\">Sample Text</a>"
       }
     ],
     "nda": {
