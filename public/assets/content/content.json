@@ -29,7 +29,10 @@
         "text": "I specialize in creating beautiful accessible web products and system designs for clients worldwide.",
         "boldify": ["beautiful accessible web products", "system designs"]
       }
-    ]
+    ],
+    "image": {
+      "alt": "avatar Marco Mazzai"
+    }
   },
   "selectedWorks": {
     "headline": "Selected works",
