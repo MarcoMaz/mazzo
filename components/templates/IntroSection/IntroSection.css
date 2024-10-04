@@ -14,6 +14,8 @@
 
     img {
       border-radius: 50%;
+      height: 12.5rem;
+      width: 12.5rem;
     }
 
     h1 {
@@ -40,6 +42,11 @@
       h1 {
         left: unset;
         margin-left: 2rem;
+      }
+
+      img {
+        height: 18.75rem;
+        width: 18.75rem;
       }
     }
 

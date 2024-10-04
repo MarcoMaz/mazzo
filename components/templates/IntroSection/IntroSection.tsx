@@ -20,34 +20,10 @@ const IntroSection: React.FC = () => {
     image: { alt },
   } = data.hi;
 
-  const [viewportWidth, setViewportWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportWidth(window.innerWidth);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      // Cleanup
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const imageSizeBasedOnViewport = viewportWidth >= 701 ? 300 : 200;
-
   return (
     <header className='intro-section'>
       <div className='intro-section__avatar'>
-        <Image
-          src={avatarImage}
-          alt={alt}
-          width={imageSizeBasedOnViewport}
-          height={imageSizeBasedOnViewport}
-          priority
-        />
+        <Image src={avatarImage} alt={alt} priority />
         <Heading level={1} label={headline} />
       </div>
       <div className='intro-section__paragraphGroup'>
