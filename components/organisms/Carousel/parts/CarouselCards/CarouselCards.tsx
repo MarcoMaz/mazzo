@@ -19,9 +19,12 @@ const CarouselCards: React.FC<CarouselCardsProps> = ({
         const cardsIsActive = index === activeIndex;
 
         return (
-          <CarouselCard id={id} key={id} isActive={cardsIsActive}>
-            {children}
-          </CarouselCard>
+          <CarouselCard
+            id={id}
+            key={id}
+            isActive={cardsIsActive}
+            children={children}
+          />
         );
       })}
     </ul>
@@ -33,7 +36,7 @@ export default CarouselCards;
 export interface CarouselCardProps {
   id: string;
   isActive?: boolean;
-  children: React.ReactNode;
+  children: string;
 }
 
 const CarouselCard: React.FC<CarouselCardProps> = ({
@@ -62,8 +65,11 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   }, [isActive]);
 
   return (
-    <li className='carousel__card' key={id} ref={cardRef}>
-      {children}
-    </li>
+    <li
+      className='carousel__card'
+      key={id}
+      ref={cardRef}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
   );
 };
